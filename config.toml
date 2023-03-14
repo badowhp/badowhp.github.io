@@ -1,0 +1,57 @@
+baseURL = "https://somni.biz"
+languageCode = "en"
+DefaultContentLanguage = "en"
+title = "Hipolit Badowski"
+
+
+theme = 'anatole'
+
+[params]
+title = "Hipolit Badowski"
+author = "Hipolit Badowski"
+description = "DevOps Engineer"
+profilePicture = "images/profile.png"
+
+[[params.socialIcons]]
+icon = "fab fa-linkedin"
+title = "Linkedin"
+url = "https://www.linkedin.com/in/hipolitb/"
+
+[[params.socialIcons]]
+icon = "fab fa-github"
+title = "GitHub"
+url = "https://github.com/badowhp"
+
+[[params.socialIcons]]
+icon = "fab fa-instagram"
+title = "instagram"
+url = "https://www.instagram.com/magnum_imperatorem/"
+
+[[params.socialIcons]]
+icon = "fas fa-envelope"
+title = "e-mail"
+url = "mailto:badowhp@gmail.com"
+
+
+
+[menu]
+
+  [[menu.main]]
+  name = "Home"
+  identifier = "home"
+  weight = 100
+  url = "/"
+
+  [[menu.main]]
+  name = "Posts"
+  weight = 200
+  identifier = "posts"
+  url = "/post/"
+
+  [[menu.main]]
+  name = "About"
+  weight = 300
+  identifier = "about"
+  url = "/about/"
+
+
