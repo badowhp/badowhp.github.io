@@ -1,7 +1,7 @@
 ---
 title: 'medusajs'
-date: 2022-03-18T21:47:41+00:00
-draft: false
+date: 2022-03-18T14:15:41+00:00
+draft: true
 tags:
   - webshop
 thumbnail: "images/medusa.png"
@@ -68,4 +68,4 @@ Now that you have a MedusaJS webshop up and running, it's important to consider 
 
 Creating a webshop with MedusaJS can be a powerful and flexible solution for e-commerce stores. Adding DevOps practices can help ensure that your webshop is scalable, reliable, and secure. By implementing continuous integration and deployment, infrastructure as code, monitoring and logging, and security practices, you can create a webshop that can meet the needs of your customers and your business.
 
-I can help you to create your own webshop based on open-source tools and host it on an kubernetes cluster.
+I can help you to create your own webshop based on open-source tools and host it on an kubernetes cluster which means zero down time while keeping full security.
