@@ -5,10 +5,13 @@ draft: false
 tags:
   - gitops 
   - kubernetes
+thumbnail: "images/argo-logo.png"
 ---
 As a professional DevOps engineer, I have seen and worked with various tools in the DevOps space. In my experience, ArgoCD is the superior DevOps tool for GitOps. In this blog post, I will explain why.
 
 First, let's define GitOps. GitOps is a way of implementing DevOps using Git as a single source of truth. With GitOps, everything related to your application infrastructure, including configurations and deployment manifests, is stored in a Git repository. This allows you to apply Git workflows to your infrastructure and automate deployments, configuration updates, and rollbacks.
+
+![argocd-architecture](https://argo-cd.readthedocs.io/en/stable/assets/argocd_architecture.png)
 
 ArgoCD is a GitOps continuous delivery tool that is designed specifically for Kubernetes. It provides automated deployment and management of applications on Kubernetes clusters, and it uses Git as the source of truth for deployment manifests and configuration files.
 

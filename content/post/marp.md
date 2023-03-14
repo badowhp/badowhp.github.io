@@ -4,6 +4,7 @@ date: 2022-03-18T21:47:41+00:00
 draft: false
 tags:
   - marp
+thumbnail: "images/marp.png"
 ---
 Marp is a free and open-source tool that allows users to create professional-grade presentations and slideshows using simple markdown syntax. It was created by the Japanese developer, Yuki Hattori, in 2014, and has since gained popularity among developers and designers worldwide. Marp is designed to be lightweight and easy to use, making it a favorite among those who want to create presentations quickly without sacrificing quality.
 

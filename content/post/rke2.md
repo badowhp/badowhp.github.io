@@ -5,6 +5,7 @@ draft: false
 tags:
   - rke2 
   - kubernetes
+thumbnail: "images/rke2.png"
 ---
 
 RKE2, a Kubernetes cluster deployment tool that enables on-premise deployments similar to cloud deployments.
