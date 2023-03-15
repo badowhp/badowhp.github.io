@@ -10,15 +10,15 @@ Marp is a free and open-source tool that allows users to create professional-gra
 
 Here are some of the key features of the Marp project:
 
-    Markdown-based: Marp uses simple markdown syntax to create presentations. Markdown is a lightweight markup language that is easy to learn and use, making it a popular choice among developers.
+  - Markdown-based: Marp uses simple markdown syntax to create presentations. Markdown is a lightweight markup language that is easy to learn and use, making it a popular choice among developers.
 
-    Live preview: Marp provides a live preview of your presentation as you create it, allowing you to see how your presentation will look in real-time. This feature is especially useful for those who want to make quick edits and see the changes immediately.
+  - Live preview: Marp provides a live preview of your presentation as you create it, allowing you to see how your presentation will look in real-time. This feature is especially useful for those who want to make quick edits and see the changes immediately.
 
-    Customizable themes: Marp provides several customizable themes that you can use to style your presentation. You can also create your own custom themes using CSS, giving you complete control over the look and feel of your presentation.
+  - Customizable themes: Marp provides several customizable themes that you can use to style your presentation. You can also create your own custom themes using CSS, giving you complete control over the look and feel of your presentation.
 
-    Export options: Marp allows you to export your presentation in several formats, including PDF, HTML, and PowerPoint. This feature makes it easy to share your presentation with others, regardless of the platform they are using.
+  - Export options: Marp allows you to export your presentation in several formats, including PDF, HTML, and PowerPoint. This feature makes it easy to share your presentation with others, regardless of the platform they are using.
 
-    Speaker mode: Marp provides a speaker mode that allows you to view your presentation notes and control the flow of your presentation. This feature is especially useful for those who want to practice their presentation before giving it to an audience.
+  - Speaker mode: Marp provides a speaker mode that allows you to view your presentation notes and control the flow of your presentation. This feature is especially useful for those who want to practice their presentation before giving it to an audience.
 
 The Marp project has gained popularity among developers and designers for several reasons. First, it is lightweight and easy to use, making it accessible to those who are new to creating presentations. Second, it is highly customizable, allowing users to create presentations that match their unique style and preferences. Finally, it is free and open-source, making it accessible to everyone.
 
