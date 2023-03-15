@@ -1,4 +1,4 @@
-baseURL = "https://somni.biz"
+baseURL = "https://badowhp.github.io"
 languageCode = "en"
 DefaultContentLanguage = "en"
 title = "Hipolit Badowski"
@@ -11,6 +11,10 @@ author = "Hipolit Badowski"
 description = "DevOps Engineer"
 profilePicture = "images/profile.png"
 gtagId = "G-PFN0H5XDM4"
+readMore = true
+displayMode = "dark"
+enableMediumZoom = false
+contentratio = 0.7
 
 [[params.socialIcons]]
 icon = "fab fa-linkedin"
