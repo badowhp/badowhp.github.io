@@ -5,12 +5,15 @@ title = "Hipolit Badowski"
 
 
 theme = 'anatole'
+googleAnalytics = "358400477"
+
 
 [params]
 title = "Hipolit Badowski"
 author = "Hipolit Badowski"
 description = "DevOps Engineer"
 profilePicture = "images/profile.png"
+
 
 [[params.socialIcons]]
 icon = "fab fa-linkedin"
