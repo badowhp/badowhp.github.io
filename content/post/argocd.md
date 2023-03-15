@@ -32,8 +32,9 @@ Here are some of the reasons why ArgoCD is the superior DevOps tool for GitOps:
 
   6. Extensibility: ArgoCD is highly extensible and can integrate with other tools in your DevOps toolchain. It provides an API and a CLI interface that allows you to automate and customize your deployment process.
 
+  7. Log visibility for developers and people who haven't directly access to Kubernetes. This is a big help!
+
 In conclusion, ArgoCD is the superior DevOps tool for GitOps. Its automated deployment and management process, Git-based workflows, declarative approach, scalability, security, and extensibility make it the ideal tool for managing complex Kubernetes applications. I highly recommend ArgoCD to teams that want to implement GitOps and automate their application deployment process.
 
+ArgoCD Applications can be set up via definied Application Sets, i recommend to check out following:
 https://argo-cd.readthedocs.io/en/stable/getting_started/
-
-I will follow up with Flux as soon i have the chance to use it in a productive environment.
