@@ -3,17 +3,14 @@ languageCode = "en"
 DefaultContentLanguage = "en"
 title = "Hipolit Badowski"
 
-
 theme = 'anatole'
-googleAnalytics = "358400477"
-
 
 [params]
 title = "Hipolit Badowski"
 author = "Hipolit Badowski"
 description = "DevOps Engineer"
 profilePicture = "images/profile.png"
-
+gtagId = "G-PFN0H5XDM4"
 
 [[params.socialIcons]]
 icon = "fab fa-linkedin"
@@ -34,8 +31,6 @@ url = "https://www.instagram.com/magnum_imperatorem/"
 icon = "fas fa-envelope"
 title = "e-mail"
 url = "mailto:badowhp@gmail.com"
-
-
 
 [menu]
 
