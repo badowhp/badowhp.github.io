@@ -34,4 +34,4 @@ Scribus is also free and open-source, which means that it is accessible to anyon
 
 In conclusion, Scribus is a powerful desktop publishing tool that is accessible to anyone who needs to create professional-quality print and digital publications. Its layout and design tools, support for vector graphics and CMYK color, and PDF support make it a versatile tool that can be used for a wide range of projects. If you need to create print or digital publications, then Scribus may be the perfect tool for you.
 
-Here you can see how i design my CV with Scribus:
+Webpage: https://www.scribus.net/ 

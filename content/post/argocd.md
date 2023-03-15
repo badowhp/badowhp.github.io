@@ -34,5 +34,6 @@ Here are some of the reasons why ArgoCD is the superior DevOps tool for GitOps:
 
 In conclusion, ArgoCD is the superior DevOps tool for GitOps. Its automated deployment and management process, Git-based workflows, declarative approach, scalability, security, and extensibility make it the ideal tool for managing complex Kubernetes applications. I highly recommend ArgoCD to teams that want to implement GitOps and automate their application deployment process.
 
-If you want to test it by yourself you can use my repository for a local setup:
-https://github.com/badowhp/kubernetes-helm-local
+https://argo-cd.readthedocs.io/en/stable/getting_started/
+
+I will follow up with Flux as soon i have the chance to use it in a productive environment.

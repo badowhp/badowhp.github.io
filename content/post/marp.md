@@ -1,6 +1,6 @@
 ---
 title: 'marp'
-date: 2022-03-18T21:47:41+00:00
+date: 2022-05-18T16:47:41+00:00
 draft: false
 tags:
   - marp
@@ -25,3 +25,5 @@ The Marp project has gained popularity among developers and designers for severa
 In addition to the Marp tool, the project also provides Marp Next, which is a more advanced version of Marp that includes additional features like custom slide sizes, speaker notes, and the ability to embed YouTube videos.
 
 In conclusion, the Marp project is a powerful tool for creating professional-grade presentations using simple markdown syntax. Its live preview, customizable themes, export options, speaker mode, and accessibility make it a popular choice among developers and designers worldwide. If you're looking for a lightweight and easy-to-use tool to create presentations, then Marp may be the perfect tool for you.
+
+https://github.com/marp-team/marp

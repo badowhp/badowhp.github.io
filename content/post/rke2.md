@@ -21,3 +21,6 @@ RKE2 also incorporates several security features that enhance the security of th
 Another key advantage of RKE2 is its scalability. RKE2 can deploy and manage Kubernetes clusters of any size, from small clusters with a few nodes to large clusters with thousands of nodes. RKE2 supports a variety of infrastructure providers, including on-premise deployments and cloud-based deployments. RKE2 also includes several features that enhance the performance and reliability of the Kubernetes cluster, such as automatic node management and automatic workload distribution.
 
 In conclusion, SUSE technologies and RKE2 provide enterprises with a powerful set of tools for deploying and managing Kubernetes clusters on-premise. RKE2's simplicity, security, and scalability make it an ideal solution for enterprises looking to deploy Kubernetes clusters on-premise. Whether you're running a small Kubernetes cluster on a few nodes or a large cluster with thousands of nodes, RKE2 can help you simplify the deployment and management process and ensure the security and reliability of your cluster.
+
+https://docs.rke2.io/
+https://registry.terraform.io/providers/rancher/rancher2/latest/docs
