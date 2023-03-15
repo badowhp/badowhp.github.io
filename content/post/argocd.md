@@ -18,7 +18,7 @@ ArgoCD is a GitOps continuous delivery tool that is designed specifically for Ku
 ![argocd-architecture](https://argo-cd.readthedocs.io/en/stable/assets/argocd_architecture.png)
 
 
-Here are some of the reasons why ArgoCD is the superior DevOps tool for GitOps:
+Here is my list with reasons why ArgoCD is the best DevOps tool for GitOps:
 
   1. Automated deployment and management: ArgoCD provides an automated deployment and management process for Kubernetes applications. It monitors your Git repository for changes, and when changes are detected, it automatically deploys and configures your application to the desired state.
 
@@ -38,3 +38,6 @@ In conclusion, ArgoCD is the superior DevOps tool for GitOps. Its automated depl
 
 ArgoCD Applications can be set up via definied Application Sets, i recommend to check out following:
 https://argo-cd.readthedocs.io/en/stable/getting_started/
+
+If you want to deploy ArgoCD on a local cluster you can use:
+https://github.com/badowhp/kubernetes-helm-local
