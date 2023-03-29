@@ -1,7 +1,7 @@
 ---
 title: 'scribus'
 date: 2022-01-18T13:47:41+00:00
-draft: false
+draft: true
 tags:
   - design
   - tools

@@ -1,7 +1,7 @@
 ---
 title: 'rke2'
 date: 2022-02-18T18:47:41+00:00
-draft: false
+draft: true
 tags:
   - rke2 
   - kubernetes

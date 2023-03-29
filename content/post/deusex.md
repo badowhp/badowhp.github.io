@@ -1,7 +1,7 @@
 ---
 title: "Deus ex"
 date: 2022-03-15T03:05:55+01:00
-draft: false
+draft: true 
 tags:
   - games
 thumbnail: "images/deus.png"
