@@ -1,4 +1,4 @@
-module github.com/badowhp/badowhp.github.io/
+module github.com/badowhp/badowhp.github.io
 
 go 1.22.0
 
