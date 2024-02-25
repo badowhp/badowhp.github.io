@@ -1,0 +1,69 @@
+############################
+## Author
+############################
+
+author:
+  name: "Hipolit Badowski"
+  image: ich.png
+  greeting: "DevOps Engineer :evergreen_tree:"
+  icon: ":wave:"
+
+############################
+## Links
+############################
+
+links:
+  - github: https://github.com/badowhp
+  # - x-twitter:
+  # - mastodon:
+  # - linkedin: 
+  # - instagram:
+  # - reddit: 
+  # - telegram: 
+  # - whatsapp: 
+  # - signal: 
+  # - codepen: 
+  # - dev: 
+  - email: badowhp@gmail.com
+  # - website:
+  # - link: 
+  # - discord:
+  # - orcid:
+  # - slack:
+  # - stack-overflow: 
+  # - twitch: 
+  # - patreon: 
+  # - soundcloud:
+  # - dribbble: 
+  # - stack-exchange: 
+  # - tiktok: 
+  # - youtube:
+  # - keybase: 
+  # - flickr: 
+  # - tumblr:
+  # - kickstarter: 
+  # - snapchat:
+  # - bluesky: 
+  # - bitbucket:
+  # - bandcamp: 
+  # - etsy: 
+  # - spotify: 
+  # - pinterest: 
+  # - strava: 
+  # - untappd: 
+  # - skype: 
+  # - medium: 
+  # - foursquare: 
+  # - apple: 
+  # - amazon: 
+  # - google: 
+  # - paypal: 
+  # - windows: 
+
+###############################
+## OpenGraph & Twitter Cards
+###############################
+
+title: "Hipolit"
+description: "is cool"
+images:

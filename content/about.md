@@ -1,20 +1,20 @@
-+++
-title = "About"
-description = "whoami"
-date = "2019-02-28"
-aliases = ["about-us", "about-hugo", "contact"]
-author = "Hipolit"
-+++
+---
+# don't change
+type: misc
 
-DevOps Engineer and Consultant
+# change these
+jobTitle: DevOps Engineer
+name: Hipolit Badowski
+bio: true
+icon: ":coffee:"
+---
 
-Specializing in:
+I'm a DevOps Engineer specializing in
 
-- Infrastructure
-- Cloud 
-- IaC 
-- CI/CD
-- Scripting
-- Kubernetes
+    Infrastructure
+    Cloud
+    IaC
+    CI/CD
+    Scripting
+    Kubernetes
 
-Reporting about DevOps Mindset and Tools
