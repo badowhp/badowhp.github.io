@@ -2,8 +2,8 @@
 ## CHANGE THESE
 ############################
 
-baseURL: 'https://%USER%.github.io/%NAME%'
-title: %NAME%
+baseURL: 'https://badowhp.github.io/'
+title: Hipolit Badowski - DevSecOps
 
 ############################
 ## MISC
