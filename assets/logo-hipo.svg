@@ -1,0 +1,36 @@
+<svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="10" y1="8" x2="54" y2="58" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#153A78"/>
+      <stop offset="0.5" stop-color="#0C2453"/>
+      <stop offset="1" stop-color="#040B19"/>
+    </linearGradient>
+    <linearGradient id="rim" x1="13" y1="10" x2="51" y2="54" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#6FC8FF"/>
+      <stop offset="0.45" stop-color="#2E73FF"/>
+      <stop offset="1" stop-color="#091428"/>
+    </linearGradient>
+    <linearGradient id="hFill" x1="20" y1="15" x2="45" y2="46" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#D5F1FF"/>
+      <stop offset="0.35" stop-color="#7FDAFF"/>
+      <stop offset="1" stop-color="#2E6BFF"/>
+    </linearGradient>
+    <linearGradient id="slash" x1="19" y1="41" x2="45" y2="19" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#8DEBFF"/>
+      <stop offset="1" stop-color="#1D5CFF"/>
+    </linearGradient>
+    <filter id="glow" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  <rect x="7" y="7" width="50" height="50" rx="16" fill="url(#bg)"/>
+  <rect x="7.75" y="7.75" width="48.5" height="48.5" rx="15.25" stroke="url(#rim)" stroke-width="1.5"/>
+  <path d="M22 18C22 16.8954 22.8954 16 24 16H27C28.1046 16 29 16.8954 29 18V29H35V18C35 16.8954 35.8954 16 37 16H40C41.1046 16 42 16.8954 42 18V46C42 47.1046 41.1046 48 40 48H37C35.8954 48 35 47.1046 35 46V35H29V46C29 47.1046 28.1046 48 27 48H24C22.8954 48 22 47.1046 22 46V18Z" fill="url(#hFill)"/>
+  <path d="M19 43L25.5 36.5" stroke="url(#slash)" stroke-width="2.2" stroke-linecap="round" filter="url(#glow)"/>
+  <path d="M39.5 19.5L45 14" stroke="#8FDBFF" stroke-width="2.2" stroke-linecap="round" filter="url(#glow)"/>
+  <circle cx="45.5" cy="14.5" r="2.5" fill="#B5F3FF" filter="url(#glow)"/>
+</svg>

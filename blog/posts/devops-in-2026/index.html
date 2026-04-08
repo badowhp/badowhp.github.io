@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The State of DevOps in 2026 | Hipolit Badowski</title>
+  <meta name="description" content="Platform engineering, software supply chain controls, and AI-assisted operations after the hype cycle.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../../assets/css/main.css">
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav scrolled" id="nav">
+    <div class="container">
+      <a href="/" class="nav-logo">
+        <img class="nav-logo-mark" src="/assets/logo-hipo.svg" alt="" width="32" height="32">
+        <span>hipo<span class="logo-accent">.dev</span></span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="/">Home</a></li>
+        <li><a href="/#skills">Skills</a></li>
+        <li><a href="/#about">About</a></li>
+        <li><a href="/blog/" class="active">Blog</a></li>
+        <li><a href="/#contact">Contact</a></li>
+      </ul>
+      <div class="nav-hamburger" id="hamburger">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+  </nav>
+  <div class="nav-mobile" id="nav-mobile">
+    <a href="/">Home</a>
+    <a href="/blog/">Blog</a>
+    <a href="/#about">About</a>
+    <a href="/#contact">Contact</a>
+  </div>
+
+  <!-- POST HEADER -->
+  <header class="post-header">
+    <div class="container" style="max-width:720px;margin:0 auto">
+      <a href="/blog/" style="font-family:var(--font-mono);font-size:.8rem;color:var(--accent-green);margin-bottom:20px;display:inline-block">&larr; Back to Blog</a>
+      <div class="post-meta">
+        <span>2026-03-08</span>
+        <span>6 min read</span>
+      </div>
+      <h1 style="font-size:clamp(1.6rem,4vw,2.6rem)">The State of DevOps in 2026</h1>
+    </div>
+  </header>
+
+  <!-- POST CONTENT -->
+  <article class="post-content">
+    <p>DevOps in 2026 feels less like a job title and more like a delivery operating model. The loudest trends from a year or two ago have either hardened into boring defaults or been exposed as expensive theater. The teams moving fastest are standardizing the platform, tightening the supply chain, and using AI in bounded places where it actually removes toil.</p>
+
+    <h2>Platform Engineering Is Now Institutionalized</h2>
+
+    <p>By 2026, platform engineering is not a fringe idea anymore. CNCF now has a dedicated Certified Cloud Native Platform Engineering Associate certification, which tells you the pattern has moved from conference talk to repeatable discipline. The interesting question is no longer whether to build an internal platform, but how opinionated to make it.</p>
+
+    <p>The healthiest platforms are converging on a few principles:</p>
+    <ul>
+      <li><strong>Golden paths over endless flexibility:</strong> paved workflows for service creation, secrets, deployment, and rollback.</li>
+      <li><strong>Self-service with guardrails:</strong> teams provision what they need, but policy, identity, and cost controls are embedded.</li>
+      <li><strong>Platform APIs over tribal knowledge:</strong> developers consume stable interfaces instead of reverse-engineering infrastructure conventions.</li>
+    </ul>
+
+    <p>The strongest platform teams are measuring adoption, lead time, and support load. If the platform only centralizes complexity instead of deleting it, developers route around it.</p>
+
+    <h2>GitOps Survived, But It Grew Up</h2>
+
+    <p>GitOps is still the default control plane for Kubernetes delivery, but the simplistic "everything in Git, reconcile forever" story has matured. Teams are now much more deliberate about what belongs in Git, what is generated, and what should be handled by higher-level platform APIs.</p>
+
+    <pre><code># Everything in Git. Everything reconciled.
+applications/
+  production/
+    app-a/
+      deployment.yaml
+      service.yaml
+      kustomization.yaml
+    app-b/
+      ...
+  staging/
+    ...</code></pre>
+
+    <p>The benefits are still real: auditability, drift detection, and deterministic rollbacks. The difference in 2026 is that teams are investing more in repository design, promotion workflows, and secret handling, because those are where GitOps programs actually succeed or fail.</p>
+
+    <h2>AI-Assisted Operations Found Its Boundaries</h2>
+
+    <p>The useful AI story is narrower and more valuable than the marketing pitch. LLMs help most when they summarize, classify, draft, and correlate. They help least when asked to autonomously mutate production systems.</p>
+
+    <ul>
+      <li><strong>Incident triage:</strong> summarizing alerts, logs, traces, and recent deploy history into something an on-call engineer can actually use.</li>
+      <li><strong>Change review:</strong> drafting Terraform, Helm, and workflow updates faster, then handing them to humans for validation.</li>
+      <li><strong>Runbook maintenance:</strong> turning postmortems into operational documentation before the context disappears.</li>
+    </ul>
+
+    <p>My rule is simple: AI can recommend, draft, and explain. It should not be allowed to make irreversible production changes without explicit control points. In practice, the high-value pattern is human-approved automation, not autonomous remediation.</p>
+
+    <h2>Supply Chain Security Became Part of Delivery</h2>
+
+    <p>Security has moved deeper into the path to production. GitHub has continued hardening Actions and artifacts, including newer artifact integrity features, while the broader ecosystem keeps pushing signed artifacts, provenance, and policy enforcement closer to the default developer workflow.</p>
+
+    <ul>
+      <li><strong>Provenance and attestations:</strong> build outputs need to be traceable back to the workflow and source that produced them.</li>
+      <li><strong>Signed artifacts:</strong> not just container images, but the metadata around how they were built.</li>
+      <li><strong>Policy as code:</strong> checks are enforced in CI and at admission, not buried in a wiki.</li>
+      <li><strong>Secret and dependency scanning:</strong> baseline controls are expected, not aspirational.</li>
+    </ul>
+
+    <p>The important change is cultural: security controls are being packaged as paved-road defaults. That matters more than any individual tool choice.</p>
+
+    <h2>The Role Keeps Fragmenting</h2>
+
+    <p>The "DevOps Engineer" title continues to blur at the edges. The work is still there, but organizations are naming it more precisely:</p>
+
+    <ul>
+      <li><strong>Platform Engineers</strong> — building internal developer platforms</li>
+      <li><strong>SREs</strong> — owning reliability engineering, capacity, and incident response</li>
+      <li><strong>Cloud Infrastructure Engineers</strong> — focused on provider architecture, networking, and cost</li>
+      <li><strong>Security Platform Engineers</strong> — building policy, identity, and supply chain controls into delivery systems</li>
+    </ul>
+
+    <p>The through-line is unchanged: reduce toil, increase delivery safety, and make engineers faster without making production more fragile.</p>
+
+    <h2>What I’m Watching For The Rest of 2026</h2>
+
+    <p>A few things look especially relevant this year:</p>
+    <ul>
+      <li><strong>Platform ROI:</strong> more teams will ask whether their internal platform is actually reducing complexity or just relocating it.</li>
+      <li><strong>AI governance in engineering workflows:</strong> especially around prompt data, change approval, and auditability.</li>
+      <li><strong>Supply chain evidence:</strong> SBOMs, attestations, and policy checks becoming normal parts of release pipelines.</li>
+      <li><strong>FinOps embedded in delivery:</strong> cost signals surfacing earlier, inside developer workflows rather than only in finance reviews.</li>
+    </ul>
+
+    <blockquote>The best DevOps teams in 2026 are not the ones with the most tools. They are the ones with the clearest operating model.</blockquote>
+
+    <p>That is still what separates mature engineering organizations from noisy ones.</p>
+  </article>
+
+  <!-- POST NAV -->
+  <nav class="post-nav">
+    <a href="../kubernetes-at-scale/">&larr; Prev: Scaling Kubernetes</a>
+    <div></div>
+  </nav>
+
+  <!-- FOOTER -->
+  <footer class="footer-bottom container" style="padding:40px 24px">
+    &copy; 2026 Hipolit Badowski. All rights reserved.
+  </footer>
+
+  <script src="../../../assets/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog | Hipolit Badowski</title>
+  <meta name="description" content="DevOps engineering blog by Hipolit Badowski — Kubernetes, Terraform, CI/CD, and cloud infrastructure.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/main.css">
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav scrolled" id="nav">
+    <div class="container">
+      <a href="/" class="nav-logo">
+        <img class="nav-logo-mark" src="/assets/logo-hipo.svg" alt="" width="32" height="32">
+        <span>hipo<span class="logo-accent">.dev</span></span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="/">Home</a></li>
+        <li><a href="/#skills">Skills</a></li>
+        <li><a href="/#about">About</a></li>
+        <li><a href="/blog/" class="active">Blog</a></li>
+        <li><a href="/#contact">Contact</a></li>
+      </ul>
+      <div class="nav-hamburger" id="hamburger">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+  </nav>
+
+  <div class="nav-mobile" id="nav-mobile">
+    <a href="/">Home</a>
+    <a href="/#skills">Skills</a>
+    <a href="/#about">About</a>
+    <a href="/blog/">Blog</a>
+    <a href="/#contact">Contact</a>
+  </div>
+
+  <!-- HEADER -->
+  <header class="blog-page-header">
+    <div class="container">
+      <div class="section-label">Blog</div>
+      <h1 style="font-size:clamp(1.8rem,4vw,3rem)">Posts & Thoughts</h1>
+      <p style="color:var(--text-secondary);margin-top:12px">Notes from the trenches of infrastructure engineering.</p>
+    </div>
+  </header>
+
+  <!-- BLOG LISTING -->
+  <main class="blog-listing">
+    <div class="container">
+      <div class="blog-cards">
+
+        <a href="posts/kubernetes-at-scale/" class="blog-card">
+          <div class="blog-card-header">
+            <span class="blog-card-dot"></span>
+            <span class="blog-card-dot"></span>
+            <span class="blog-card-dot"></span>
+            <span class="blog-card-filename">kubernetes-at-scale.md</span>
+          </div>
+          <div class="blog-card-body">
+            <div class="blog-card-date">2026-03-19</div>
+            <h3>Scaling Kubernetes: Lessons from Production</h3>
+            <p class="blog-card-excerpt">Resource management, workload identity, observability, and the Kubernetes 1.35 realities that matter in production.</p>
+          </div>
+        </a>
+
+        <a href="posts/devops-in-2026/" class="blog-card">
+          <div class="blog-card-header">
+            <span class="blog-card-dot"></span>
+            <span class="blog-card-dot"></span>
+            <span class="blog-card-dot"></span>
+            <span class="blog-card-filename">devops-in-2026.md</span>
+          </div>
+          <div class="blog-card-body">
+            <div class="blog-card-date">2026-04-08</div>
+            <h3>The State of DevOps in 2026</h3>
+            <p class="blog-card-excerpt">Platform engineering, software supply chain controls, and AI-assisted operations after the hype cycle.</p>
+          </div>
+        </a>
+
+      </div>
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer-bottom container" style="padding:40px 24px">
+    &copy; 2026 Hipolit Badowski. All rights reserved.
+  </footer>
+
+  <script src="../assets/js/main.js"></script>
+</body>
+</html>
