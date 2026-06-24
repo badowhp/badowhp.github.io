@@ -4,55 +4,56 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Scaling Kubernetes: Lessons from Production | Hipolit Badowski</title>
-  <meta name="description" content="Hard-won lessons from running Kubernetes clusters at scale — resource management, networking, and operational gotchas.">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <meta name="description" content="Hard-won lessons from running Kubernetes clusters at scale, including resource management, networking, and operational gotchas.">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self'; script-src 'self'; style-src 'self'; base-uri 'none'; form-action 'none'; object-src 'none'; upgrade-insecure-requests">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
   <link rel="stylesheet" href="../../../assets/css/main.css">
 </head>
 <body>
+  <a class="skip-link" href="#main">Skip to content</a>
 
   <!-- NAV -->
   <nav class="nav scrolled" id="nav">
     <div class="container">
       <a href="/" class="nav-logo">
-        <img class="nav-logo-mark" src="/assets/logo-hipo.svg" alt="" width="32" height="32">
-        <span>hipo<span class="logo-accent">.dev</span></span>
+        <img class="nav-logo-mark" src="../../../assets/logo-hipo.svg" alt="" width="36" height="36">
+        <span>Hipolit Badowski</span>
       </a>
       <ul class="nav-links">
         <li><a href="/">Home</a></li>
-        <li><a href="/#skills">Skills</a></li>
+        <li><a href="/#work">Work</a></li>
         <li><a href="/#about">About</a></li>
         <li><a href="/blog/" class="active">Blog</a></li>
         <li><a href="/#contact">Contact</a></li>
       </ul>
-      <div class="nav-hamburger" id="hamburger">
-        <span></span><span></span><span></span>
-      </div>
+      <button class="nav-hamburger" id="hamburger" type="button" aria-label="Open menu" aria-controls="nav-mobile" aria-expanded="false">
+        <span>Menu line</span><span>Menu line</span><span>Menu line</span>
+      </button>
     </div>
   </nav>
-  <div class="nav-mobile" id="nav-mobile">
+  <nav class="nav-mobile" id="nav-mobile" aria-label="Mobile navigation">
     <a href="/">Home</a>
+    <a href="/#work">Work</a>
     <a href="/blog/">Blog</a>
     <a href="/#about">About</a>
     <a href="/#contact">Contact</a>
-  </div>
+  </nav>
 
   <!-- POST HEADER -->
   <header class="post-header">
-    <div class="container" style="max-width:720px;margin:0 auto">
-      <a href="/blog/" style="font-family:var(--font-mono);font-size:.8rem;color:var(--accent-green);margin-bottom:20px;display:inline-block">&larr; Back to Blog</a>
+    <div class="container header-container-narrow">
+      <a href="/blog/" class="back-link">&larr; Back to Blog</a>
       <div class="post-meta">
         <span>2026-03-19</span>
         <span>8 min read</span>
       </div>
-      <h1 style="font-size:clamp(1.6rem,4vw,2.6rem)">Scaling Kubernetes: Lessons from Production</h1>
+      <h1 class="post-title">Scaling Kubernetes: Lessons from Production</h1>
     </div>
   </header>
 
   <!-- POST CONTENT -->
-  <article class="post-content">
-    <p>Kubernetes in 2026 is a more capable platform than it was even a year ago, but scale still punishes hand-wavy decisions. The control plane is better, the resource model is getting richer, and workload identity keeps improving. None of that rescues a cluster with bad defaults, weak observability, or unclear ownership.</p>
+  <article class="post-content" id="main">
+    <p>Kubernetes in 2026 is a more capable platform than it was even a year ago, but scale still punishes vague decisions. The control plane is better, the resource model is getting richer, and workload identity keeps improving. None of that rescues a cluster with weak defaults, weak observability, or unclear ownership.</p>
 
     <p>As of March 19, 2026, the latest upstream Kubernetes release is 1.35.3. That matters because some operational advice has changed: in-place Pod resize is now stable in 1.35, the project only maintains the latest three minor releases, and newer resource-management features are becoming practical for real production use.</p>
 
@@ -114,7 +115,7 @@ spec:
     <ul>
       <li>queue depth for APIs and async workers</li>
       <li>consumer lag for streaming and messaging systems</li>
-      <li>latency or saturation signals as guardrails, not just CPU</li>
+      <li>latency and saturation signals as guardrails alongside CPU</li>
     </ul>
 
     <blockquote>The best autoscaling metric is the one that directly represents the user-facing symptom you're trying to prevent.</blockquote>
@@ -133,17 +134,16 @@ spec:
 
     <h2>Wrapping Up</h2>
 
-    <p>Kubernetes at scale still rewards boring discipline. Accurate requests, explicit placement, real identity boundaries, sensible autoscaling, and first-class observability remain the difference between a platform and a science experiment. The 2026 features are useful, but they amplify good operations more than they replace them.</p>
+    <p>Kubernetes at scale still rewards operational discipline. Accurate requests, explicit placement, real identity boundaries, sensible autoscaling, and first-class observability remain the difference between a platform and an expensive experiment. The 2026 features are useful, but they amplify good operations more than they replace them.</p>
   </article>
 
   <!-- POST NAV -->
   <nav class="post-nav">
-    <div></div>
     <a href="../devops-in-2026/">Next: The State of DevOps in 2026 &rarr;</a>
   </nav>
 
   <!-- FOOTER -->
-  <footer class="footer-bottom container" style="padding:40px 24px">
+  <footer class="footer-bottom page-footer container">
     &copy; 2026 Hipolit Badowski. All rights reserved.
   </footer>
 

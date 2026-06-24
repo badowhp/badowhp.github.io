@@ -4,61 +4,61 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Blog | Hipolit Badowski</title>
-  <meta name="description" content="DevOps engineering blog by Hipolit Badowski — Kubernetes, Terraform, CI/CD, and cloud infrastructure.">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <meta name="description" content="DevOps engineering blog by Hipolit Badowski covering Kubernetes, Terraform, CI/CD, and cloud infrastructure.">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self'; script-src 'self'; style-src 'self'; base-uri 'none'; form-action 'none'; object-src 'none'; upgrade-insecure-requests">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
   <link rel="stylesheet" href="../assets/css/main.css">
 </head>
 <body>
+  <a class="skip-link" href="#main">Skip to content</a>
 
   <!-- NAV -->
   <nav class="nav scrolled" id="nav">
     <div class="container">
       <a href="/" class="nav-logo">
-        <img class="nav-logo-mark" src="/assets/logo-hipo.svg" alt="" width="32" height="32">
-        <span>hipo<span class="logo-accent">.dev</span></span>
+        <img class="nav-logo-mark" src="../assets/logo-hipo.svg" alt="" width="36" height="36">
+        <span>Hipolit Badowski</span>
       </a>
       <ul class="nav-links">
         <li><a href="/">Home</a></li>
-        <li><a href="/#skills">Skills</a></li>
+        <li><a href="/#work">Work</a></li>
         <li><a href="/#about">About</a></li>
         <li><a href="/blog/" class="active">Blog</a></li>
         <li><a href="/#contact">Contact</a></li>
       </ul>
-      <div class="nav-hamburger" id="hamburger">
-        <span></span><span></span><span></span>
-      </div>
+      <button class="nav-hamburger" id="hamburger" type="button" aria-label="Open menu" aria-controls="nav-mobile" aria-expanded="false">
+        <span>Menu line</span><span>Menu line</span><span>Menu line</span>
+      </button>
     </div>
   </nav>
 
-  <div class="nav-mobile" id="nav-mobile">
+  <nav class="nav-mobile" id="nav-mobile" aria-label="Mobile navigation">
     <a href="/">Home</a>
-    <a href="/#skills">Skills</a>
+    <a href="/#work">Work</a>
     <a href="/#about">About</a>
     <a href="/blog/">Blog</a>
     <a href="/#contact">Contact</a>
-  </div>
+  </nav>
 
   <!-- HEADER -->
   <header class="blog-page-header">
     <div class="container">
       <div class="section-label">Blog</div>
-      <h1 style="font-size:clamp(1.8rem,4vw,3rem)">Posts & Thoughts</h1>
-      <p style="color:var(--text-secondary);margin-top:12px">Notes from the trenches of infrastructure engineering.</p>
+      <h1 class="blog-title">Posts & Notes</h1>
+      <p class="page-subtitle">Field notes on infrastructure engineering and operations.</p>
     </div>
   </header>
 
   <!-- BLOG LISTING -->
-  <main class="blog-listing">
+  <main class="blog-listing" id="main">
     <div class="container">
       <div class="blog-cards">
 
         <a href="posts/kubernetes-at-scale/" class="blog-card">
           <div class="blog-card-header">
-            <span class="blog-card-dot"></span>
-            <span class="blog-card-dot"></span>
-            <span class="blog-card-dot"></span>
+            <span class="blog-card-dot">Status</span>
+            <span class="blog-card-dot">Status</span>
+            <span class="blog-card-dot">Status</span>
             <span class="blog-card-filename">kubernetes-at-scale.md</span>
           </div>
           <div class="blog-card-body">
@@ -70,9 +70,9 @@
 
         <a href="posts/devops-in-2026/" class="blog-card">
           <div class="blog-card-header">
-            <span class="blog-card-dot"></span>
-            <span class="blog-card-dot"></span>
-            <span class="blog-card-dot"></span>
+            <span class="blog-card-dot">Status</span>
+            <span class="blog-card-dot">Status</span>
+            <span class="blog-card-dot">Status</span>
             <span class="blog-card-filename">devops-in-2026.md</span>
           </div>
           <div class="blog-card-body">
@@ -87,7 +87,7 @@
   </main>
 
   <!-- FOOTER -->
-  <footer class="footer-bottom container" style="padding:40px 24px">
+  <footer class="footer-bottom page-footer container">
     &copy; 2026 Hipolit Badowski. All rights reserved.
   </footer>
 

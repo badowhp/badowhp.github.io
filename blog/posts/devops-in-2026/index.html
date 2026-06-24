@@ -5,54 +5,55 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>The State of DevOps in 2026 | Hipolit Badowski</title>
   <meta name="description" content="Platform engineering, software supply chain controls, and AI-assisted operations after the hype cycle.">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self'; script-src 'self'; style-src 'self'; base-uri 'none'; form-action 'none'; object-src 'none'; upgrade-insecure-requests">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
   <link rel="stylesheet" href="../../../assets/css/main.css">
 </head>
 <body>
+  <a class="skip-link" href="#main">Skip to content</a>
 
   <!-- NAV -->
   <nav class="nav scrolled" id="nav">
     <div class="container">
       <a href="/" class="nav-logo">
-        <img class="nav-logo-mark" src="/assets/logo-hipo.svg" alt="" width="32" height="32">
-        <span>hipo<span class="logo-accent">.dev</span></span>
+        <img class="nav-logo-mark" src="../../../assets/logo-hipo.svg" alt="" width="36" height="36">
+        <span>Hipolit Badowski</span>
       </a>
       <ul class="nav-links">
         <li><a href="/">Home</a></li>
-        <li><a href="/#skills">Skills</a></li>
+        <li><a href="/#work">Work</a></li>
         <li><a href="/#about">About</a></li>
         <li><a href="/blog/" class="active">Blog</a></li>
         <li><a href="/#contact">Contact</a></li>
       </ul>
-      <div class="nav-hamburger" id="hamburger">
-        <span></span><span></span><span></span>
-      </div>
+      <button class="nav-hamburger" id="hamburger" type="button" aria-label="Open menu" aria-controls="nav-mobile" aria-expanded="false">
+        <span>Menu line</span><span>Menu line</span><span>Menu line</span>
+      </button>
     </div>
   </nav>
-  <div class="nav-mobile" id="nav-mobile">
+  <nav class="nav-mobile" id="nav-mobile" aria-label="Mobile navigation">
     <a href="/">Home</a>
+    <a href="/#work">Work</a>
     <a href="/blog/">Blog</a>
     <a href="/#about">About</a>
     <a href="/#contact">Contact</a>
-  </div>
+  </nav>
 
   <!-- POST HEADER -->
   <header class="post-header">
-    <div class="container" style="max-width:720px;margin:0 auto">
-      <a href="/blog/" style="font-family:var(--font-mono);font-size:.8rem;color:var(--accent-green);margin-bottom:20px;display:inline-block">&larr; Back to Blog</a>
+    <div class="container header-container-narrow">
+      <a href="/blog/" class="back-link">&larr; Back to Blog</a>
       <div class="post-meta">
-        <span>2026-03-08</span>
+        <span>2026-04-08</span>
         <span>6 min read</span>
       </div>
-      <h1 style="font-size:clamp(1.6rem,4vw,2.6rem)">The State of DevOps in 2026</h1>
+      <h1 class="post-title">The State of DevOps in 2026</h1>
     </div>
   </header>
 
   <!-- POST CONTENT -->
-  <article class="post-content">
-    <p>DevOps in 2026 feels less like a job title and more like a delivery operating model. The loudest trends from a year or two ago have either hardened into boring defaults or been exposed as expensive theater. The teams moving fastest are standardizing the platform, tightening the supply chain, and using AI in bounded places where it actually removes toil.</p>
+  <article class="post-content" id="main">
+    <p>DevOps in 2026 is less useful as a job title and more useful as a delivery operating model. The loudest trends from a year or two ago have either become normal engineering practice or failed to justify their cost. The teams moving fastest are standardizing the platform, tightening the supply chain, and using AI in bounded places where it removes real toil.</p>
 
     <h2>Platform Engineering Is Now Institutionalized</h2>
 
@@ -103,7 +104,7 @@ applications/
 
     <ul>
       <li><strong>Provenance and attestations:</strong> build outputs need to be traceable back to the workflow and source that produced them.</li>
-      <li><strong>Signed artifacts:</strong> not just container images, but the metadata around how they were built.</li>
+      <li><strong>Signed artifacts:</strong> container images and the metadata around how they were built.</li>
       <li><strong>Policy as code:</strong> checks are enforced in CI and at admission, not buried in a wiki.</li>
       <li><strong>Secret and dependency scanning:</strong> baseline controls are expected, not aspirational.</li>
     </ul>
@@ -115,10 +116,10 @@ applications/
     <p>The "DevOps Engineer" title continues to blur at the edges. The work is still there, but organizations are naming it more precisely:</p>
 
     <ul>
-      <li><strong>Platform Engineers</strong> — building internal developer platforms</li>
-      <li><strong>SREs</strong> — owning reliability engineering, capacity, and incident response</li>
-      <li><strong>Cloud Infrastructure Engineers</strong> — focused on provider architecture, networking, and cost</li>
-      <li><strong>Security Platform Engineers</strong> — building policy, identity, and supply chain controls into delivery systems</li>
+      <li><strong>Platform Engineers</strong>: building internal developer platforms</li>
+      <li><strong>SREs</strong>: owning reliability engineering, capacity, and incident response</li>
+      <li><strong>Cloud Infrastructure Engineers</strong>: focused on provider architecture, networking, and cost</li>
+      <li><strong>Security Platform Engineers</strong>: building policy, identity, and supply chain controls into delivery systems</li>
     </ul>
 
     <p>The through-line is unchanged: reduce toil, increase delivery safety, and make engineers faster without making production more fragile.</p>
@@ -141,11 +142,10 @@ applications/
   <!-- POST NAV -->
   <nav class="post-nav">
     <a href="../kubernetes-at-scale/">&larr; Prev: Scaling Kubernetes</a>
-    <div></div>
   </nav>
 
   <!-- FOOTER -->
-  <footer class="footer-bottom container" style="padding:40px 24px">
+  <footer class="footer-bottom page-footer container">
     &copy; 2026 Hipolit Badowski. All rights reserved.
   </footer>
 

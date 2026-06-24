@@ -1,5 +1,5 @@
 /* ============================================
-   MAIN — Navigation, Mobile Menu, Smooth Scroll
+   MAIN - Navigation, Mobile Menu, Smooth Scroll
    ============================================ */
 (function () {
   /* ---- Nav scroll effect ---- */
@@ -22,18 +22,31 @@
   const mobileNav = document.getElementById('nav-mobile');
 
   if (hamburger && mobileNav) {
+    const closeMenu = () => {
+      hamburger.classList.remove('open');
+      mobileNav.classList.remove('open');
+      hamburger.setAttribute('aria-expanded', 'false');
+      document.body.style.overflow = '';
+    };
+
     hamburger.addEventListener('click', () => {
       hamburger.classList.toggle('open');
       mobileNav.classList.toggle('open');
+      hamburger.setAttribute('aria-expanded', hamburger.classList.contains('open') ? 'true' : 'false');
       document.body.style.overflow = mobileNav.classList.contains('open') ? 'hidden' : '';
     });
 
     mobileNav.querySelectorAll('a').forEach(link => {
       link.addEventListener('click', () => {
-        hamburger.classList.remove('open');
-        mobileNav.classList.remove('open');
-        document.body.style.overflow = '';
+        closeMenu();
       });
+    });
+
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape' && mobileNav.classList.contains('open')) {
+        closeMenu();
+        hamburger.focus();
+      }
     });
   }
 
@@ -68,17 +81,4 @@
     sections.forEach(section => observer.observe(section));
   }
 
-  /* ---- Skill card hover — icon spin ---- */
-  document.querySelectorAll('.skill-card').forEach(card => {
-    const icon = card.querySelector('.skill-icon svg');
-    if (icon) {
-      card.addEventListener('mouseenter', () => {
-        icon.style.transition = 'transform 0.6s ease';
-        icon.style.transform = 'rotate(10deg) scale(1.1)';
-      });
-      card.addEventListener('mouseleave', () => {
-        icon.style.transform = 'rotate(0) scale(1)';
-      });
-    }
-  });
 })();

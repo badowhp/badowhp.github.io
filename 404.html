@@ -3,133 +3,24 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>404 | Hipolit Badowski</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/main.css">
-  <style>
-    .page-404 {
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 24px;
-      background: var(--bg-primary);
-      position: relative;
-      overflow: hidden;
-    }
-    .glitch-404 {
-      font-family: var(--font-mono);
-      font-size: clamp(6rem, 20vw, 14rem);
-      font-weight: 700;
-      color: var(--text-bright);
-      position: relative;
-      line-height: 1;
-      margin-bottom: 24px;
-    }
-    .glitch-404::before,
-    .glitch-404::after {
-      content: '404';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-    }
-    .glitch-404::before {
-      color: var(--accent-cyan);
-      animation: glitch-1 2s infinite linear;
-      clip-path: polygon(0 0, 100% 0, 100% 33%, 0 33%);
-    }
-    .glitch-404::after {
-      color: var(--accent-green);
-      animation: glitch-2 2s infinite linear;
-      clip-path: polygon(0 66%, 100% 66%, 100% 100%, 0 100%);
-    }
-    @keyframes glitch-1 {
-      0%, 100% { transform: translate(0); }
-      20% { transform: translate(-3px, 2px); }
-      40% { transform: translate(3px, -2px); }
-      60% { transform: translate(-2px, -1px); }
-      80% { transform: translate(2px, 1px); }
-    }
-    @keyframes glitch-2 {
-      0%, 100% { transform: translate(0); }
-      20% { transform: translate(3px, -2px); }
-      40% { transform: translate(-3px, 2px); }
-      60% { transform: translate(2px, 1px); }
-      80% { transform: translate(-2px, -1px); }
-    }
-    .terminal-error {
-      font-family: var(--font-mono);
-      font-size: 1rem;
-      color: var(--accent-green);
-      margin-bottom: 12px;
-    }
-    .terminal-error .prompt { color: var(--accent-green); }
-    .terminal-error .cmd { color: var(--text-secondary); }
-    .error-msg {
-      color: var(--text-secondary);
-      margin-bottom: 40px;
-      font-size: .95rem;
-    }
-    .home-link {
-      font-family: var(--font-mono);
-      font-size: .9rem;
-      color: var(--text-bright);
-      border: 1px solid var(--accent-green);
-      padding: 12px 32px;
-      border-radius: 8px;
-      transition: all .3s;
-    }
-    .home-link:hover {
-      background: var(--accent-green);
-      color: var(--bg-primary);
-      box-shadow: var(--glow-green);
-    }
-    /* Broken circuit decoration */
-    .broken-circuit {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      top: 0;
-      left: 0;
-      opacity: .06;
-      pointer-events: none;
-    }
-    .broken-circuit line, .broken-circuit path {
-      stroke: var(--accent-green);
-      stroke-width: 1;
-      fill: none;
-    }
-  </style>
+  <title>Page not found | Hipolit Badowski</title>
+  <meta name="description" content="The requested page could not be found. Return to Hipolit Badowski's DevOps portfolio.">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self'; script-src 'self'; style-src 'self'; base-uri 'none'; form-action 'none'; object-src 'none'; upgrade-insecure-requests">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <link rel="stylesheet" href="/assets/css/main.css">
 </head>
 <body>
-  <div class="page-404">
-    <svg class="broken-circuit" viewBox="0 0 800 600" preserveAspectRatio="xMidYMid slice">
-      <path d="M0,300 H150 L170,280 H250" stroke-dasharray="8 4"/>
-      <path d="M800,200 H650 L630,220 H550" stroke-dasharray="8 4"/>
-      <path d="M400,0 V100 L380,120 V200" stroke-dasharray="8 4"/>
-      <path d="M200,600 V500 L220,480 V400" stroke-dasharray="8 4"/>
-      <path d="M600,600 V480 L620,460" stroke-dasharray="8 4"/>
-      <path d="M100,0 V80 L120,100" stroke-dasharray="8 4"/>
-      <circle cx="250" cy="280" r="4" fill="#00ff88" opacity=".3"/>
-      <circle cx="550" cy="220" r="4" fill="#00ff88" opacity=".3"/>
-      <circle cx="380" cy="120" r="4" fill="#00ff88" opacity=".3"/>
-    </svg>
-
-    <div class="glitch-404">404</div>
-    <div class="terminal-error">
-      <span class="prompt">$ </span><span class="cmd">curl -I /this-page</span>
-    </div>
-    <div class="terminal-error">
-      <span style="color:var(--accent-orange)">ERROR:</span> <span class="cmd">page_not_found</span>
-    </div>
-    <p class="error-msg">The page you're looking for doesn't exist or has been moved.</p>
-    <a href="/" class="home-link">&larr; Back to Home</a>
-  </div>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <main class="not-found" id="main">
+    <section class="not-found-panel" aria-labelledby="not-found-title">
+      <p class="not-found-code">404</p>
+      <h1 id="not-found-title">This page is not available.</h1>
+      <p>The link may be old, or the page may have moved during the site redesign.</p>
+      <div class="not-found-actions">
+        <a class="button button-primary" href="/">Return home</a>
+        <a class="button button-secondary" href="/blog/">Read notes</a>
+      </div>
+    </section>
+  </main>
 </body>
 </html>

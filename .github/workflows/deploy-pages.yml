@@ -28,8 +28,20 @@ jobs:
       - name: Stage static site
         run: |
           mkdir -p _site
-          cp -R assets blog _site/
+          mkdir -p _site/assets/css _site/assets/js
+          cp assets/css/main.css _site/assets/css/
+          cp -R assets/img _site/assets/
+          cp assets/logo-hipo.svg _site/assets/
+          cp assets/js/main.js _site/assets/js/
+          cp -R blog _site/
           cp 404.html CNAME index.html .nojekyll _site/
+
+      - name: Validate staged site
+        run: |
+          if grep -R -n -E 'localhost:1313|livereload\.js|fonts\.googleapis\.com|fonts\.gstatic\.com|style=' _site; then
+            echo "Found development-only URLs, external font calls, or inline styles in staged site."
+            exit 1
+          fi
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v4

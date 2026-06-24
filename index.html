@@ -3,292 +3,272 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Hipolit Badowski | DevOps Engineer</title>
-  <meta name="description" content="Hipolit Badowski - DevOps Engineer specializing in Kubernetes, Terraform, CI/CD, and Cloud Infrastructure. Based in Vienna.">
+  <title>Hipolit Badowski | DevOps Engineer in Vienna</title>
+  <meta name="description" content="Hipolit Badowski is a Vienna-based DevOps engineer for Kubernetes, Terraform, CI/CD, observability, and dependable cloud operations.">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' https://hipo.is-a.dev; script-src 'self'; style-src 'self'; base-uri 'none'; form-action 'none'; object-src 'none'; upgrade-insecure-requests">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
   <meta property="og:title" content="Hipolit Badowski | DevOps Engineer">
-  <meta property="og:description" content="Portfolio of a DevOps Engineer working with Kubernetes, Terraform, CI/CD pipelines, and cloud infrastructure.">
+  <meta property="og:description" content="A calm technical profile focused on reliable infrastructure, cloud operations, and practical automation.">
   <meta property="og:url" content="https://hipo.is-a.dev">
   <meta property="og:type" content="website">
   <meta property="og:image" content="https://hipo.is-a.dev/assets/img/ich.png">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:image" content="https://hipo.is-a.dev/assets/img/ich.png">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="icon" href="assets/logo-hipo.svg" type="image/svg+xml">
   <link rel="stylesheet" href="assets/css/main.css">
 </head>
 <body>
-
-  <!-- ============ NAVIGATION ============ -->
-  <nav class="nav" id="nav">
-    <div class="container">
-      <a href="/" class="nav-logo">
-        <img class="nav-logo-mark" src="/assets/logo-hipo.svg" alt="" width="42" height="42">
-        <span>hipo<span class="logo-accent">.dev</span></span>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <nav class="nav" id="nav" aria-label="Primary navigation">
+    <div class="container nav-inner">
+      <a href="/" class="nav-logo" aria-label="Hipolit Badowski homepage">
+        <img class="nav-logo-mark" src="assets/logo-hipo.svg" alt="" width="36" height="36">
+        <span>Hipolit Badowski</span>
       </a>
       <ul class="nav-links">
-        <li><a href="/" class="active">Home</a></li>
-        <li><a href="#skills">Skills</a></li>
+        <li><a href="#work">Work</a></li>
         <li><a href="#about">About</a></li>
-        <li><a href="blog/">Blog</a></li>
+        <li><a href="#notes">Notes</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
-      <div class="nav-hamburger" id="hamburger">
-        <span></span><span></span><span></span>
-      </div>
+      <button class="nav-hamburger" id="hamburger" type="button" aria-label="Open menu" aria-controls="nav-mobile" aria-expanded="false">
+        <span>Menu line</span>
+        <span>Menu line</span>
+        <span>Menu line</span>
+      </button>
     </div>
   </nav>
 
-  <!-- Mobile overlay -->
-  <div class="nav-mobile" id="nav-mobile">
-    <a href="/">Home</a>
-    <a href="#skills">Skills</a>
+  <nav class="nav-mobile" id="nav-mobile" aria-label="Mobile navigation">
+    <a href="#work">Work</a>
     <a href="#about">About</a>
-    <a href="blog/">Blog</a>
+    <a href="#notes">Notes</a>
     <a href="#contact">Contact</a>
-  </div>
+  </nav>
 
-  <!-- ============ HERO ============ -->
-  <section id="hero">
-    <canvas id="particles-canvas"></canvas>
-    <div class="hero-ambient-glow" aria-hidden="true"></div>
-    <div class="scanlines"></div>
-    <div class="hero-content">
-      <h1 class="hero-title" id="hero-title">HIPOLIT BADOWSKI</h1>
-      <div class="hero-subtitle">
-        <span id="typed-text"></span><span class="cursor-blink"></span>
+  <main id="main">
+    <section id="hero" class="hero-section">
+      <div class="hero-backdrop" aria-hidden="true">
+        <img src="assets/img/ich.png" alt="">
       </div>
-      <p class="hero-tagline">Building reliable infrastructure, one pipeline at a time.</p>
-    </div>
-    <div class="scroll-indicator">
-      <span>scroll</span>
-      <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round">
-        <path d="M12 5v14M5 12l7 7 7-7"/>
-      </svg>
-    </div>
-  </section>
-
-  <!-- ============ SKILLS ============ -->
-  <section id="skills" class="section">
-    <!-- Circuit SVG background -->
-    <svg class="circuit-bg" viewBox="0 0 1200 800" preserveAspectRatio="xMidYMid slice">
-      <path class="circuit-path" d="M0,400 H200 L250,350 H500 L520,370 H700"/>
-      <path class="circuit-path" d="M1200,200 H1000 L950,250 H750 L730,230 H600"/>
-      <path class="circuit-path" d="M100,100 V300 L150,350 V600"/>
-      <path class="circuit-path" d="M1100,700 V500 L1050,450 V200"/>
-      <path class="circuit-path" d="M300,0 V150 L350,200 H550 L600,250 V400"/>
-      <path class="circuit-path" d="M900,800 V650 L850,600 H650 L600,550 V450"/>
-      <circle class="circuit-node" cx="200" cy="400" r="4" fill="#00ff88" opacity="0"/>
-      <circle class="circuit-node" cx="500" cy="350" r="4" fill="#00ff88" opacity="0"/>
-      <circle class="circuit-node" cx="700" cy="370" r="4" fill="#00ff88" opacity="0"/>
-      <circle class="circuit-node" cx="1000" cy="200" r="4" fill="#00ff88" opacity="0"/>
-      <circle class="circuit-node" cx="750" cy="250" r="4" fill="#00ff88" opacity="0"/>
-      <circle class="circuit-node" cx="150" cy="350" r="4" fill="#00ff88" opacity="0"/>
-      <circle class="circuit-node" cx="350" cy="200" r="4" fill="#00ff88" opacity="0"/>
-      <circle class="circuit-node" cx="850" cy="600" r="4" fill="#00ff88" opacity="0"/>
-    </svg>
-
-    <div class="container" style="position:relative;z-index:1">
-      <div class="section-label">What I Do</div>
-      <h2>Skills & Expertise</h2>
-      <div class="skills-grid">
-
-        <!-- Kubernetes -->
-        <div class="skill-card" data-skill>
-          <div class="skill-icon">
-            <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-              <circle cx="24" cy="24" r="18" class="draw-path"/>
-              <circle cx="24" cy="24" r="6" class="draw-path"/>
-              <line x1="24" y1="6" x2="24" y2="18" class="draw-path"/>
-              <line x1="24" y1="30" x2="24" y2="42" class="draw-path"/>
-              <line x1="7.5" y1="14.5" x2="18.5" y2="21" class="draw-path"/>
-              <line x1="29.5" y1="27" x2="40.5" y2="33.5" class="draw-path"/>
-              <line x1="7.5" y1="33.5" x2="18.5" y2="27" class="draw-path"/>
-              <line x1="29.5" y1="21" x2="40.5" y2="14.5" class="draw-path"/>
-            </svg>
+      <div class="container hero-layout">
+        <div class="hero-copy">
+          <p class="eyebrow">DevOps Engineer · Vienna</p>
+          <h1>Hipolit Badowski</h1>
+          <p class="hero-lede">I design, automate, and operate cloud infrastructure for teams that need changes to be reviewable, recoverable, and calm in production.</p>
+          <ul class="hero-proof" aria-label="Core capabilities">
+            <li>Kubernetes platforms</li>
+            <li>Terraform-managed environments</li>
+            <li>CI/CD and observability</li>
+          </ul>
+          <div class="hero-actions">
+            <a class="button button-primary" href="mailto:badowhp@gmail.com">Contact me</a>
+            <a class="button button-secondary" href="#work">See focus areas</a>
           </div>
-          <h3>Kubernetes</h3>
-          <p>Container orchestration, cluster management, Helm charts, and service mesh architectures.</p>
         </div>
-
-        <!-- Cloud -->
-        <div class="skill-card" data-skill>
-          <div class="skill-icon">
-            <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-              <path class="draw-path" d="M13 36h22a10 10 0 0 0 2-19.8A12 12 0 0 0 14 18a10 10 0 0 0-1 18z"/>
-            </svg>
+        <aside class="ops-panel" aria-label="Infrastructure focus snapshot">
+          <div class="ops-panel-top">
+            <span class="window-controls" aria-hidden="true">
+              <span></span>
+              <span></span>
+              <span></span>
+            </span>
+            <span>infra-review.yml</span>
           </div>
-          <h3>Cloud</h3>
-          <p>AWS and GCP cloud architecture, cost optimization, multi-cloud strategies, and managed services.</p>
-        </div>
-
-        <!-- IaC -->
-        <div class="skill-card" data-skill>
-          <div class="skill-icon">
-            <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-              <path class="draw-path" d="M24 4L42 14v20L24 44 6 34V14L24 4z"/>
-              <path class="draw-path" d="M24 4v20l18 10"/>
-              <path class="draw-path" d="M24 24L6 14"/>
-              <line x1="15" y1="9" x2="33" y2="19" class="draw-path"/>
-            </svg>
+          <dl class="ops-metrics">
+            <div>
+              <dt>Core stack</dt>
+              <dd>Kubernetes · Terraform · GitOps</dd>
+            </div>
+            <div>
+              <dt>Cloud</dt>
+              <dd>AWS · GCP · Linux operations</dd>
+            </div>
+            <div>
+              <dt>Operating style</dt>
+              <dd>Small changes · visible state · documented rollback</dd>
+            </div>
+          </dl>
+          <div class="ops-log" aria-label="Typical engagement flow">
+            <p><span>01</span> map the current deployment path</p>
+            <p><span>02</span> remove fragile manual steps</p>
+            <p><span>03</span> add signals operators can trust</p>
           </div>
-          <h3>Infrastructure as Code</h3>
-          <p>Terraform, Pulumi, and CloudFormation for reproducible, version-controlled infrastructure.</p>
-        </div>
-
-        <!-- CI/CD -->
-        <div class="skill-card" data-skill>
-          <div class="skill-icon">
-            <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-              <circle cx="10" cy="24" r="5" class="draw-path"/>
-              <circle cx="38" cy="24" r="5" class="draw-path"/>
-              <circle cx="24" cy="10" r="5" class="draw-path"/>
-              <circle cx="24" cy="38" r="5" class="draw-path"/>
-              <path class="draw-path" d="M15 24h18"/>
-              <path class="draw-path" d="M24 15v18"/>
-              <polyline class="draw-path" points="30,21 33,24 30,27"/>
-              <polyline class="draw-path" points="21,33 24,36 27,33"/>
-            </svg>
-          </div>
-          <h3>CI/CD</h3>
-          <p>GitHub Actions, GitLab CI, Jenkins, and ArgoCD for automated build, test, and deployment pipelines.</p>
-        </div>
-
-        <!-- Scripting -->
-        <div class="skill-card" data-skill>
-          <div class="skill-icon">
-            <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-              <rect x="4" y="8" width="40" height="32" rx="4" class="draw-path"/>
-              <polyline points="14,22 20,28 14,34" class="draw-path"/>
-              <line x1="24" y1="34" x2="34" y2="34" class="draw-path"/>
-            </svg>
-          </div>
-          <h3>Scripting</h3>
-          <p>Bash, Python, and Go for automation, tooling, and custom operators.</p>
-        </div>
-
-        <!-- Monitoring -->
-        <div class="skill-card" data-skill>
-          <div class="skill-icon">
-            <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-              <rect x="4" y="6" width="40" height="30" rx="3" class="draw-path"/>
-              <polyline points="10,28 18,18 24,24 30,14 38,22" class="draw-path"/>
-              <line x1="16" y1="42" x2="32" y2="42" class="draw-path"/>
-              <line x1="24" y1="36" x2="24" y2="42" class="draw-path"/>
-            </svg>
-          </div>
-          <h3>Monitoring</h3>
-          <p>Prometheus, Grafana, ELK stack, and observability pipelines for production reliability.</p>
-        </div>
-
+        </aside>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- ============ ABOUT ============ -->
-  <section id="about" class="section">
-    <div class="container">
-      <div class="section-label">Who I Am</div>
-      <div class="about-grid">
-        <div class="about-photo-wrapper">
-          <!-- Morphing frame -->
-          <div class="about-photo-frame" id="morph-frame">
-            <svg viewBox="0 0 280 280">
-              <path id="morph-path" d="M140,10 C210,10 270,70 270,140 C270,210 210,270 140,270 C70,270 10,210 10,140 C10,70 70,10 140,10 Z" fill="none" stroke="#00ff88" stroke-width="2"/>
-            </svg>
-          </div>
+    <section id="work" class="section section-paper">
+      <div class="container">
+        <div class="section-intro">
+          <p class="eyebrow">Focused work</p>
+          <h2>Infrastructure work with clear operating edges.</h2>
+          <p>I prefer systems that are easy to review, easy to operate, and predictable under pressure. These are the areas where I usually bring the most value.</p>
+        </div>
+
+        <div class="service-grid">
+          <article class="service-card">
+            <div class="card-header">
+              <p class="card-index">01</p>
+              <span class="card-tag">Platforms</span>
+            </div>
+            <h3>Cloud platforms</h3>
+            <p class="service-outcome">Kubernetes and cloud environments that teams can change without guessing what will break.</p>
+            <ul>
+              <li>Kubernetes clusters and workloads</li>
+              <li>AWS and GCP infrastructure</li>
+              <li>Service ownership and runbooks</li>
+            </ul>
+          </article>
+
+          <article class="service-card">
+            <div class="card-header">
+              <p class="card-index">02</p>
+              <span class="card-tag">Delivery</span>
+            </div>
+            <h3>Delivery pipelines</h3>
+            <p class="service-outcome">CI/CD paths where every change is traceable, repeatable, and easier to recover from.</p>
+            <ul>
+              <li>GitHub Actions and GitLab CI</li>
+              <li>GitOps workflows</li>
+              <li>Release checks and rollback paths</li>
+            </ul>
+          </article>
+
+          <article class="service-card">
+            <div class="card-header">
+              <p class="card-index">03</p>
+              <span class="card-tag">IaC</span>
+            </div>
+            <h3>Infrastructure as code</h3>
+            <p class="service-outcome">Terraform definitions that stay close to reality and remain reviewable as systems grow.</p>
+            <ul>
+              <li>Terraform modules and environments</li>
+              <li>Configuration review practices</li>
+              <li>Repeatable provisioning</li>
+            </ul>
+          </article>
+
+          <article class="service-card">
+            <div class="card-header">
+              <p class="card-index">04</p>
+              <span class="card-tag">Reliability</span>
+            </div>
+            <h3>Production reliability</h3>
+            <p class="service-outcome">Operational signals and habits that make failures easier to understand and follow up.</p>
+            <ul>
+              <li>Prometheus and Grafana</li>
+              <li>Logging and alert hygiene</li>
+              <li>Incident follow-up and prevention</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="section section-quiet">
+      <div class="container about-layout">
+        <div class="about-photo-wrap">
           <img class="about-photo" src="assets/img/ich.png" alt="Portrait of Hipolit Badowski">
         </div>
-        <div class="about-text">
-          <h2>About Me</h2>
-          <p>I'm a DevOps Engineer based in Vienna, currently working at <strong style="color:var(--text-bright)">Karriere.at</strong>. I specialize in building and maintaining scalable cloud infrastructure, automating everything that can be automated, and keeping production systems running smoothly.</p>
-          <p>My toolkit spans across Kubernetes orchestration, Terraform-driven infrastructure, CI/CD pipeline design, and cloud-native architecture on AWS and GCP. I'm passionate about reliability engineering and developer experience.</p>
-          <div class="about-links">
-            <a href="https://github.com/badowhp" target="_blank" rel="noopener" class="about-link">
-              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
-              GitHub
-            </a>
-            <a href="mailto:badowhp@gmail.com" class="about-link">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="22,4 12,13 2,4"/></svg>
-              Email
-            </a>
+        <div class="about-copy">
+          <p class="eyebrow">About</p>
+          <h2>Calm engineering, practical communication.</h2>
+          <p>I am based in Vienna and work around cloud-native infrastructure, automation, and developer-facing operations. My strongest work usually sits between platform engineering and production support: reducing friction while keeping the system understandable.</p>
+          <p>I value small changes, documented decisions, and tools that can be debugged by the people who depend on them. The goal is not to make infrastructure impressive; it is to make it trustworthy.</p>
+          <div class="tool-strip" aria-label="Common tooling">
+            <span>Kubernetes</span>
+            <span>Terraform</span>
+            <span>GitHub Actions</span>
+            <span>GitLab CI</span>
+            <span>Prometheus</span>
+            <span>Grafana</span>
+            <span>Linux</span>
+          </div>
+          <div class="principles">
+            <div>
+              <strong>Reviewable changes</strong>
+              <span>Prefer small steps with visible impact.</span>
+            </div>
+            <div>
+              <strong>Clear ownership</strong>
+              <span>Make responsibilities and escalation paths explicit.</span>
+            </div>
+            <div>
+              <strong>Useful automation</strong>
+              <span>Automate what removes toil and preserves clarity.</span>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- ============ BLOG PREVIEW ============ -->
-  <section id="blog-preview" class="section">
-    <div class="container">
-      <div class="section-label">Latest Posts</div>
-      <h2>From the Blog</h2>
-      <div class="blog-cards">
+    <section id="notes" class="section section-paper">
+      <div class="container">
+        <div class="section-intro">
+          <p class="eyebrow">Notes</p>
+          <h2>Writing on infrastructure and operations.</h2>
+          <p>Short technical notes and longer articles from practical work with platforms, deployment systems, and cloud operations.</p>
+        </div>
 
-        <a href="blog/posts/kubernetes-at-scale/" class="blog-card">
-          <div class="blog-card-header">
-            <span class="blog-card-dot"></span>
-            <span class="blog-card-dot"></span>
-            <span class="blog-card-dot"></span>
-            <span class="blog-card-filename">kubernetes-at-scale.md</span>
-          </div>
-          <div class="blog-card-body">
-            <div class="blog-card-date">2026-03-19</div>
+        <div class="notes-grid">
+          <a href="blog/posts/kubernetes-at-scale/" class="note-card">
+            <span class="note-top">
+              <span class="note-date">2026-03-19</span>
+              <span class="note-tag">Kubernetes</span>
+            </span>
             <h3>Scaling Kubernetes: Lessons from Production</h3>
-            <p class="blog-card-excerpt">Updated for 2026: resource management, workload identity, observability, and the Kubernetes 1.35 realities that matter in production.</p>
-          </div>
-        </a>
+            <p>Resource management, workload identity, observability, and the details that matter once clusters carry real traffic.</p>
+          </a>
 
-        <a href="blog/posts/devops-in-2026/" class="blog-card">
-          <div class="blog-card-header">
-            <span class="blog-card-dot"></span>
-            <span class="blog-card-dot"></span>
-            <span class="blog-card-dot"></span>
-            <span class="blog-card-filename">devops-in-2026.md</span>
-          </div>
-          <div class="blog-card-body">
-            <div class="blog-card-date">2026-04-08</div>
+          <a href="blog/posts/devops-in-2026/" class="note-card">
+            <span class="note-top">
+              <span class="note-date">2026-04-08</span>
+              <span class="note-tag">Platform</span>
+            </span>
             <h3>The State of DevOps in 2026</h3>
-            <p class="blog-card-excerpt">Platform engineering, software supply chain controls, and AI-assisted operations after the hype cycle.</p>
+            <p>Platform engineering, software supply chain controls, and AI-assisted operations after the hype cycle.</p>
+          </a>
+        </div>
+
+        <a href="blog/" class="text-link">Read all posts</a>
+      </div>
+    </section>
+
+    <section id="contact" class="section contact-section">
+      <div class="container contact-layout">
+        <div>
+          <p class="eyebrow">Contact</p>
+          <h2>Start with a practical conversation.</h2>
+        </div>
+        <div class="contact-panel">
+          <p>Tell me what is hard to operate, deploy, or explain. I will reply with where I can help, where I would be cautious, and what I would not change yet.</p>
+          <dl class="contact-meta" aria-label="Contact expectations">
+            <div>
+              <dt>Best first message</dt>
+              <dd>Current stack, pain point, and desired outcome</dd>
+            </div>
+            <div>
+              <dt>Typical topics</dt>
+              <dd>Kubernetes, CI/CD, IaC, monitoring, hosting</dd>
+            </div>
+          </dl>
+          <div class="contact-links">
+            <a class="contact-link" href="mailto:badowhp@gmail.com">badowhp@gmail.com</a>
+            <a class="contact-link" href="https://github.com/badowhp" target="_blank" rel="noopener">GitHub</a>
           </div>
-        </a>
-
+        </div>
       </div>
-      <a href="blog/" class="blog-view-all">
-        View all posts
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-      </a>
-    </div>
-  </section>
+    </section>
+  </main>
 
-  <!-- ============ CONTACT / FOOTER ============ -->
-  <section id="contact" class="section">
-    <canvas id="matrix-canvas"></canvas>
-    <div class="contact-content container">
-      <div class="section-label" style="justify-content:center">Get in Touch</div>
-      <h2 id="contact-title">LET'S CONNECT</h2>
-      <p>Have a project in mind, want to talk DevOps, or just say hello? I'm always open to interesting conversations.</p>
-      <div class="contact-links">
-        <a href="https://github.com/badowhp" target="_blank" rel="noopener" class="contact-link">
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
-          GitHub
-        </a>
-        <a href="mailto:badowhp@gmail.com" class="contact-link">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="22,4 12,13 2,4"/></svg>
-          badowhp@gmail.com
-        </a>
-      </div>
+  <footer class="footer">
+    <div class="container footer-inner">
+      <span>&copy; 2026 Hipolit Badowski</span>
+      <span>DevOps · Cloud Infrastructure · Vienna</span>
     </div>
-    <div class="footer-bottom container">
-      &copy; 2026 Hipolit Badowski. All rights reserved.
-    </div>
-  </section>
+  </footer>
 
-  <!-- ============ SCRIPTS ============ -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-  <script src="assets/js/particles.js"></script>
-  <script src="assets/js/animations.js"></script>
   <script src="assets/js/main.js"></script>
 </body>
 </html>

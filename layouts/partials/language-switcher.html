@@ -1,0 +1,31 @@
+{{- if hugo.IsMultilingual -}}
+  {{- range .Site.Languages -}}
+    {{- if ne .Lang $.Site.Language.Lang -}}
+      {{- $url := "" -}}
+      {{- if $.IsTranslated -}}
+        {{- range $.Translations -}}
+          {{- if eq .Lang .Lang -}}
+            {{- $url = .RelPermalink -}}
+          {{- end -}}
+        {{- end -}}
+      {{- else -}}
+        {{- /* Create equivalent URL for the other language */ -}}
+        {{- $currentPath := strings.TrimPrefix $.Site.Language.Lang $.RelPermalink -}}
+        {{- $currentPath = strings.TrimPrefix "/de" $currentPath -}}
+        {{- $currentPath = strings.TrimPrefix "/" $currentPath -}}
+        {{- if eq .Lang "de" -}}
+          {{- $url = printf "/de/%s" $currentPath -}}
+        {{- else -}}
+          {{- $url = printf "/%s" $currentPath -}}
+        {{- end -}}
+        {{- $url = strings.TrimSuffix "/" $url -}}
+        {{- if eq $url "" -}}
+          {{- $url = "/" -}}
+        {{- end -}}
+      {{- end -}}
+      <a href="{{ $url }}" class="language-switcher" title="{{ .LanguageName }}">
+        {{ upper .Lang }}
+      </a>
+    {{- end -}}
+  {{- end -}}
+{{- end -}}

@@ -1,0 +1,41 @@
+# Navigation
+home: "Home"
+services: "Services"
+blog: "Blog"
+about: "About"
+
+# Services page
+services_title: "IT Services & Solutions"
+professional_services: "Professional IT Services"
+services_intro: "I provide tailored technology solutions for individuals, businesses, and organizations across multiple domains."
+service_categories: "Service Categories"
+
+# Service categories
+kids_training: "IT Training for Kids"
+kids_subtitle: "Technology Education for Young Minds"
+kids_description: "Programming courses designed to make learning accessible for children. Using approaches like Minecraft-based Python programming, I help kids develop computational thinking and coding skills."
+
+seniors_training: "IT Training for Seniors"
+seniors_subtitle: "Technology Made Simple and Accessible"
+seniors_description: "Patient instruction tailored for older adults. I help seniors navigate modern technology with confidence, focusing on practical skills and real-world applications."
+
+hosting_web: "Hosting & Web Services"
+hosting_subtitle: "Professional Web Solutions"
+hosting_description: "Complete web hosting and development services for businesses and individuals. From simple websites to complex web applications."
+
+cloud_devops: "Cloud Consulting & DevOps"
+cloud_subtitle: "Enterprise Infrastructure Solutions"
+cloud_description: "Advanced cloud architecture and DevOps consulting for businesses ready to scale. Specializing in modern infrastructure practices and automation."
+
+# Common
+learn_more: "Learn More"
+get_started: "Get Started"
+contact_me: "Contact Me"
+
+# About page
+professional_title: "Professional IT Services & Solutions"
+about_intro: "I'm Hipolit Badowski, an experienced IT professional based in Vienna, Austria, providing comprehensive technology solutions worldwide through remote collaboration."
+
+# Footer
+ready_to_start: "Ready to Get Started?"
+contact_intro: "Contact me to discuss your specific needs and how we can work together."
