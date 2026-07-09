@@ -19,15 +19,19 @@
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
+
   <nav class="nav" id="nav" aria-label="Primary navigation">
     <div class="container nav-inner">
       <a href="/" class="nav-logo" aria-label="Hipolit Badowski homepage">
-        <img class="nav-logo-mark" src="assets/logo-hipo.svg" alt="" width="36" height="36">
-        <span>Hipolit Badowski</span>
+        <img class="nav-logo-mark" src="assets/logo-hipo.svg" alt="" width="40" height="40">
+        <span class="nav-logo-text">
+          <strong>Hipolit Badowski</strong>
+          <small>DevOps Engineer</small>
+        </span>
       </a>
       <ul class="nav-links">
         <li><a href="#work">Work</a></li>
-        <li><a href="#about">About</a></li>
+        <li><a href="#approach">Approach</a></li>
         <li><a href="#notes">Notes</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
@@ -41,141 +45,158 @@
 
   <nav class="nav-mobile" id="nav-mobile" aria-label="Mobile navigation">
     <a href="#work">Work</a>
-    <a href="#about">About</a>
+    <a href="#approach">Approach</a>
     <a href="#notes">Notes</a>
     <a href="#contact">Contact</a>
   </nav>
 
   <main id="main">
-    <section id="hero" class="hero-section">
-      <div class="hero-backdrop" aria-hidden="true">
-        <img src="assets/img/ich.png" alt="">
-      </div>
+    <section id="hero" class="hero-section" aria-labelledby="hero-title">
+      <div class="hero-grid" aria-hidden="true"></div>
       <div class="container hero-layout">
         <div class="hero-copy">
-          <p class="eyebrow">DevOps Engineer · Vienna</p>
-          <h1>Hipolit Badowski</h1>
-          <p class="hero-lede">I design, automate, and operate cloud infrastructure for teams that need changes to be reviewable, recoverable, and calm in production.</p>
-          <ul class="hero-proof" aria-label="Core capabilities">
-            <li>Kubernetes platforms</li>
-            <li>Terraform-managed environments</li>
-            <li>CI/CD and observability</li>
+          <p class="eyebrow">DevOps engineer / Vienna</p>
+          <h1 id="hero-title">Hipolit Badowski</h1>
+          <p class="hero-lede">I help teams make Kubernetes, Terraform, CI/CD, and observability work easier to review, change, and operate under pressure.</p>
+          <ul class="hero-signals" aria-label="Core operating focus">
+            <li><span>01</span>Kubernetes platforms</li>
+            <li><span>02</span>Terraform environments</li>
+            <li><span>03</span>Delivery and signals</li>
           </ul>
           <div class="hero-actions">
-            <a class="button button-primary" href="mailto:badowhp@gmail.com">Contact me</a>
-            <a class="button button-secondary" href="#work">See focus areas</a>
+            <a class="button button-primary" href="mailto:badowhp@gmail.com">Start a conversation</a>
+            <a class="button button-secondary" href="#work">View focus areas</a>
           </div>
         </div>
-        <aside class="ops-panel" aria-label="Infrastructure focus snapshot">
+
+        <aside class="ops-panel" aria-label="Infrastructure review snapshot">
           <div class="ops-panel-top">
             <span class="window-controls" aria-hidden="true">
-              <span></span>
-              <span></span>
-              <span></span>
+              <span>close</span>
+              <span>pause</span>
+              <span>ok</span>
             </span>
-            <span>infra-review.yml</span>
+            <span class="ops-file">infra-review.yml</span>
+            <span class="ops-state">ready</span>
           </div>
+          <div class="ops-command">kubectl rollout status deploy/platform-api</div>
           <dl class="ops-metrics">
-            <div>
-              <dt>Core stack</dt>
-              <dd>Kubernetes · Terraform · GitOps</dd>
-            </div>
-            <div>
-              <dt>Cloud</dt>
-              <dd>AWS · GCP · Linux operations</dd>
-            </div>
-            <div>
-              <dt>Operating style</dt>
-              <dd>Small changes · visible state · documented rollback</dd>
-            </div>
+            <dt>Core stack</dt>
+            <dd>Kubernetes / Terraform / Linux</dd>
+            <dt>Delivery path</dt>
+            <dd>GitHub Actions / GitLab CI / GitOps</dd>
+            <dt>Operating target</dt>
+            <dd>Small changes, visible state, clear rollback</dd>
           </dl>
           <div class="ops-log" aria-label="Typical engagement flow">
-            <p><span>01</span> map the current deployment path</p>
-            <p><span>02</span> remove fragile manual steps</p>
-            <p><span>03</span> add signals operators can trust</p>
+            <p><span>01</span> map ownership, failure modes, and blast radius</p>
+            <p><span>02</span> remove fragile manual deployment steps</p>
+            <p><span>03</span> put useful signals where operators act</p>
           </div>
         </aside>
+
+        <figure class="portrait-card">
+          <img src="assets/img/ich.png" alt="Portrait of Hipolit Badowski">
+          <figcaption>Cloud operations, platform reliability, and reviewable delivery paths.</figcaption>
+        </figure>
       </div>
     </section>
 
-    <section id="work" class="section section-paper">
+    <section class="section section-snapshot" aria-label="Working summary">
+      <div class="container snapshot-grid">
+        <div>
+          <span class="snapshot-label">Based in</span>
+          <strong>Vienna</strong>
+        </div>
+        <div>
+          <span class="snapshot-label">Typical stack</span>
+          <strong>Kubernetes / Terraform / Linux</strong>
+        </div>
+        <div>
+          <span class="snapshot-label">Best fit</span>
+          <strong>Teams with real production stakes</strong>
+        </div>
+        <div>
+          <span class="snapshot-label">Operating style</span>
+          <strong>Small changes, clear rollback</strong>
+        </div>
+      </div>
+    </section>
+
+    <section id="work" class="section section-work">
       <div class="container">
         <div class="section-intro">
           <p class="eyebrow">Focused work</p>
           <h2>Infrastructure work with clear operating edges.</h2>
-          <p>I prefer systems that are easy to review, easy to operate, and predictable under pressure. These are the areas where I usually bring the most value.</p>
+          <p>I focus on the points where ambiguity becomes risk: ownership, deployment paths, platform defaults, and the signals people use under pressure.</p>
         </div>
 
-        <div class="service-grid">
-          <article class="service-card">
-            <div class="card-header">
-              <p class="card-index">01</p>
-              <span class="card-tag">Platforms</span>
+        <div class="work-board">
+          <article class="work-item">
+            <span class="work-index">01</span>
+            <div class="work-copy">
+              <p class="work-label">Platform shape-up</p>
+              <h3>Make cloud and Kubernetes environments easier to reason about.</h3>
+              <p>Clarify cluster shape, workload boundaries, environment ownership, and the runbooks that keep platform work understandable.</p>
             </div>
-            <h3>Cloud platforms</h3>
-            <p class="service-outcome">Kubernetes and cloud environments that teams can change without guessing what will break.</p>
-            <ul>
-              <li>Kubernetes clusters and workloads</li>
+            <ul class="work-checks">
+              <li>Cluster and workload review</li>
               <li>AWS and GCP infrastructure</li>
-              <li>Service ownership and runbooks</li>
+              <li>Service ownership notes</li>
             </ul>
           </article>
 
-          <article class="service-card">
-            <div class="card-header">
-              <p class="card-index">02</p>
-              <span class="card-tag">Delivery</span>
+          <article class="work-item">
+            <span class="work-index">02</span>
+            <div class="work-copy">
+              <p class="work-label">Delivery cleanup</p>
+              <h3>Reduce fragile manual steps between commit and production.</h3>
+              <p>Turn deployment paths into repeatable workflows with checks, traceability, and rollback points that do not depend on memory.</p>
             </div>
-            <h3>Delivery pipelines</h3>
-            <p class="service-outcome">CI/CD paths where every change is traceable, repeatable, and easier to recover from.</p>
-            <ul>
+            <ul class="work-checks">
               <li>GitHub Actions and GitLab CI</li>
               <li>GitOps workflows</li>
-              <li>Release checks and rollback paths</li>
+              <li>Release and rollback gates</li>
             </ul>
           </article>
 
-          <article class="service-card">
-            <div class="card-header">
-              <p class="card-index">03</p>
-              <span class="card-tag">IaC</span>
+          <article class="work-item">
+            <span class="work-index">03</span>
+            <div class="work-copy">
+              <p class="work-label">Infrastructure as code</p>
+              <h3>Keep Terraform close to reality as systems grow.</h3>
+              <p>Improve module structure, environment separation, review habits, and state hygiene so infrastructure changes stay predictable.</p>
             </div>
-            <h3>Infrastructure as code</h3>
-            <p class="service-outcome">Terraform definitions that stay close to reality and remain reviewable as systems grow.</p>
-            <ul>
-              <li>Terraform modules and environments</li>
-              <li>Configuration review practices</li>
-              <li>Repeatable provisioning</li>
+            <ul class="work-checks">
+              <li>Terraform modules</li>
+              <li>Environment definitions</li>
+              <li>Provisioning patterns</li>
             </ul>
           </article>
 
-          <article class="service-card">
-            <div class="card-header">
-              <p class="card-index">04</p>
-              <span class="card-tag">Reliability</span>
+          <article class="work-item">
+            <span class="work-index">04</span>
+            <div class="work-copy">
+              <p class="work-label">Operational clarity</p>
+              <h3>Put useful signals where operators actually need them.</h3>
+              <p>Clean up alerts, dashboards, logs, and follow-up habits so incidents become easier to understand and less likely to repeat.</p>
             </div>
-            <h3>Production reliability</h3>
-            <p class="service-outcome">Operational signals and habits that make failures easier to understand and follow up.</p>
-            <ul>
+            <ul class="work-checks">
               <li>Prometheus and Grafana</li>
-              <li>Logging and alert hygiene</li>
-              <li>Incident follow-up and prevention</li>
+              <li>Logging and alert review</li>
+              <li>Incident follow-up</li>
             </ul>
           </article>
         </div>
       </div>
     </section>
 
-    <section id="about" class="section section-quiet">
-      <div class="container about-layout">
-        <div class="about-photo-wrap">
-          <img class="about-photo" src="assets/img/ich.png" alt="Portrait of Hipolit Badowski">
-        </div>
-        <div class="about-copy">
-          <p class="eyebrow">About</p>
-          <h2>Calm engineering, practical communication.</h2>
-          <p>I am based in Vienna and work around cloud-native infrastructure, automation, and developer-facing operations. My strongest work usually sits between platform engineering and production support: reducing friction while keeping the system understandable.</p>
-          <p>I value small changes, documented decisions, and tools that can be debugged by the people who depend on them. The goal is not to make infrastructure impressive; it is to make it trustworthy.</p>
+    <section id="approach" class="section section-approach">
+      <div class="container approach-layout">
+        <div class="approach-copy">
+          <p class="eyebrow">Approach</p>
+          <h2>A practical loop for production systems.</h2>
+          <p>Most infrastructure problems do not need a louder toolchain. They need clearer boundaries, fewer surprise paths, and enough written context for the next person to make a safe change.</p>
           <div class="tool-strip" aria-label="Common tooling">
             <span>Kubernetes</span>
             <span>Terraform</span>
@@ -185,27 +206,36 @@
             <span>Grafana</span>
             <span>Linux</span>
           </div>
-          <div class="principles">
-            <div>
-              <strong>Reviewable changes</strong>
-              <span>Prefer small steps with visible impact.</span>
-            </div>
-            <div>
-              <strong>Clear ownership</strong>
-              <span>Make responsibilities and escalation paths explicit.</span>
-            </div>
-            <div>
-              <strong>Useful automation</strong>
-              <span>Automate what removes toil and preserves clarity.</span>
-            </div>
+        </div>
+
+        <div class="approach-steps" aria-label="Working process">
+          <div class="approach-step">
+            <span>Map</span>
+            <strong>Trace the current path</strong>
+            <p>Understand how changes move, where ownership is unclear, and what fails most often.</p>
+          </div>
+          <div class="approach-step">
+            <span>Reduce</span>
+            <strong>Remove avoidable friction</strong>
+            <p>Simplify the path before adding automation, dashboards, or new platform layers.</p>
+          </div>
+          <div class="approach-step">
+            <span>Automate</span>
+            <strong>Keep the human control points</strong>
+            <p>Automate repeatable work while preserving review, intent, and rollback options.</p>
+          </div>
+          <div class="approach-step">
+            <span>Document</span>
+            <strong>Leave the system explainable</strong>
+            <p>Write the decisions, operating notes, and follow-up work where teams can use them.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <section id="notes" class="section section-paper">
+    <section id="notes" class="section section-notes">
       <div class="container">
-        <div class="section-intro">
+        <div class="section-intro section-intro-narrow">
           <p class="eyebrow">Notes</p>
           <h2>Writing on infrastructure and operations.</h2>
           <p>Short technical notes and longer articles from practical work with platforms, deployment systems, and cloud operations.</p>
@@ -237,21 +267,17 @@
 
     <section id="contact" class="section contact-section">
       <div class="container contact-layout">
-        <div>
+        <div class="contact-copy">
           <p class="eyebrow">Contact</p>
-          <h2>Start with a practical conversation.</h2>
+          <h2>Start with the operational problem.</h2>
+          <p>Send the current stack, what is hard to operate or deploy, and what better would look like. I will reply with where I can help and where I would be cautious.</p>
         </div>
         <div class="contact-panel">
-          <p>Tell me what is hard to operate, deploy, or explain. I will reply with where I can help, where I would be cautious, and what I would not change yet.</p>
           <dl class="contact-meta" aria-label="Contact expectations">
-            <div>
-              <dt>Best first message</dt>
-              <dd>Current stack, pain point, and desired outcome</dd>
-            </div>
-            <div>
-              <dt>Typical topics</dt>
-              <dd>Kubernetes, CI/CD, IaC, monitoring, hosting</dd>
-            </div>
+            <dt>Best first message</dt>
+            <dd>Current stack, pain point, and desired outcome</dd>
+            <dt>Typical topics</dt>
+            <dd>Kubernetes, CI/CD, IaC, monitoring, hosting</dd>
           </dl>
           <div class="contact-links">
             <a class="contact-link" href="mailto:badowhp@gmail.com">badowhp@gmail.com</a>
@@ -265,7 +291,7 @@
   <footer class="footer">
     <div class="container footer-inner">
       <span>&copy; 2026 Hipolit Badowski</span>
-      <span>DevOps · Cloud Infrastructure · Vienna</span>
+      <span>DevOps / Cloud Infrastructure / Vienna</span>
     </div>
   </footer>
 

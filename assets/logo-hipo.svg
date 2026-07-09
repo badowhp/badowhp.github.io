@@ -1,8 +1,7 @@
-<svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <rect x="6" y="6" width="52" height="52" rx="14" fill="#132033"/>
-  <rect x="7" y="7" width="50" height="50" rx="13" stroke="#315A73" stroke-width="2"/>
-  <rect x="19" y="17" width="7" height="30" rx="3.5" fill="#F5F7FA"/>
-  <rect x="38" y="17" width="7" height="30" rx="3.5" fill="#F5F7FA"/>
-  <rect x="24" y="29" width="16" height="7" rx="3.5" fill="#F5F7FA"/>
-  <rect x="46" y="13" width="8" height="8" rx="4" fill="#9A6630"/>
+<svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title">
+  <title id="title">Hipolit Badowski</title>
+  <path d="M32 5L55 18.5V45.5L32 59L9 45.5V18.5L32 5Z" fill="#101824"/>
+  <path d="M32 8.5L52 20.25V43.75L32 55.5L12 43.75V20.25L32 8.5Z" stroke="#2D5065" stroke-width="2.5"/>
+  <path d="M21 19V45M43 19V45M21 32H43" stroke="#F4F7F8" stroke-width="6.5" stroke-linecap="square" stroke-linejoin="round"/>
+  <path d="M21 45H43" stroke="#C28A2F" stroke-width="3.5" stroke-linecap="square"/>
 </svg>
