@@ -1,78 +1,92 @@
 # hipo.is-a.dev
 
-Static portfolio and technical notes for Hipolit Badowski.
+Localized portfolio and technical notes for Hipolit Badowski, built as a small dependency-free static site for GitHub Pages.
 
-## Deployed Surface
+## Architecture
 
-GitHub Pages deploys only the handcrafted static site:
+- `src/data/site.en.json` and `src/data/site.de.json` contain localized interface copy.
+- `src/posts/en/` and `src/posts/de/` contain paired Markdown posts.
+- `src/templates.mjs` owns the shared home, blog, post, navigation, footer, metadata, and structured-data templates.
+- `scripts/build.mjs` validates content and writes the deployable `_site/` artifact.
+- `scripts/check.mjs` validates metadata, language alternates, internal links, assets, headings, CSP rules, and publishing files.
+- `assets/css/main.css`, `assets/js/main.js`, `assets/logo-hipo.svg`, and `assets/img/ich.png` are the only public design/runtime sources.
 
-- `index.html`
-- `404.html`
-- `blog/`
-- `assets/css/main.css`
-- `assets/img/`
-- `assets/logo-hipo.svg`
-- `assets/js/main.js`
-- `CNAME`
-- `.nojekyll`
+There is no Hugo theme, committed generated output, runtime framework, client-side translation, remote font, or third-party script.
 
-The deploy workflow stages this list explicitly in `.github/workflows/deploy-pages.yml`.
+## Local Development
 
-## Edit Notes
-
-- Keep reader-facing copy direct and modest.
-- Avoid inline styles; the Pages workflow rejects them so the meta CSP can stay strict.
-- Do not add third-party scripts or font calls without a clear reason.
-- Generated or experimental Hugo output under `public/`, `resources/`, `content/`, and related folders is not part of the deployed static surface unless the workflow is changed.
-
-## Local Testing
-
-These commands assume macOS with `tidy`, Node.js, and Google Chrome available.
-
-Open `index.html` directly in a browser for a quick static check:
+Node.js 20 or newer is required; GitHub Actions uses Node.js 24.
 
 ```sh
-open index.html
+npm ci --ignore-scripts
+npm test
+python3 -m http.server 8000 --directory _site
 ```
 
-Run the lightweight checks used for this static site:
+Then open `http://127.0.0.1:8000/`. Do not open generated pages directly with `file://`; the production site uses root-relative URLs.
+
+`npm test` always rebuilds the complete site before checking it. `_site/` is generated and ignored by Git.
+
+For reproducible responsive evidence, start Chrome with a temporary profile and a debugging port, then run the dependency-free QA adapter with Node’s WebSocket flag:
 
 ```sh
-tidy -qe index.html 404.html blog/index.html blog/posts/devops-in-2026/index.html blog/posts/kubernetes-at-scale/index.html
-node --check assets/js/main.js
-git diff --check
+node --experimental-websocket scripts/browser-qa.mjs \
+  --port 9333 \
+  --url http://127.0.0.1:8000/ \
+  --width 390 \
+  --height 900 \
+  --mobile \
+  --screenshot /tmp/hipo-mobile.png \
+  --menu-screenshot /tmp/hipo-menu.png \
+  --report /tmp/hipo-report.json
 ```
 
-Mirror the GitHub Pages staging validation locally:
+The adapter checks the real layout viewport, page overflow, console errors, failed requests, mobile-menu state, target height, Escape behavior, and focus return. It can also write a full-page screenshot with `--full-page-screenshot`.
 
-```sh
-set -e
-tmp="$(mktemp -d)"
-mkdir -p "$tmp/_site/assets/css" "$tmp/_site/assets/js"
-cp assets/css/main.css "$tmp/_site/assets/css/"
-cp -R assets/img "$tmp/_site/assets/"
-cp assets/logo-hipo.svg "$tmp/_site/assets/"
-cp assets/js/main.js "$tmp/_site/assets/js/"
-cp -R blog "$tmp/_site/"
-cp 404.html CNAME index.html .nojekyll "$tmp/_site/"
-if grep -R -n -E 'localhost:1313|livereload\.js|fonts\.googleapis\.com|fonts\.gstatic\.com|style=' "$tmp/_site"; then
-  echo "Found development-only URLs, external font calls, or inline styles."
-  exit 1
-fi
+## Publishing Contract
+
+English is the default language; German is a first-class alternate.
+
+| Surface | English | German |
+| --- | --- | --- |
+| Home | `/` | `/de/` |
+| Notes | `/blog/` | `/de/blog/` |
+| Post | `/blog/posts/<slug>/` | `/de/blog/posts/<slug>/` |
+| Feed | `/blog/index.xml` | `/de/blog/index.xml` |
+
+The build also emits `404.html`, `sitemap.xml`, `robots.txt`, `site.webmanifest`, `CNAME`, and `.nojekyll`. GitHub Actions uploads only `_site/` and deploys it through the `github-pages` environment.
+
+## Add a Post
+
+Create a Markdown file in each locale directory. Paired posts use the same `translationKey`; slugs may differ, although keeping them aligned makes maintenance easier.
+
+```markdown
+---
+title: "A clear, specific title"
+slug: "clear-specific-title"
+date: "2026-07-10"
+translationKey: "clear-specific-title"
+topic: "Platform engineering"
+description: "One useful sentence for listings and search previews."
+tags: ["Kubernetes", "Delivery"]
+draft: false
+---
+
+Opening paragraph.
+
+## Section heading
+
+Body copy with **strong text**, `inline code`, lists, links, blockquotes, and fenced code blocks.
 ```
 
-Capture a desktop visual smoke-test screenshot with local Chrome:
+The intentionally small Markdown renderer supports paragraphs, H2–H4 headings, ordered and unordered lists, blockquotes, fenced code, strong text, inline code, and safe links. The build escapes raw HTML.
 
-```sh
-'/Applications/Google Chrome.app/Contents/MacOS/Google Chrome' --headless=new --disable-gpu --hide-scrollbars --window-size=1440,1100 --screenshot=/private/tmp/hipo-desktop.png "file://$PWD/index.html"
-```
+Run `npm test` after adding or translating content. Missing translation pairs, duplicate keys/slugs, invalid front matter, broken routes, and missing assets fail the build.
 
-For 390px and 320px mobile checks, use Chrome DevTools device emulation or a DevTools Protocol capture. Plain headless `--window-size` can crop a wider layout viewport instead of testing the intended mobile CSS width.
+## Design and Content Rules
 
-Optional served check for absolute paths and `404.html` behavior:
-
-```sh
-python3 -m http.server 8000 --bind 127.0.0.1
-```
-
-Then open `http://127.0.0.1:8000/`. The deployed artifact is assembled by the GitHub Pages workflow on `main`.
+- Follow `DESIGN.md` for the visual system and `PLAN.md` for the current architecture decisions.
+- Use concrete operating outcomes; avoid unsupported scale, client, availability, or certification claims.
+- Keep email, LinkedIn, GitHub, portrait, canonical domain, and schema identity aligned in `src/config.mjs`.
+- Do not add inline styles or executable inline scripts. JSON-LD receives a page-specific CSP hash during the build.
+- Preserve the existing post paths unless a migration and redirect strategy is added first.

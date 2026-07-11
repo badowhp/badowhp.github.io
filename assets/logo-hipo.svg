@@ -1,7 +1,7 @@
 <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title">
   <title id="title">Hipolit Badowski</title>
-  <path d="M32 5L55 18.5V45.5L32 59L9 45.5V18.5L32 5Z" fill="#101824"/>
-  <path d="M32 8.5L52 20.25V43.75L32 55.5L12 43.75V20.25L32 8.5Z" stroke="#2D5065" stroke-width="2.5"/>
-  <path d="M21 19V45M43 19V45M21 32H43" stroke="#F4F7F8" stroke-width="6.5" stroke-linecap="square" stroke-linejoin="round"/>
-  <path d="M21 45H43" stroke="#C28A2F" stroke-width="3.5" stroke-linecap="square"/>
+  <rect x="4" y="4" width="56" height="56" rx="8" fill="#071521"/>
+  <path d="M18 17V47M46 17V47M18 32H46" stroke="#EDF3F5" stroke-width="6" stroke-linecap="square" stroke-linejoin="miter"/>
+  <path d="M18 49H46" stroke="#7AD7CF" stroke-width="3" stroke-linecap="square"/>
+  <path d="M48 12H54V18" stroke="#7AD7CF" stroke-width="2" stroke-linecap="square"/>
 </svg>
