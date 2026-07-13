@@ -59,51 +59,57 @@ for (const filename of htmlFiles) {
   idsByRoute.set(route, new Set(idsForHtml(html)));
 }
 
+const expectedRoutes = ["/", "/404.html", "/de/"];
+const actualRoutes = [...htmlByRoute.keys()].sort();
+if (JSON.stringify(actualRoutes) !== JSON.stringify(expectedRoutes)) {
+  errors.push(`unexpected HTML routes: ${actualRoutes.join(", ")}`);
+}
+
 let checkedLinks = 0;
 
 for (const [route, html] of htmlByRoute) {
-  const label = route;
-  if (!/^<!doctype html>/i.test(html)) errors.push(`${label}: missing HTML5 doctype`);
-  if (!/<html lang="(?:en-GB|de-AT)">/.test(html)) errors.push(`${label}: missing supported lang attribute`);
-  if (!/<meta name="viewport"/.test(html)) errors.push(`${label}: missing viewport metadata`);
-  if (!/<meta name="description" content="[^"]+">/.test(html)) errors.push(`${label}: missing meta description`);
-  if (!/<meta http-equiv="Content-Security-Policy"/.test(html)) errors.push(`${label}: missing Content Security Policy`);
-  if (!/<link rel="canonical" href="https:\/\/hipo\.is-a\.dev\//.test(html)) errors.push(`${label}: missing canonical URL`);
-  if (!/<a class="skip-link" href="#main">/.test(html)) errors.push(`${label}: missing skip link`);
+  if (!/^<!doctype html>/i.test(html)) errors.push(`${route}: missing HTML5 doctype`);
+  if (!/<html lang="(?:en-GB|de-AT)">/.test(html)) errors.push(`${route}: missing supported lang attribute`);
+  if (!/<meta name="viewport"/.test(html)) errors.push(`${route}: missing viewport metadata`);
+  if (!/<meta name="description" content="[^"]+">/.test(html)) errors.push(`${route}: missing meta description`);
+  if (!/<meta http-equiv="Content-Security-Policy"/.test(html)) errors.push(`${route}: missing Content Security Policy`);
+  if (!/<link rel="canonical" href="https:\/\/hipo\.is-a\.dev\//.test(html)) errors.push(`${route}: missing canonical URL`);
+  if (!/<a class="skip-link" href="#main">/.test(html)) errors.push(`${route}: missing skip link`);
   if (route === "/404.html" && !/<meta name="robots" content="noindex, follow">/.test(html)) {
-    errors.push(`${label}: 404 page must be noindex`);
+    errors.push(`${route}: 404 page must be noindex`);
   }
   if (route !== "/404.html" && /<meta name="robots" content="[^"]*noindex/.test(html)) {
-    errors.push(`${label}: indexable route unexpectedly uses noindex`);
+    errors.push(`${route}: indexable route unexpectedly uses noindex`);
   }
 
   const h1Count = (html.match(/<h1(?:\s|>)/g) || []).length;
-  if (h1Count !== 1) errors.push(`${label}: expected one h1, found ${h1Count}`);
+  if (h1Count !== 1) errors.push(`${route}: expected one h1, found ${h1Count}`);
 
   const ids = idsForHtml(html);
   const duplicateIds = ids.filter((id, index) => ids.indexOf(id) !== index);
-  if (duplicateIds.length) errors.push(`${label}: duplicate ids: ${[...new Set(duplicateIds)].join(", ")}`);
+  if (duplicateIds.length) errors.push(`${route}: duplicate ids: ${[...new Set(duplicateIds)].join(", ")}`);
 
-  if (/\sstyle=|<style(?:\s|>)/i.test(html)) errors.push(`${label}: inline styles are not allowed`);
-  if (/http:\/\//i.test(html)) errors.push(`${label}: insecure http URL found`);
+  if (/\sstyle=|<style(?:\s|>)/i.test(html)) errors.push(`${route}: inline styles are not allowed`);
+  if (/http:\/\//i.test(html)) errors.push(`${route}: insecure http URL found`);
   if (/localhost|livereload\.js|fonts\.googleapis\.com|fonts\.gstatic\.com/i.test(html)) {
-    errors.push(`${label}: development or remote-font resource found`);
+    errors.push(`${route}: development or remote-font resource found`);
   }
+  if (/\b(?:blog|notes|rss)\b/i.test(html)) errors.push(`${route}: removed Notes/blog copy or route found`);
 
   for (const tag of html.match(/<script\b[^>]*>/g) || []) {
     if (!/\bsrc="[^"]+"/.test(tag) && !/type="application\/ld\+json"/.test(tag)) {
-      errors.push(`${label}: executable inline script is not allowed`);
+      errors.push(`${route}: executable inline script is not allowed`);
     }
   }
 
   for (const tag of html.match(/<a\b[^>]*target="_blank"[^>]*>/g) || []) {
-    if (!/rel="noopener noreferrer"/.test(tag)) errors.push(`${label}: target=_blank link missing safe rel`);
+    if (!/rel="noopener noreferrer"/.test(tag)) errors.push(`${route}: target=_blank link missing safe rel`);
   }
 
   for (const tag of html.match(/<img\b[^>]*>/g) || []) {
-    if (!/\balt="[^"]*"/.test(tag)) errors.push(`${label}: image missing alt attribute`);
+    if (!/\balt="[^"]*"/.test(tag)) errors.push(`${route}: image missing alt attribute`);
     if (!/\bwidth="\d+"/.test(tag) || !/\bheight="\d+"/.test(tag)) {
-      errors.push(`${label}: image missing explicit dimensions`);
+      errors.push(`${route}: image missing explicit dimensions`);
     }
   }
 
@@ -113,14 +119,14 @@ for (const [route, html] of htmlByRoute) {
     checkedLinks += 1;
     const targetFile = fileForRoute(target.pathname);
     if (!fileSet.has(path.resolve(targetFile))) {
-      errors.push(`${label}: missing internal target ${value}`);
+      errors.push(`${route}: missing internal target ${value}`);
       continue;
     }
-    if (target.hash && target.pathname.endsWith("/") && targetFile.endsWith("index.html")) {
+    if (target.hash && targetFile.endsWith("index.html")) {
       const targetRoute = routeForFile(targetFile);
       const targetIds = idsByRoute.get(targetRoute);
       const id = decodeURIComponent(target.hash.slice(1));
-      if (targetIds && !targetIds.has(id)) errors.push(`${label}: missing anchor target ${value}`);
+      if (targetIds && !targetIds.has(id)) errors.push(`${route}: missing anchor target ${value}`);
     }
   }
 }
@@ -136,13 +142,18 @@ for (const [route, html] of htmlByRoute) {
     }
     const sourceLanguage = /<html lang="de-AT">/.test(html) ? "de" : "en";
     const sourceUrl = new URL(route, SITE.url).href;
-    const reciprocal = new RegExp(`<link rel="alternate" hreflang="${sourceLanguage}" href="${sourceUrl.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}">`);
+    const escapedUrl = sourceUrl.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+    const reciprocal = new RegExp(`<link rel="alternate" hreflang="${sourceLanguage}" href="${escapedUrl}">`);
     if (!reciprocal.test(targetHtml)) errors.push(`${route}: hreflang ${language} target is not reciprocal`);
   }
 }
 
-for (const required of ["sitemap.xml", "robots.txt", "site.webmanifest", "CNAME", "blog/index.xml", "de/blog/index.xml"]) {
+for (const required of ["sitemap.xml", "robots.txt", "site.webmanifest", "CNAME", ".nojekyll"]) {
   if (!fileSet.has(path.join(OUTPUT, required))) errors.push(`missing required output: /${required}`);
+}
+
+if (files.some((filename) => filename.includes(`${path.sep}blog${path.sep}`) || filename.endsWith(".xml") && !filename.endsWith("sitemap.xml"))) {
+  errors.push("removed blog or feed output is still present");
 }
 
 const manifest = JSON.parse(await readFile(path.join(OUTPUT, "site.webmanifest"), "utf8"));

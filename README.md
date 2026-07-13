@@ -1,17 +1,16 @@
 # hipo.is-a.dev
 
-Localized portfolio and technical notes for Hipolit Badowski, built as a small dependency-free static site for GitHub Pages.
+A compact, bilingual portfolio for Hipolit Badowski, built as a dependency-free static site for GitHub Pages.
 
 ## Architecture
 
-- `src/data/site.en.json` and `src/data/site.de.json` contain localized interface copy.
-- `src/posts/en/` and `src/posts/de/` contain paired Markdown posts.
-- `src/templates.mjs` owns the shared home, blog, post, navigation, footer, metadata, and structured-data templates.
+- `src/data/site.en.json` and `src/data/site.de.json` contain all localized interface copy.
+- `src/templates.mjs` owns the shared home, navigation, footer, metadata, structured data, and 404 templates.
 - `scripts/build.mjs` validates content and writes the deployable `_site/` artifact.
-- `scripts/check.mjs` validates metadata, language alternates, internal links, assets, headings, CSP rules, and publishing files.
+- `scripts/check.mjs` validates metadata, language alternates, internal links, assets, headings, CSP rules, the deliberately small route set, and publishing files.
 - `assets/css/main.css`, `assets/js/main.js`, `assets/logo-hipo.svg`, and `assets/img/ich.png` are the only public design/runtime sources.
 
-There is no Hugo theme, committed generated output, runtime framework, client-side translation, remote font, or third-party script.
+There is no runtime framework, blog, content feed, remote font, analytics, third-party script, or client-side translation.
 
 ## Local Development
 
@@ -50,43 +49,14 @@ English is the default language; German is a first-class alternate.
 | Surface | English | German |
 | --- | --- | --- |
 | Home | `/` | `/de/` |
-| Notes | `/blog/` | `/de/blog/` |
-| Post | `/blog/posts/<slug>/` | `/de/blog/posts/<slug>/` |
-| Feed | `/blog/index.xml` | `/de/blog/index.xml` |
+| Not found | `/404.html` | — |
 
-The build also emits `404.html`, `sitemap.xml`, `robots.txt`, `site.webmanifest`, `CNAME`, and `.nojekyll`. GitHub Actions uploads only `_site/` and deploys it through the `github-pages` environment.
-
-## Add a Post
-
-Create a Markdown file in each locale directory. Paired posts use the same `translationKey`; slugs may differ, although keeping them aligned makes maintenance easier.
-
-```markdown
----
-title: "A clear, specific title"
-slug: "clear-specific-title"
-date: "2026-07-10"
-translationKey: "clear-specific-title"
-topic: "Platform engineering"
-description: "One useful sentence for listings and search previews."
-tags: ["Kubernetes", "Delivery"]
-draft: false
----
-
-Opening paragraph.
-
-## Section heading
-
-Body copy with **strong text**, `inline code`, lists, links, blockquotes, and fenced code blocks.
-```
-
-The intentionally small Markdown renderer supports paragraphs, H2–H4 headings, ordered and unordered lists, blockquotes, fenced code, strong text, inline code, and safe links. The build escapes raw HTML.
-
-Run `npm test` after adding or translating content. Missing translation pairs, duplicate keys/slugs, invalid front matter, broken routes, and missing assets fail the build.
+The build also emits `sitemap.xml`, `robots.txt`, `site.webmanifest`, `CNAME`, and `.nojekyll`. GitHub Actions uploads only `_site/` and deploys it through the `github-pages` environment.
 
 ## Design and Content Rules
 
 - Follow `DESIGN.md` for the visual system and `PLAN.md` for the current architecture decisions.
-- Use concrete operating outcomes; avoid unsupported scale, client, availability, or certification claims.
+- Keep claims short, concrete, and supportable; do not add scale, client, availability, or certification claims without evidence.
 - Keep email, LinkedIn, GitHub, portrait, canonical domain, and schema identity aligned in `src/config.mjs`.
 - Do not add inline styles or executable inline scripts. JSON-LD receives a page-specific CSP hash during the build.
-- Preserve the existing post paths unless a migration and redirect strategy is added first.
+- Keep the public route set intentionally small. A new surface must earn its maintenance cost before it is added.

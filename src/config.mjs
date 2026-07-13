@@ -15,12 +15,3 @@ export const LOCALES = Object.freeze(["en", "de"]);
 export function homePath(locale) {
   return locale === "de" ? "/de/" : "/";
 }
-
-export function blogPath(locale) {
-  return locale === "de" ? "/de/blog/" : "/blog/";
-}
-
-export function postPath(locale, slug) {
-  return `${blogPath(locale)}posts/${slug}/`;
-}
-

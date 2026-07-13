@@ -5,182 +5,85 @@
   "prefix": "",
   "meta": {
     "homeTitle": "Hipolit Badowski | Platform & DevOps Engineer in Vienna",
-    "homeDescription": "Hipolit Badowski helps teams build dependable cloud platforms, reviewable delivery paths, and operable production systems.",
-    "blogTitle": "Technical notes | Hipolit Badowski",
-    "blogDescription": "Field notes on platform engineering, delivery systems, Kubernetes, and production operations.",
+    "homeDescription": "Hipolit Badowski builds dependable cloud platforms, delivery systems, and production operations for teams in Vienna and across Europe.",
     "themeColor": "#071521"
   },
   "skip": "Skip to content",
   "nav": {
     "aria": "Primary navigation",
     "homeAria": "Hipolit Badowski home",
-    "role": "Platform · Delivery · Operations",
+    "role": "DevOps engineer",
     "work": "Work",
-    "build": "Build",
-    "method": "Method",
-    "notes": "Notes",
-    "contact": "Start a conversation",
+    "project": "Open source",
+    "contact": "Contact",
     "menuOpen": "Open navigation",
     "menuClose": "Close navigation",
     "language": "Language"
   },
   "hero": {
-    "eyebrow": "Independent platform & DevOps engineer · Vienna / remote",
-    "title": "Safer change. Calmer operations.",
-    "lede": "I help teams turn fragile infrastructure and release handoffs into dependable platforms, reviewable delivery paths, and useful operational context.",
-    "primaryAction": "Discuss your infrastructure",
-    "secondaryAction": "View GitHub",
-    "proofAria": "Core operating outcomes",
-    "proof": [
-      {
-        "label": "Platform",
-        "value": "Cloud and Kubernetes with clear ownership"
-      },
-      {
-        "label": "Delivery",
-        "value": "Reviewable releases with rollback points"
-      },
-      {
-        "label": "Operations",
-        "value": "Signals and runbooks that hold up under pressure"
-      }
-    ],
+    "eyebrow": "Independent DevOps engineer · Vienna / remote",
+    "title": "Infrastructure should be boring.",
+    "lede": "I build cloud platforms and delivery systems that are easy to change, hard to misuse, and calm to operate.",
+    "primaryAction": "Let's talk infrastructure",
+    "secondaryAction": "GitHub",
+    "expertiseLabel": "Working across",
+    "expertise": "Cloud platforms · CI/CD · Infrastructure as code · Operations",
     "portraitAlt": "Hipolit Badowski working with a team at a table with laptops",
-    "portraitKicker": "Field note / Vienna",
-    "portraitName": "Hipolit Badowski",
-    "portraitBody": "I work alongside people carrying production responsibility—close enough to improve the system, and careful enough to leave it understandable.",
-    "portraitMetaLabel": "Most useful for",
-    "portraitMetaValue": "Teams responsible for live services"
-  },
-  "fit": {
-    "aria": "When the work is useful",
-    "items": [
-      {
-        "label": "Release friction",
-        "value": "Deployments have too many handoffs or too little certainty."
-      },
-      {
-        "label": "Platform drift",
-        "value": "Infrastructure has outgrown the rules that once kept it understandable."
-      },
-      {
-        "label": "Operational gaps",
-        "value": "On-call work exposes missing signals, ownership, or recovery context."
-      }
-    ]
+    "portraitCaption": "Hipolit Badowski · Vienna"
   },
   "work": {
-    "eyebrow": "Capabilities",
-    "title": "Three ways to make production work less fragile.",
-    "intro": "The useful work begins where ambiguity turns into operational risk: the platform shape, the release path, and the information available when something fails.",
+    "eyebrow": "What I do",
+    "title": "Build. Ship. Operate.",
+    "intro": "Three parts of the same job: make change safer without making the system heavier.",
     "items": [
       {
         "index": "01",
-        "label": "Platform foundations",
-        "title": "Give the platform a clear, usable shape.",
-        "body": "Clarify environment boundaries, workload ownership, and the operating context that keeps cloud infrastructure understandable.",
-        "facts": [
-          "Kubernetes and Linux operations",
-          "AWS and GCP foundations",
-          "Ownership and runbook design"
-        ]
+        "label": "Platforms",
+        "title": "Clear foundations.",
+        "body": "Cloud and Kubernetes environments with boundaries teams can understand and own.",
+        "tools": "AWS · GCP · Kubernetes · Terraform"
       },
       {
         "index": "02",
-        "label": "Dependable delivery",
-        "title": "Turn changes into repeatable releases.",
-        "body": "Replace fragile manual steps with reviewable workflows, traceable releases, and rollback points that do not depend on memory.",
-        "facts": [
-          "GitHub Actions and GitLab CI",
-          "Terraform and GitOps workflows",
-          "Release and rollback design"
-        ]
+        "label": "Delivery",
+        "title": "Releases without theatre.",
+        "body": "Reviewable pipelines, useful rollback points, and less manual choreography.",
+        "tools": "GitHub Actions · GitLab CI · GitOps"
       },
       {
         "index": "03",
-        "label": "Operable systems",
-        "title": "Make the next incident easier to understand.",
-        "body": "Improve the signals, alerts, and operating notes that help teams diagnose failure without adding a theatre of dashboards.",
-        "facts": [
-          "Prometheus and Grafana",
-          "Logging and alert review",
-          "Incident follow-up and runbooks"
-        ]
+        "label": "Operations",
+        "title": "Less guesswork.",
+        "body": "Signals, runbooks, and incident follow-up that help when production gets loud.",
+        "tools": "Prometheus · Grafana · Linux"
       }
     ]
   },
-  "build": {
-    "eyebrow": "Selected open-source build",
-    "title": "Skill Mania: portable workflows for coding agents.",
-    "body": "A public repository that keeps reusable agent skills in one canonical source, then packages them for Codex, Claude Code, and GitHub Copilot.",
-    "facts": [
-      "Portable Agent Skills",
-      "Plugin and marketplace packaging",
-      "Validation and release checks"
-    ],
-    "actionKicker": "GitHub repository",
-    "action": "Explore Skill Mania",
-    "actionPath": "github.com/badowhp/skill-mania"
+  "project": {
+    "eyebrow": "Open source",
+    "title": "Skill Mania.",
+    "body": "One source of truth for agent skills, packaged for Codex, Claude Code, and GitHub Copilot.",
+    "action": "View repository",
+    "path": "github.com/badowhp/skill-mania"
   },
   "method": {
-    "eyebrow": "Working method",
-    "title": "Make the smallest change that removes real risk.",
-    "body": "Infrastructure work is most useful when it leaves clearer boundaries, fewer surprise paths, and enough context for the next person to make a safe decision.",
-    "stepsAria": "Working process",
-    "steps": [
-      {
-        "index": "01 / Understand",
-        "title": "Trace the system as it runs today.",
-        "body": "Find the release path, ownership edges, and failure points before proposing another layer."
-      },
-      {
-        "index": "02 / Reduce",
-        "title": "Make one safe, reviewable improvement.",
-        "body": "Simplify the path first; automate only the work that should be repeatable."
-      },
-      {
-        "index": "03 / Leave context",
-        "title": "Make the next decision less expensive.",
-        "body": "Record the operating notes, rollback path, and open questions where the team will use them."
-      }
-    ]
-  },
-  "notes": {
-    "eyebrow": "Technical notes",
-    "title": "Writing from the operating edge.",
-    "intro": "Short, practical notes about the decisions that make platforms easier to change and production easier to understand.",
-    "allAction": "Read all notes"
+    "eyebrow": "How I work",
+    "title": "Understand → simplify → document.",
+    "body": "Small, reviewable changes. Clear rollback. Context left behind."
   },
   "contact": {
     "eyebrow": "Contact",
-    "title": "Start with the system that feels risky to touch.",
-    "body": "Send the current stack, the friction, and what better would look like. I’ll give you a direct view of where I can help and where I would be cautious.",
-    "contextLabel": "Useful context",
-    "contextValue": "Current stack, pain point, and a practical desired outcome",
-    "terrainLabel": "Typical terrain",
-    "terrainValue": "Cloud platforms, CI/CD, infrastructure as code, and operations",
+    "title": "Got a fragile part?",
+    "body": "Send me the problem. I’ll tell you where I can help—and where I can’t.",
     "email": "Email",
     "linkedin": "LinkedIn",
     "github": "GitHub"
   },
-  "blog": {
-    "eyebrow": "Technical notes",
-    "title": "Field notes for people operating real systems.",
-    "intro": "Platform engineering, delivery, Kubernetes, and the practical work of keeping production understandable.",
-    "backHome": "Back to home",
-    "backNotes": "Back to all notes",
-    "readTime": "min read",
-    "feed": "RSS feed",
-    "previous": "Previous note",
-    "next": "Next note",
-    "open": "Read note"
-  },
   "notFound": {
     "eyebrow": "404 / Route not found",
-    "title": "This path does not lead anywhere.",
-    "body": "The address may be old, or the page may have moved during the rebuild.",
+    "title": "This route goes nowhere.",
+    "body": "Nothing to debug here. The page moved or never existed.",
     "home": "Return home",
-    "notes": "Read technical notes",
     "german": "Deutsch"
   },
   "footer": {

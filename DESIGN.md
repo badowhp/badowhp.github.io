@@ -2,58 +2,58 @@
 
 ## 1. Overview
 
-- **Creative north star:** The operator's field journal — a precise editorial portfolio that feels like it belongs beside an architecture decision record: calm, legible, and built around evidence. The portrait adds a human counterweight to the technical structure; the interface must never imitate a terminal or fabricated dashboard.
-- **Register:** Brand / portfolio. The home page is a conversion surface for an independent DevOps engineer; technical notes and the 404 page are supporting editorial surfaces.
-- **Audience and primary job:** Engineering leaders, CTOs, and senior developers with live cloud infrastructure. They need to quickly establish fit, understand the work, and start a well-scoped conversation.
-- **Tone and density:** Direct, modest, technically literate, and deliberately edited. The first viewport earns trust with one operating promise, a short proof rail, and one obvious contact action. Tools support a real capability or public build; they are not decorative badges.
-- **Provisional assumptions:** The primary audience is engineering leaders and senior developers in Vienna or remote European teams. The desired inquiry is a practical conversation about a production, delivery, or reliability problem. English is the default language and German is a complete first-class alternate.
-- **Technology:** A dependency-free Node static build renders localized data and Markdown into HTML. CSS and small progressive-enhancement JavaScript are hand-authored. No third-party fonts, client frameworks, analytics, or runtime content requests. GitHub Actions builds and deploys the `_site/` artifact to GitHub Pages.
-- **Source of truth:** `src/data/site.en.json` and `src/data/site.de.json` for interface copy; `src/posts/{en,de}/` for paired Markdown notes; `src/templates.mjs` and `scripts/build.mjs` for rendering; `assets/css/main.css` for tokens/components; `assets/js/main.js` for enhancement; `assets/img/ich.png` and `assets/logo-hipo.svg` for brand media; `README.md` and `.github/workflows/deploy-pages.yml` for the publishing contract.
-- **References:** [Niklas Rosenstein](https://www.niklasrosenstein.com/) for outcome-first service framing and concrete open-source evidence; [Janus Chung](https://januschung.github.io/) for a project-led portfolio with current writing; [Robert Andruschow](https://andruschow.de/) for precise operating scope and professional history. Borrow their clarity, proof hierarchy, and direct social paths, not their visual styling. **Anti-references:** neon hacker aesthetics, fake terminal dashboards, logo/tool walls, generic SaaS gradients, stacked feature-card grids, and unverified scale claims.
-- **Freshness:** Reviewed 2026-07-10 against the repository, portrait asset, current GitHub Pages constraints, and live 2026 portfolio references.
+- **Creative north star:** The operations brief — sparse, blunt, and credible. The page should feel like a senior engineer wrote down only what a technical lead needs to know before starting a conversation. The real portrait is the only decorative asset; everything else earns its place through hierarchy or proof.
+- **Register:** Brand / portfolio. The home page is the product. The German route is an equal localized version; the 404 page is the only supporting surface.
+- **Audience and primary job:** Engineering leaders, CTOs, and senior developers responsible for live cloud systems. In one short scroll they should understand what Hipolit does, see one verifiable public build, and know how to contact him.
+- **Tone and density:** Confident, concise, practical, and lightly irreverent. Prefer short assertions over consulting language. The first viewport carries one memorable position — infrastructure should be boring — plus one explanation and one contact action.
+- **Provisional assumptions:** The main audience is based in Vienna or works with remote European teams. The desired inquiry concerns cloud platforms, delivery, infrastructure as code, or production operations. English is the default language and German is a complete alternate.
+- **Technology:** A dependency-free Node static build renders localized JSON into HTML. CSS and small progressive-enhancement JavaScript are hand-authored. No third-party fonts, client frameworks, analytics, blog engine, feeds, Markdown, or runtime content requests. GitHub Actions builds and deploys the `_site/` artifact to GitHub Pages.
+- **Source of truth:** `src/data/site.en.json` and `src/data/site.de.json` for localized copy; `src/templates.mjs` and `scripts/build.mjs` for rendering; `assets/css/main.css` for tokens/components; `assets/js/main.js` for enhancement; `assets/img/ich.png` and `assets/logo-hipo.svg` for brand media; `README.md` and `.github/workflows/deploy-pages.yml` for publishing.
+- **Reference direction:** editorial engineering portfolios with the restraint of a printed technical brief. Borrow strong type, evidence, and direct contact paths—not terminal styling, fabricated metrics, or a résumé timeline. **Anti-references:** neon hacker aesthetics, fake dashboards, logo/tool walls, generic agency gradients, card grids, padded case studies, and unsupported scale claims.
+- **Freshness:** Revised 2026-07-13 for the compact portfolio direction and removal of the Notes/blog feature.
 
 ## 2. Colors
 
-- **Page surface:** frost `#edf3f5` / `--paper`; **raised surface:** `#f8fbfc` / `--surface`; **inset surface:** steel mist `#dfe9ed` / `--surface-cool`. These cool neutrals make long technical copy calm without reading as corporate blue-grey.
-- **Primary text / dark field:** midnight `#071521` / `--ink`; **body text:** `#263e4d` / `--text`; **muted text:** `#5f7480` / `--text-soft`; **disabled text:** `#748791` / `--muted`.
-- **Primary action:** deep teal `#105e68` / `--teal-dark`; **secondary action and link:** `#1b717a` / `--teal`; **signal accent:** ice teal `#7ad7cf` / `--signal` for rules and indexes. Focus is a visible 3px deep-teal outline on light surfaces and ice-teal outline on dark surfaces.
-- **Status accents:** success `#2d7b62`, warning `#a66b24`, danger `#a44848`, and info `#367594`; use only when the content carries that state. No warm accent is a general decoration.
-- **Borders and depth:** `#cad8de` / `--line` for structure and `#8ea6b1` / `--line-strong` for interaction. Shadows are cool, soft, and sparse; reserve the strongest shadow for the portrait frame and mobile navigation overlay.
+- **Page surface:** frost `#edf3f5` / `--paper`; **primary surface:** `#f8fbfc` / `--surface`; **quiet structure:** steel mist `#dfe9ed` / `--surface-cool`.
+- **Primary text / inverse field:** midnight `#071521` / `--ink`; **body text:** `#263e4d` / `--text`; **muted text:** `#5f7480` / `--text-soft`.
+- **Primary action and link:** deep teal `#105e68` / `--teal-dark`; **hover:** `#0b4c55`; **signal:** ice teal `#7ad7cf` / `--signal`. Focus is a visible 3px deep-teal outline on light surfaces and ice-teal on dark surfaces.
+- **Borders:** `#cad8de` / `--line` and `#8ea6b1` / `--line-strong`. Use rules for structure; do not use shadow as a substitute for hierarchy.
 
 ## 3. Typography
 
-- **Body:** local system sans (`--font-sans`), 16px base, 1.62 line height. Avoid remote font dependencies.
-- **Headings:** same system sans at a heavy but not black weight; use compact line-height (0.96–1.14) and sentence-case copy. Home H1 uses explicit responsive steps from 5.2rem desktop to 3.1rem narrow mobile; H2 steps from 3rem to 2.05rem. The masthead wordmark is compact; mono metadata may identify the route or locale but must not imitate system status.
-- **Technical labels:** local monospace (`--font-mono`), uppercase, 0.76–0.8rem, for labels, dates, status, and compact metadata only; never for paragraphs.
-- **Content limits:** paragraph measure is 62–68ch; hero heading measure is 9–11ch; controls retain at least 44px height. German expansion, long tool names, repository paths, and email addresses wrap safely. Blog prose stays near 72ch and code blocks scroll horizontally.
+- **Body and headings:** local system sans (`--font-sans`), 16px base, body line-height 1.55. No remote fonts.
+- **Hero:** heavy, tight, and sentence case. Desktop H1 is 5.5–6.6rem with a 0.88–0.94 line-height; narrow mobile is 3.25rem. Headings use short lines and no ornamental emphasis.
+- **Technical labels:** local monospace (`--font-mono`), uppercase, 0.7–0.76rem, used only for section labels, numbers, and compact metadata.
+- **Content limits:** body copy stays below 60ch; hero heading below 9ch; hero lede below 52ch. Controls are at least 44px high. German expansion, email addresses, and repository paths wrap safely.
 
-## 4. Elevation
+## 4. Spacing, Depth, and Motion
 
-- **Depth model:** default surfaces are flat and divided by 1px rules. Use one raised portrait frame and one dark contact panel; capability rows, project evidence, and article lists remain flat so the page reads as an editorial system instead of a dashboard. Never nest raised cards.
-- **Radius:** 6px for controls and media frames, 8px for panels. Avoid pills except for a compact, semantically useful status.
-- **Motion:** 160–220ms opacity, color, and small transform transitions only. Hover lift is at most 2px. The menu may fade/translate over 180ms. `prefers-reduced-motion` removes smooth scrolling and transitions.
-- **Media:** the portrait uses `assets/img/ich.png`, cropped with the face visible at every breakpoint. Give it an explicit aspect ratio and dimensions to prevent layout shift. Do not hide it under copy, filters, or decorative overlays.
+- **Layout:** one 1180px max-width container with fluid 20–48px gutters. Use generous section space and few components instead of many small gaps.
+- **Depth:** flat surfaces divided by 1px rules. The portrait has a narrow border and small radius. The open-source band and closing contact area are the only inverse surfaces. No cards, nested panels, or decorative shadows.
+- **Radius:** 4px for controls and portrait. Avoid pills.
+- **Motion:** 160ms color, opacity, and small arrow movement only. No scroll reveals, background animation, or hover lift. `prefers-reduced-motion` removes smooth scrolling and transitions.
+- **Media:** show `assets/img/ich.png` without filters, coordinate overlays, or résumé caption cards. Keep the face visible at every breakpoint and reserve dimensions to prevent layout shift.
 
-## 5. Components
+## 5. Components and Content
 
-- **Navigation:** persistent compact masthead with the geometric H mark, name, four short destinations, a visible EN/DE route switch, and one high-contrast contact action. Desktop links expose current/hover state. Mobile uses a labelled menu button with `aria-expanded` and `aria-controls`; Escape, outside click, route selection, and desktop resize close it; focus returns to the trigger. Targets are at least 44px high.
-- **Buttons and links:** primary action is filled dark teal; secondary action is bordered. All keyboard focus states are visible. On narrow screens, paired actions become full-width to prevent cramped targets.
-- **Hero:** the first viewport states the platform/delivery/operations role, one concrete outcome, Vienna/remote context, two clear actions, and a compact proof rail. The real portrait supplies personality; its caption provides identity and useful context rather than a résumé summary.
-- **Work list:** use one bordered board with exactly three numbered outcome rows: platform foundations, dependable delivery, and operable systems. Each row has one concise result, one short explanation, and no more than three supporting capabilities. Rows collapse from three columns to two and then one without changing reading order.
-- **Featured build:** place one dark, horizontal “selected build” band after capabilities for [Skill Mania](https://github.com/badowhp/skill-mania). State only repository-verifiable facts and label it as open source, not client work. The GitHub action is obvious and uses `rel="noopener noreferrer"`.
-- **Method and writing:** process is a sequential three-step rail, not a second card grid. Home writing preview shows the two newest localized posts with date, topic, title, and summary. The blog index is chronological and post pages include translation, back-navigation, metadata, related/adjacent navigation, and readable code states.
-- **Language control:** route-preserving language links use visible `EN` and `DE` labels, native language names in accessible text, `hreflang`, and a current-language state. Never translate code, product names, or personal names. If a post lacks a translation, the alternate links to the other language’s blog index rather than a false equivalent.
-- **Contact and social proof:** offer direct email, LinkedIn, and GitHub as equal, clearly named links. External links use `rel="noopener noreferrer"`. No form states are needed because no form is provided.
-- **System states:** links, buttons, menu state, card hover, focus, and reduced-motion behavior are required. Empty, loading, validation, selected, error, and permission states do not apply to the current static read-only surface; add them before introducing dynamic UI.
-- **Responsive behavior:** use a 1180px max content width with fluid 20–48px gutters. The hero stacks and navigation collapses by 900px, while multi-column content becomes a single reading column by 760px. At 580px, actions stack full-width and social links become full-width rows. Preserve DOM reading order and prevent horizontal scroll at 320px, including long German words and code.
+- **Navigation:** compact masthead with mark/name, three destinations — Work, Open source, Contact — EN/DE switch, and no separate header CTA. Mobile uses a labelled button with `aria-expanded` and `aria-controls`; Escape, outside click, link selection, and desktop resize close it; focus returns to the trigger. Targets are at least 44px.
+- **Hero:** eyebrow, the line “Infrastructure should be boring.” / “Infrastruktur sollte langweilig sein.”, one short explanation, one email action, one GitHub text link, and the real portrait. A single compact expertise line may follow; do not add a proof grid or portrait biography.
+- **Work:** exactly three flat numbered rows: Platforms, Delivery, Operations. Each uses one two-to-five-word result, one sentence, and a short tool line. No bullets, badges, or repeated benefit copy.
+- **Open source:** one full-width dark band for Skill Mania. Describe only repository-verifiable scope in one sentence and provide one GitHub action. Do not imply client work.
+- **Method:** one compact line — understand, simplify, document — with one sentence of support. It is not a separate case-study section or three-card process.
+- **Contact:** a direct closing statement, one short expectation-setting sentence, email, LinkedIn, and GitHub. Do not ask for a stack inventory or mimic a form.
+- **Language control:** route-preserving links show `EN` and `DE`, native names in accessible text, `hreflang`, and a current state. Product and personal names are not translated.
+- **Removed surfaces:** no Notes/blog navigation, home preview, post routes, feeds, Markdown content, adjacent-post controls, or blog metadata. Existing public post URLs may return the branded 404.
+- **System states:** visible hover, focus, open-menu, current-language, and reduced-motion states are required. Loading, empty, validation, selected, error, and permission states do not apply to the static portfolio.
+- **Responsive behavior:** hero is two-column above 900px and one column below it. At mobile widths, copy appears before the portrait, actions remain easy to tap, work rows collapse to one column, and contact links become full-width rows. Prevent horizontal scroll at 320px.
 
-## 6. Do's And Don'ts
+## 6. Do's and Don'ts
 
-- Do use semantic tokens and the real portrait/logo assets; keep the midnight, frost, steel, and signal-teal palette consistent across home, blog, posts, and 404.
-- Do write for operators with concrete outcomes: reviewable changes, clear rollback, useful signals, and understandable ownership. Use "DevOps" only when it accurately describes the work; prefer platform, delivery, infrastructure, and operations when more precise.
-- Do preserve semantic landmarks, accessible labels, visible focus, resilient wrapping, and `prefers-reduced-motion` behavior.
-- Do make every localized route share the same nav, token system, mobile rules, canonical metadata, alternate-language link, and footer social paths.
-- Do not use gradients as decoration, gradient text, oversize icon tiles, fake product screenshots, or emoji as UI icons.
-- Do not add card-on-card layouts, side accent borders, generic agency language, remote font calls, third-party scripts, inline styles, client-side translation, or runtime content fetching.
-- Do not turn every tool into a badge; tooling should support a specific operating outcome. Do not repeat the same promise in the hero, capabilities, and method sections.
-- Any exception to these rules must state the user-facing reason in code review or this document.
+- Do use semantic tokens, the real portrait/logo, short concrete copy, one visible H1, useful alt text, and visible focus.
+- Do make the first viewport say what the site stands for before it lists technologies.
+- Do keep tooling subordinate to outcomes and claims verifiable from the public repository or professional scope.
+- Do preserve canonical metadata, localized alternates, semantic landmarks, resilient wrapping, and reduced-motion behavior.
+- Do not use gradients, gradient text, icon tiles, fake screenshots, terminal chrome, emoji UI, pills, card grids, side-accent panels, or generic “transform your business” language.
+- Do not repeat reliability, ownership, rollback, or operational-context claims in multiple sections.
+- Do not reintroduce a blog, content feed, form, résumé timeline, testimonial, tool wall, or framework without a user-facing need.
+- Any exception must state the user-facing reason in this document.

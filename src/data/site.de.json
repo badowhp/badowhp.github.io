@@ -5,186 +5,89 @@
   "prefix": "/de",
   "meta": {
     "homeTitle": "Hipolit Badowski | Platform & DevOps Engineer in Wien",
-    "homeDescription": "Hipolit Badowski unterstützt Teams mit verlässlichen Cloud-Plattformen, nachvollziehbaren Delivery-Pfaden und betreibbaren Produktionssystemen.",
-    "blogTitle": "Technische Notizen | Hipolit Badowski",
-    "blogDescription": "Notizen zu Platform Engineering, Delivery-Systemen, Kubernetes und dem Betrieb von Produktionssystemen.",
+    "homeDescription": "Hipolit Badowski baut verlässliche Cloud-Plattformen, Delivery-Systeme und Produktionsbetrieb für Teams in Wien und Europa.",
     "themeColor": "#071521"
   },
   "skip": "Zum Inhalt springen",
   "nav": {
     "aria": "Hauptnavigation",
     "homeAria": "Startseite von Hipolit Badowski",
-    "role": "Plattform · Delivery · Betrieb",
+    "role": "DevOps Engineer",
     "work": "Arbeit",
-    "build": "Projekt",
-    "method": "Methode",
-    "notes": "Notizen",
-    "contact": "Gespräch beginnen",
+    "project": "Open Source",
+    "contact": "Kontakt",
     "menuOpen": "Navigation öffnen",
     "menuClose": "Navigation schließen",
     "language": "Sprache"
   },
   "hero": {
-    "eyebrow": "Selbstständiger Platform & DevOps Engineer · Wien / Remote",
-    "title": "Sicherer ändern. Ruhiger betreiben.",
-    "lede": "Ich unterstütze Teams dabei, fragile Infrastruktur und Release-Übergaben in verlässliche Plattformen, nachvollziehbare Delivery-Pfade und nutzbaren Betriebskontext zu verwandeln.",
+    "eyebrow": "Selbstständiger DevOps Engineer · Wien / Remote",
+    "title": "Infrastruktur sollte langweilig sein.",
+    "lede": "Ich baue Cloud-Plattformen und Delivery-Systeme, die sich sicher ändern lassen und im Betrieb keine Überraschungen liefern.",
     "primaryAction": "Infrastruktur besprechen",
-    "secondaryAction": "GitHub ansehen",
-    "proofAria": "Zentrale Ergebnisse",
-    "proof": [
-      {
-        "label": "Plattform",
-        "value": "Cloud und Kubernetes mit klarer Verantwortung"
-      },
-      {
-        "label": "Delivery",
-        "value": "Nachvollziehbare Releases mit Rollback-Punkten"
-      },
-      {
-        "label": "Betrieb",
-        "value": "Signale und Runbooks, die unter Druck tragen"
-      }
-    ],
+    "secondaryAction": "GitHub",
+    "expertiseLabel": "Arbeitsfelder",
+    "expertise": "Cloud-Plattformen · CI/CD · Infrastructure as Code · Betrieb",
     "portraitAlt": "Hipolit Badowski arbeitet mit einem Team an einem Tisch mit Laptops",
-    "portraitKicker": "Field Note / Wien",
-    "portraitName": "Hipolit Badowski",
-    "portraitBody": "Ich arbeite nahe an den Menschen, die Produktionsverantwortung tragen—nah genug, um das System zu verbessern, und sorgfältig genug, um es verständlich zu hinterlassen.",
-    "portraitMetaLabel": "Besonders hilfreich für",
-    "portraitMetaValue": "Teams mit Verantwortung für laufende Services"
-  },
-  "fit": {
-    "aria": "Wann die Zusammenarbeit sinnvoll ist",
-    "items": [
-      {
-        "label": "Release-Reibung",
-        "value": "Deployments haben zu viele Übergaben oder zu wenig Sicherheit."
-      },
-      {
-        "label": "Plattform-Drift",
-        "value": "Die Infrastruktur ist über die Regeln hinausgewachsen, die sie verständlich hielten."
-      },
-      {
-        "label": "Betriebslücken",
-        "value": "Der Bereitschaftsdienst zeigt fehlende Signale, Zuständigkeiten oder Recovery-Kontext."
-      }
-    ]
+    "portraitCaption": "Hipolit Badowski · Wien"
   },
   "work": {
-    "eyebrow": "Leistungen",
-    "title": "Drei Wege zu weniger fragiler Produktion.",
-    "intro": "Die sinnvolle Arbeit beginnt dort, wo Unklarheit zum Betriebsrisiko wird: bei der Form der Plattform, dem Release-Pfad und den Informationen im Fehlerfall.",
+    "eyebrow": "Was ich mache",
+    "title": "Bauen. Ausliefern. Betreiben.",
+    "intro": "Drei Teile derselben Aufgabe: Änderungen sicherer machen, ohne das System schwerer zu machen.",
     "items": [
       {
         "index": "01",
-        "label": "Plattform-Fundament",
-        "title": "Der Plattform eine klare, nutzbare Form geben.",
-        "body": "Umgebungsgrenzen, Workload-Verantwortung und den Betriebskontext klären, der Cloud-Infrastruktur verständlich hält.",
-        "facts": [
-          "Kubernetes- und Linux-Betrieb",
-          "AWS- und GCP-Fundamente",
-          "Ownership- und Runbook-Design"
-        ]
+        "label": "Plattformen",
+        "title": "Klare Grundlagen.",
+        "body": "Cloud- und Kubernetes-Umgebungen mit Grenzen, die Teams verstehen und verantworten können.",
+        "tools": "AWS · GCP · Kubernetes · Terraform"
       },
       {
         "index": "02",
-        "label": "Verlässliche Delivery",
-        "title": "Änderungen zu wiederholbaren Releases machen.",
-        "body": "Fragile manuelle Schritte durch prüfbare Workflows, nachvollziehbare Releases und Rollback-Punkte ersetzen, die nicht vom Gedächtnis abhängen.",
-        "facts": [
-          "GitHub Actions und GitLab CI",
-          "Terraform- und GitOps-Workflows",
-          "Release- und Rollback-Design"
-        ]
+        "label": "Delivery",
+        "title": "Releases ohne Theater.",
+        "body": "Nachvollziehbare Pipelines, brauchbare Rollback-Punkte und weniger manuelle Choreografie.",
+        "tools": "GitHub Actions · GitLab CI · GitOps"
       },
       {
         "index": "03",
-        "label": "Betreibbare Systeme",
-        "title": "Den nächsten Vorfall leichter verstehen.",
-        "body": "Signale, Alarme und Betriebsnotizen verbessern, die Fehlerdiagnose unterstützen—ohne ein Theater aus Dashboards aufzubauen.",
-        "facts": [
-          "Prometheus und Grafana",
-          "Logging- und Alert-Review",
-          "Incident-Follow-up und Runbooks"
-        ]
+        "label": "Betrieb",
+        "title": "Weniger Rätselraten.",
+        "body": "Signale, Runbooks und Incident-Follow-up, die helfen, wenn es in Produktion laut wird.",
+        "tools": "Prometheus · Grafana · Linux"
       }
     ]
   },
-  "build": {
-    "eyebrow": "Ausgewähltes Open-Source-Projekt",
-    "title": "Skill Mania: portable Workflows für Coding Agents.",
-    "body": "Ein öffentliches Repository, das wiederverwendbare Agent Skills in einer kanonischen Quelle pflegt und für Codex, Claude Code und GitHub Copilot paketiert.",
-    "facts": [
-      "Portable Agent Skills",
-      "Plugin- und Marketplace-Pakete",
-      "Validierungs- und Release-Checks"
-    ],
-    "actionKicker": "GitHub Repository",
-    "action": "Skill Mania ansehen",
-    "actionPath": "github.com/badowhp/skill-mania"
+  "project": {
+    "eyebrow": "Open Source",
+    "title": "Skill Mania.",
+    "body": "Eine Quelle für Agent Skills, verpackt für Codex, Claude Code und GitHub Copilot.",
+    "action": "Repository ansehen",
+    "path": "github.com/badowhp/skill-mania"
   },
   "method": {
-    "eyebrow": "Arbeitsweise",
-    "title": "Die kleinste Änderung, die echtes Risiko entfernt.",
-    "body": "Infrastrukturarbeit ist dann wertvoll, wenn sie klarere Grenzen, weniger Überraschungspfade und genug Kontext für die nächste sichere Entscheidung hinterlässt.",
-    "stepsAria": "Arbeitsprozess",
-    "steps": [
-      {
-        "index": "01 / Verstehen",
-        "title": "Das System so nachzeichnen, wie es heute läuft.",
-        "body": "Release-Pfad, Verantwortungsgrenzen und Fehlerstellen finden, bevor eine weitere Schicht vorgeschlagen wird."
-      },
-      {
-        "index": "02 / Reduzieren",
-        "title": "Eine sichere, prüfbare Verbesserung umsetzen.",
-        "body": "Zuerst den Pfad vereinfachen; nur Arbeit automatisieren, die wiederholbar sein soll."
-      },
-      {
-        "index": "03 / Kontext lassen",
-        "title": "Die nächste Entscheidung günstiger machen.",
-        "body": "Betriebsnotizen, Rollback-Pfad und offene Fragen dort festhalten, wo das Team sie nutzt."
-      }
-    ]
-  },
-  "notes": {
-    "eyebrow": "Technische Notizen",
-    "title": "Notizen vom Rand des Betriebs.",
-    "intro": "Kurze, praktische Texte über Entscheidungen, die Plattformen leichter veränderbar und Produktion verständlicher machen.",
-    "allAction": "Alle Notizen lesen"
+    "eyebrow": "So arbeite ich",
+    "title": "Verstehen → vereinfachen → dokumentieren.",
+    "body": "Kleine, nachvollziehbare Änderungen. Klarer Rollback. Kontext für das Team."
   },
   "contact": {
     "eyebrow": "Kontakt",
-    "title": "Beginnen wir mit dem System, das sich riskant anfühlt.",
-    "body": "Schicken Sie den aktuellen Stack, die Reibung und das gewünschte Ergebnis. Ich gebe eine direkte Einschätzung, wo ich helfen kann und wo Vorsicht sinnvoll ist.",
-    "contextLabel": "Hilfreicher Kontext",
-    "contextValue": "Aktueller Stack, konkreter Schmerzpunkt und ein praktisches Ziel",
-    "terrainLabel": "Typisches Terrain",
-    "terrainValue": "Cloud-Plattformen, CI/CD, Infrastructure as Code und Betrieb",
+    "title": "Was fühlt sich fragil an?",
+    "body": "Schick mir das Problem. Ich sage direkt, wo ich helfen kann—und wo nicht.",
     "email": "E-Mail",
     "linkedin": "LinkedIn",
     "github": "GitHub"
   },
-  "blog": {
-    "eyebrow": "Technische Notizen",
-    "title": "Field Notes für Menschen, die reale Systeme betreiben.",
-    "intro": "Platform Engineering, Delivery, Kubernetes und die praktische Arbeit, Produktion verständlich zu halten.",
-    "backHome": "Zurück zur Startseite",
-    "backNotes": "Zurück zu allen Notizen",
-    "readTime": "Min. Lesezeit",
-    "feed": "RSS-Feed",
-    "previous": "Vorherige Notiz",
-    "next": "Nächste Notiz",
-    "open": "Notiz lesen"
-  },
   "notFound": {
     "eyebrow": "404 / Route nicht gefunden",
-    "title": "Dieser Pfad führt nirgendwohin.",
-    "body": "Die Adresse ist möglicherweise veraltet oder die Seite ist beim Umbau umgezogen.",
+    "title": "Diese Route führt nirgendwohin.",
+    "body": "Hier gibt es nichts zu debuggen. Die Seite wurde verschoben oder hat nie existiert.",
     "home": "Zur Startseite",
-    "notes": "Technische Notizen lesen",
     "german": "Deutsch"
   },
   "footer": {
     "strapline": "Plattform · Delivery · Betrieb",
-    "location": "Wien, Österreich · Remote verfügbar"
+    "location": "Wien, Österreich · Remote"
   }
 }
