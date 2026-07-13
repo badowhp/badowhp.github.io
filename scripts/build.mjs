@@ -15,7 +15,8 @@ async function loadData(locale) {
     data.locale !== locale
     || !data.languageCode
     || !data.meta?.homeTitle
-    || data.work?.items?.length !== 3
+    || !/^\d{4}-\d{2}-\d{2}$/.test(data.meta?.lastModified)
+    || data.work?.items?.length !== 4
   ) {
     throw new Error(`${filename}: invalid locale data contract`);
   }
@@ -45,10 +46,14 @@ function xmlEscape(value = "") {
     .replaceAll("'", "&apos;");
 }
 
-function renderSitemap() {
-  const entries = ["/", "/de/"];
-  const urls = entries.map((route) => `  <url>
+function renderSitemap(dataByLocale) {
+  const entries = [
+    { route: "/", lastModified: dataByLocale.en.meta.lastModified },
+    { route: "/de/", lastModified: dataByLocale.de.meta.lastModified }
+  ];
+  const urls = entries.map(({ route, lastModified }) => `  <url>
     <loc>${xmlEscape(new URL(route, SITE.url).href)}</loc>
+    <lastmod>${xmlEscape(lastModified)}</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="${xmlEscape(new URL("/", SITE.url).href)}" />
     <xhtml:link rel="alternate" hreflang="de" href="${xmlEscape(new URL("/de/", SITE.url).href)}" />
     <xhtml:link rel="alternate" hreflang="x-default" href="${xmlEscape(new URL("/", SITE.url).href)}" />
@@ -78,10 +83,10 @@ async function build() {
   }
 
   await writeRoute("/404.html", renderNotFound({ data: dataByLocale.en }));
-  await writeRoute("/sitemap.xml", renderSitemap());
+  await writeRoute("/sitemap.xml", renderSitemap(dataByLocale));
   await writeRoute("/robots.txt", `User-agent: *\nAllow: /\n\nSitemap: ${SITE.url}/sitemap.xml\n`);
   await writeRoute("/site.webmanifest", `${JSON.stringify({
-    name: `${SITE.name} — Platform & DevOps Engineer`,
+    name: `${SITE.name} — DevOps & AI Infrastructure Engineer`,
     short_name: SITE.name,
     start_url: "/",
     display: "standalone",

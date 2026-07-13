@@ -51,6 +51,28 @@ const fileSet = new Set(files.map((filename) => path.resolve(filename)));
 const htmlFiles = files.filter((filename) => filename.endsWith(".html"));
 const htmlByRoute = new Map();
 const idsByRoute = new Map();
+const seoExpectations = {
+  "/": {
+    title: "DevOps Engineer Vienna | Hipolit Badowski",
+    heading: "DevOps Engineer in Vienna.",
+    descriptionPhrase: "Vienna-based DevOps engineer",
+    visiblePhrase: "Independent DevOps engineer in Vienna",
+    offerPhrases: ["Agentic AI infrastructure", "private local LLM systems"],
+    lastModified: "2026-07-13",
+    alternateLocale: "de_AT",
+    city: "Vienna"
+  },
+  "/de/": {
+    title: "DevOps Engineer Wien | Hipolit Badowski",
+    heading: "DevOps Engineer in Wien.",
+    descriptionPhrase: "DevOps Engineer Hipolit Badowski in Wien",
+    visiblePhrase: "Selbstständiger DevOps Engineer in Wien",
+    offerPhrases: ["agentische AI-Infrastruktur", "private lokale LLM-Systeme"],
+    lastModified: "2026-07-13",
+    alternateLocale: "en_GB",
+    city: "Vienna"
+  }
+};
 
 for (const filename of htmlFiles) {
   const route = routeForFile(filename);
@@ -84,6 +106,68 @@ for (const [route, html] of htmlByRoute) {
 
   const h1Count = (html.match(/<h1(?:\s|>)/g) || []).length;
   if (h1Count !== 1) errors.push(`${route}: expected one h1, found ${h1Count}`);
+  if (route === "/404.html" && /<link rel="alternate" hreflang=/.test(html)) {
+    errors.push(`${route}: noindex page must not advertise language alternates`);
+  }
+
+  const seoExpectation = seoExpectations[route];
+  if (seoExpectation) {
+    const bodyHtml = html.slice(html.indexOf("<body"));
+    if (!html.includes(`<title>${seoExpectation.title}</title>`)) {
+      errors.push(`${route}: title is not aligned with the local DevOps search target`);
+    }
+    if (!html.includes(`<h1 id="hero-title">${seoExpectation.heading}</h1>`)) {
+      errors.push(`${route}: H1 is not aligned with the local DevOps search target`);
+    }
+    const description = html.match(/<meta name="description" content="([^"]+)">/)?.[1] || "";
+    if (!description.includes(seoExpectation.descriptionPhrase)) {
+      errors.push(`${route}: description is missing the local DevOps search target`);
+    }
+    if (!bodyHtml.includes(seoExpectation.visiblePhrase)) {
+      errors.push(`${route}: visible content is missing the local DevOps search target`);
+    }
+    for (const phrase of seoExpectation.offerPhrases) {
+      if (!bodyHtml.includes(phrase)) errors.push(`${route}: visible content is missing AI offer phrase: ${phrase}`);
+    }
+    const alternateCount = (html.match(/<link rel="alternate" hreflang=/g) || []).length;
+    if (alternateCount !== 3) errors.push(`${route}: expected three language alternate links, found ${alternateCount}`);
+    if (!html.includes(`<meta property="og:locale:alternate" content="${seoExpectation.alternateLocale}">`)) {
+      errors.push(`${route}: missing Open Graph alternate locale`);
+    }
+    if (!html.includes('<meta property="og:image:type" content="image/png">')) {
+      errors.push(`${route}: missing Open Graph image type`);
+    }
+    if (!/<meta name="twitter:image:alt" content="[^"]+">/.test(html)) {
+      errors.push(`${route}: missing Twitter image alt text`);
+    }
+
+    const jsonLd = html.match(/<script type="application\/ld\+json">([^<]+)<\/script>/)?.[1];
+    if (!jsonLd) {
+      errors.push(`${route}: missing JSON-LD`);
+    } else {
+      try {
+        const schema = JSON.parse(jsonLd);
+        const website = schema["@graph"]?.find((entry) => entry["@type"] === "WebSite");
+        const profile = schema["@graph"]?.find((entry) => entry["@type"] === "ProfilePage");
+        const person = profile?.mainEntity;
+        if (website?.alternateName !== "hipo.is-a.dev") {
+          errors.push(`${route}: WebSite schema is missing its alternate name`);
+        }
+        if (
+          profile?.dateModified !== seoExpectation.lastModified
+          || person?.jobTitle !== "DevOps Engineer"
+          || person?.address?.addressLocality !== seoExpectation.city
+          || !person?.description?.includes(seoExpectation.descriptionPhrase)
+          || !person?.knowsAbout?.includes("Agentic AI infrastructure")
+          || !person?.knowsAbout?.includes("Private local LLM systems")
+        ) {
+          errors.push(`${route}: Person schema is not aligned with the local DevOps search target`);
+        }
+      } catch {
+        errors.push(`${route}: JSON-LD is invalid JSON`);
+      }
+    }
+  }
 
   const ids = idsForHtml(html);
   const duplicateIds = ids.filter((id, index) => ids.indexOf(id) !== index);
@@ -152,13 +236,24 @@ for (const required of ["sitemap.xml", "robots.txt", "site.webmanifest", "CNAME"
   if (!fileSet.has(path.join(OUTPUT, required))) errors.push(`missing required output: /${required}`);
 }
 
+const sitemap = await readFile(path.join(OUTPUT, "sitemap.xml"), "utf8");
+for (const [route, expectation] of Object.entries(seoExpectations)) {
+  const canonical = new URL(route, SITE.url).href;
+  const expectedEntry = `<loc>${canonical}</loc>\n    <lastmod>${expectation.lastModified}</lastmod>`;
+  if (!sitemap.includes(expectedEntry)) errors.push(`sitemap.xml: missing accurate lastmod for ${route}`);
+}
+
 if (files.some((filename) => filename.includes(`${path.sep}blog${path.sep}`) || filename.endsWith(".xml") && !filename.endsWith("sitemap.xml"))) {
   errors.push("removed blog or feed output is still present");
 }
 
 const manifest = JSON.parse(await readFile(path.join(OUTPUT, "site.webmanifest"), "utf8"));
-if (manifest.start_url !== "/" || manifest.theme_color !== "#071521") {
-  errors.push("site.webmanifest: invalid start URL or theme color");
+if (
+  manifest.start_url !== "/"
+  || manifest.theme_color !== "#071521"
+  || !manifest.name.includes("DevOps & AI Infrastructure Engineer")
+) {
+  errors.push("site.webmanifest: invalid identity, start URL, or theme color");
 }
 
 const portrait = await stat(path.join(OUTPUT, "assets", "img", "ich.png"));

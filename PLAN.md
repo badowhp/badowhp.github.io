@@ -7,8 +7,8 @@ Turn the existing long-form “operator’s field journal” into an operations 
 ## Information Architecture
 
 1. **Masthead:** identity, Work, Open source, Contact, and EN/DE.
-2. **Hero:** “Infrastructure should be boring,” a concise supporting sentence, email action, GitHub path, portrait, and one compact expertise line.
-3. **Work:** three numbered rows for platforms, delivery, and operations.
+2. **Hero:** the role and location as the H1, “Infrastructure should be boring” in the supporting sentence, email action, GitHub path, portrait, and one compact expertise line.
+3. **Work:** four numbered rows for platforms, delivery, operations, and private AI infrastructure.
 4. **Open source:** one dark Skill Mania band with one verifiable description and repository link.
 5. **Method:** one line — understand, simplify, document — instead of three process panels.
 6. **Contact:** direct email-led close plus LinkedIn and GitHub.
@@ -27,7 +27,7 @@ The fit strip, proof grid, portrait biography, long method section, Notes previe
 ## Responsive and Interaction States
 
 - Desktop uses a two-column hero; mobile keeps copy before portrait.
-- Work rows move from a compact three-part grid to one reading column without changing DOM order.
+- Work rows move from a compact multi-column grid to one reading column without changing DOM order.
 - Long German words, email, and repository paths wrap safely.
 - Navigation closes on Escape, outside click, link selection, and desktop resize; focus returns to the menu button.
 - Hover, focus-visible, current-language, menu-open, and reduced-motion states remain visible.

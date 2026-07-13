@@ -4,15 +4,16 @@
   "languageName": "Deutsch",
   "prefix": "/de",
   "meta": {
-    "homeTitle": "Hipolit Badowski | Platform & DevOps Engineer in Wien",
-    "homeDescription": "Hipolit Badowski baut verlässliche Cloud-Plattformen, Delivery-Systeme und Produktionsbetrieb für Teams in Wien und Europa.",
+    "homeTitle": "DevOps Engineer Wien | Hipolit Badowski",
+    "homeDescription": "DevOps Engineer Hipolit Badowski in Wien baut Cloud- und CI/CD-Plattformen, agentische AI-Infrastruktur und private lokale LLM-Systeme.",
+    "lastModified": "2026-07-13",
     "themeColor": "#071521"
   },
   "skip": "Zum Inhalt springen",
   "nav": {
     "aria": "Hauptnavigation",
     "homeAria": "Startseite von Hipolit Badowski",
-    "role": "DevOps Engineer",
+    "role": "DevOps Engineer · Wien",
     "work": "Arbeit",
     "project": "Open Source",
     "contact": "Kontakt",
@@ -21,20 +22,20 @@
     "language": "Sprache"
   },
   "hero": {
-    "eyebrow": "Selbstständiger DevOps Engineer · Wien / Remote",
-    "title": "Infrastruktur sollte langweilig sein.",
-    "lede": "Ich baue Cloud-Plattformen und Delivery-Systeme, die sich sicher ändern lassen und im Betrieb keine Überraschungen liefern.",
+    "eyebrow": "Selbstständiger DevOps Engineer in Wien · Remote in Europa",
+    "title": "DevOps Engineer in Wien.",
+    "lede": "Infrastruktur sollte langweilig sein. Ich baue Cloud-Plattformen, agentische AI-Infrastruktur und private lokale LLM-Systeme.",
     "primaryAction": "Infrastruktur besprechen",
     "secondaryAction": "GitHub",
     "expertiseLabel": "Arbeitsfelder",
-    "expertise": "Cloud-Plattformen · CI/CD · Infrastructure as Code · Betrieb",
+    "expertise": "Cloud-Plattformen · CI/CD · Agentische AI-Infrastruktur · Private lokale LLMs",
     "portraitAlt": "Hipolit Badowski arbeitet mit einem Team an einem Tisch mit Laptops",
     "portraitCaption": "Hipolit Badowski · Wien"
   },
   "work": {
     "eyebrow": "Was ich mache",
-    "title": "Bauen. Ausliefern. Betreiben.",
-    "intro": "Drei Teile derselben Aufgabe: Änderungen sicherer machen, ohne das System schwerer zu machen.",
+    "title": "DevOps- und AI-Infrastruktur, von Anfang bis Betrieb.",
+    "intro": "Von Cloud-Grundlagen bis Production AI: Änderungen sicherer machen, ohne das System schwerer zu machen.",
     "items": [
       {
         "index": "01",
@@ -56,6 +57,13 @@
         "title": "Weniger Rätselraten.",
         "body": "Signale, Runbooks und Incident-Follow-up, die helfen, wenn es in Produktion laut wird.",
         "tools": "Prometheus · Grafana · Linux"
+      },
+      {
+        "index": "04",
+        "label": "AI-Infrastruktur",
+        "title": "Privat per Design.",
+        "body": "Agent Runtimes und private lokale LLM-Systeme für kontrollierte Umgebungen, in denen Modelle, Tools und Daten vor Ort bleiben sollen.",
+        "tools": "Lokale Inferenz · Agent Runtimes · Model Serving · AI Observability"
       }
     ]
   },
@@ -87,7 +95,7 @@
     "german": "Deutsch"
   },
   "footer": {
-    "strapline": "Plattform · Delivery · Betrieb",
+    "strapline": "Plattform · Delivery · AI-Infrastruktur · Betrieb",
     "location": "Wien, Österreich · Remote"
   }
 }

@@ -4,15 +4,16 @@
   "languageName": "English",
   "prefix": "",
   "meta": {
-    "homeTitle": "Hipolit Badowski | Platform & DevOps Engineer in Vienna",
-    "homeDescription": "Hipolit Badowski builds dependable cloud platforms, delivery systems, and production operations for teams in Vienna and across Europe.",
+    "homeTitle": "DevOps Engineer Vienna | Hipolit Badowski",
+    "homeDescription": "Vienna-based DevOps engineer Hipolit Badowski builds cloud and CI/CD platforms, agentic AI infrastructure, and private local LLM deployments.",
+    "lastModified": "2026-07-13",
     "themeColor": "#071521"
   },
   "skip": "Skip to content",
   "nav": {
     "aria": "Primary navigation",
     "homeAria": "Hipolit Badowski home",
-    "role": "DevOps engineer",
+    "role": "DevOps Engineer · Vienna",
     "work": "Work",
     "project": "Open source",
     "contact": "Contact",
@@ -21,20 +22,20 @@
     "language": "Language"
   },
   "hero": {
-    "eyebrow": "Independent DevOps engineer · Vienna / remote",
-    "title": "Infrastructure should be boring.",
-    "lede": "I build cloud platforms and delivery systems that are easy to change, hard to misuse, and calm to operate.",
+    "eyebrow": "Independent DevOps engineer in Vienna · Remote across Europe",
+    "title": "DevOps Engineer in Vienna.",
+    "lede": "Infrastructure should be boring. I build cloud platforms, agentic AI infrastructure, and private local LLM systems.",
     "primaryAction": "Let's talk infrastructure",
     "secondaryAction": "GitHub",
     "expertiseLabel": "Working across",
-    "expertise": "Cloud platforms · CI/CD · Infrastructure as code · Operations",
+    "expertise": "Cloud platforms · CI/CD · Agentic AI infrastructure · Private local LLMs",
     "portraitAlt": "Hipolit Badowski working with a team at a table with laptops",
     "portraitCaption": "Hipolit Badowski · Vienna"
   },
   "work": {
     "eyebrow": "What I do",
-    "title": "Build. Ship. Operate.",
-    "intro": "Three parts of the same job: make change safer without making the system heavier.",
+    "title": "DevOps and AI infrastructure, end to end.",
+    "intro": "From cloud foundations to production AI: make change safer without making the system heavier.",
     "items": [
       {
         "index": "01",
@@ -56,6 +57,13 @@
         "title": "Less guesswork.",
         "body": "Signals, runbooks, and incident follow-up that help when production gets loud.",
         "tools": "Prometheus · Grafana · Linux"
+      },
+      {
+        "index": "04",
+        "label": "AI infrastructure",
+        "title": "Private by design.",
+        "body": "Agent runtimes and private local LLM systems for controlled environments where models, tools, and data need to stay close.",
+        "tools": "Local inference · Agent runtimes · Model serving · AI observability"
       }
     ]
   },
@@ -87,7 +95,7 @@
     "german": "Deutsch"
   },
   "footer": {
-    "strapline": "Platform · Delivery · Operations",
+    "strapline": "Platform · Delivery · AI Infrastructure · Operations",
     "location": "Vienna, Austria · Working remotely"
   }
 }

@@ -27,6 +27,7 @@ function schemaForHome(data, path) {
         "@id": `${SITE.url}/#website`,
         url: `${SITE.url}/`,
         name: SITE.name,
+        alternateName: "hipo.is-a.dev",
         inLanguage: ["en-GB", "de-AT"]
       },
       {
@@ -35,13 +36,15 @@ function schemaForHome(data, path) {
         url: absolute(path),
         name: data.meta.homeTitle,
         description: data.meta.homeDescription,
+        dateModified: data.meta.lastModified,
         inLanguage: data.languageCode,
         isPartOf: { "@id": `${SITE.url}/#website` },
         mainEntity: {
           "@type": "Person",
           "@id": `${SITE.url}/#person`,
           name: SITE.name,
-          jobTitle: "Platform and DevOps Engineer",
+          jobTitle: "DevOps Engineer",
+          description: data.meta.homeDescription,
           image: absolute(SITE.image),
           url: `${SITE.url}/`,
           email: SITE.emailHref,
@@ -52,7 +55,11 @@ function schemaForHome(data, path) {
           },
           sameAs: [SITE.github, SITE.linkedin],
           knowsAbout: [
+            "DevOps engineering",
             "Platform engineering",
+            "Agentic AI infrastructure",
+            "Private local LLM systems",
+            "Local LLM deployment",
             "Kubernetes",
             "Cloud infrastructure",
             "Continuous delivery",
@@ -93,7 +100,8 @@ function layout({
   ].join("; ");
   const alternateEn = alternatePaths?.en;
   const alternateDe = alternatePaths?.de;
-  const xDefault = alternateEn || "/";
+  const xDefault = alternateEn;
+  const alternateLocale = data.locale === "de" ? "en_GB" : "de_AT";
 
   return `<!doctype html>
 <html lang="${escapeHtml(data.languageCode)}">
@@ -111,14 +119,16 @@ function layout({
   <link rel="canonical" href="${absolute(path)}">
   ${alternateEn ? `<link rel="alternate" hreflang="en" href="${absolute(alternateEn)}">` : ""}
   ${alternateDe ? `<link rel="alternate" hreflang="de" href="${absolute(alternateDe)}">` : ""}
-  <link rel="alternate" hreflang="x-default" href="${absolute(xDefault)}">
+  ${xDefault ? `<link rel="alternate" hreflang="x-default" href="${absolute(xDefault)}">` : ""}
   <meta property="og:site_name" content="${SITE.name}">
   <meta property="og:title" content="${escapeHtml(title)}">
   <meta property="og:description" content="${escapeHtml(description)}">
   <meta property="og:url" content="${absolute(path)}">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="${data.languageCode.replace("-", "_")}">
+  ${alternatePaths ? `<meta property="og:locale:alternate" content="${alternateLocale}">` : ""}
   <meta property="og:image" content="${absolute(SITE.image)}">
+  <meta property="og:image:type" content="image/png">
   <meta property="og:image:width" content="874">
   <meta property="og:image:height" content="952">
   <meta property="og:image:alt" content="${escapeHtml(data.hero.portraitAlt)}">
@@ -126,6 +136,7 @@ function layout({
   <meta name="twitter:title" content="${escapeHtml(title)}">
   <meta name="twitter:description" content="${escapeHtml(description)}">
   <meta name="twitter:image" content="${absolute(SITE.image)}">
+  <meta name="twitter:image:alt" content="${escapeHtml(data.hero.portraitAlt)}">
   <link rel="icon" href="${SITE.logo}" type="image/svg+xml">
   <link rel="manifest" href="/site.webmanifest">
   <link rel="stylesheet" href="/assets/css/main.css">

@@ -1,6 +1,6 @@
 # hipo.is-a.dev
 
-A compact, bilingual portfolio for Hipolit Badowski, built as a dependency-free static site for GitHub Pages.
+A compact, bilingual portfolio for Hipolit Badowski, a Vienna-based DevOps engineer working across cloud platforms, agentic AI infrastructure, and private local LLM systems.
 
 ## Architecture
 
@@ -52,6 +52,8 @@ English is the default language; German is a first-class alternate.
 | Not found | `/404.html` | — |
 
 The build also emits `sitemap.xml`, `robots.txt`, `site.webmanifest`, `CNAME`, and `.nojekyll`. GitHub Actions uploads only `_site/` and deploys it through the `github-pages` environment.
+
+After a significant public-content change, verify `/`, `/de/`, `robots.txt`, and `sitemap.xml` in production. Submit `https://hipo.is-a.dev/sitemap.xml` in Google Search Console and request recrawling for the two home URLs through URL Inspection. Search Console ownership and indexing requests remain account-controlled operations; they are not automated by this repository.
 
 ## Design and Content Rules
 

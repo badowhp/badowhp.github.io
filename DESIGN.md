@@ -5,7 +5,7 @@
 - **Creative north star:** The operations brief — sparse, blunt, and credible. The page should feel like a senior engineer wrote down only what a technical lead needs to know before starting a conversation. The real portrait is the only decorative asset; everything else earns its place through hierarchy or proof.
 - **Register:** Brand / portfolio. The home page is the product. The German route is an equal localized version; the 404 page is the only supporting surface.
 - **Audience and primary job:** Engineering leaders, CTOs, and senior developers responsible for live cloud systems. In one short scroll they should understand what Hipolit does, see one verifiable public build, and know how to contact him.
-- **Tone and density:** Confident, concise, practical, and lightly irreverent. Prefer short assertions over consulting language. The first viewport carries one memorable position — infrastructure should be boring — plus one explanation and one contact action.
+- **Tone and density:** Confident, concise, practical, and lightly irreverent. Prefer short assertions over consulting language. The first viewport names the role and location, carries one memorable position — infrastructure should be boring — plus one explanation and one contact action.
 - **Provisional assumptions:** The main audience is based in Vienna or works with remote European teams. The desired inquiry concerns cloud platforms, delivery, infrastructure as code, or production operations. English is the default language and German is a complete alternate.
 - **Technology:** A dependency-free Node static build renders localized JSON into HTML. CSS and small progressive-enhancement JavaScript are hand-authored. No third-party fonts, client frameworks, analytics, blog engine, feeds, Markdown, or runtime content requests. GitHub Actions builds and deploys the `_site/` artifact to GitHub Pages.
 - **Source of truth:** `src/data/site.en.json` and `src/data/site.de.json` for localized copy; `src/templates.mjs` and `scripts/build.mjs` for rendering; `assets/css/main.css` for tokens/components; `assets/js/main.js` for enhancement; `assets/img/ich.png` and `assets/logo-hipo.svg` for brand media; `README.md` and `.github/workflows/deploy-pages.yml` for publishing.
@@ -22,9 +22,9 @@
 ## 3. Typography
 
 - **Body and headings:** local system sans (`--font-sans`), 16px base, body line-height 1.55. No remote fonts.
-- **Hero:** heavy, tight, and sentence case. Desktop H1 is 5.5–6.6rem with a 0.88–0.94 line-height; narrow mobile is 3.25rem. Headings use short lines and no ornamental emphasis.
+- **Hero:** heavy, tight, and sentence case. Desktop H1 is 5.5–6.6rem with a 0.88–0.94 line-height; narrow mobile is 3.25rem. The role-and-location H1 stays below six words. Headings use short lines and no ornamental emphasis.
 - **Technical labels:** local monospace (`--font-mono`), uppercase, 0.7–0.76rem, used only for section labels, numbers, and compact metadata.
-- **Content limits:** body copy stays below 60ch; hero heading below 9ch; hero lede below 52ch. Controls are at least 44px high. German expansion, email addresses, and repository paths wrap safely.
+- **Content limits:** body copy stays below 60ch; the hero heading stays below 32 characters and six words; hero lede stays below 52ch. Controls are at least 44px high. German expansion, email addresses, and repository paths wrap safely.
 
 ## 4. Spacing, Depth, and Motion
 
@@ -37,8 +37,8 @@
 ## 5. Components and Content
 
 - **Navigation:** compact masthead with mark/name, three destinations — Work, Open source, Contact — EN/DE switch, and no separate header CTA. Mobile uses a labelled button with `aria-expanded` and `aria-controls`; Escape, outside click, link selection, and desktop resize close it; focus returns to the trigger. Targets are at least 44px.
-- **Hero:** eyebrow, the line “Infrastructure should be boring.” / “Infrastruktur sollte langweilig sein.”, one short explanation, one email action, one GitHub text link, and the real portrait. A single compact expertise line may follow; do not add a proof grid or portrait biography.
-- **Work:** exactly three flat numbered rows: Platforms, Delivery, Operations. Each uses one two-to-five-word result, one sentence, and a short tool line. No bullets, badges, or repeated benefit copy.
+- **Hero:** eyebrow, “DevOps Engineer in Vienna.” / “DevOps Engineer in Wien.” as the H1, the line “Infrastructure should be boring.” / “Infrastruktur sollte langweilig sein.” in one short explanation, one email action, one GitHub text link, and the real portrait. A single compact expertise line may follow; do not add a proof grid or portrait biography.
+- **Work:** exactly four flat numbered rows: Platforms, Delivery, Operations, and AI Infrastructure. Each uses one short result, one sentence, and a compact tool line. The AI row covers agent runtimes and private local LLM systems without implying model training or unsupported scale. No bullets, badges, or repeated benefit copy.
 - **Open source:** one full-width dark band for Skill Mania. Describe only repository-verifiable scope in one sentence and provide one GitHub action. Do not imply client work.
 - **Method:** one compact line — understand, simplify, document — with one sentence of support. It is not a separate case-study section or three-card process.
 - **Contact:** a direct closing statement, one short expectation-setting sentence, email, LinkedIn, and GitHub. Do not ask for a stack inventory or mimic a form.
