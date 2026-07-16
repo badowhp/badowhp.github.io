@@ -6,7 +6,7 @@ export const SITE = Object.freeze({
   github: "https://github.com/badowhp",
   linkedin: "https://www.linkedin.com/in/hipolit-badowski",
   project: "https://github.com/badowhp/skill-mania",
-  image: "/assets/img/ich.png",
+  image: "/assets/img/ich.jpg",
   logo: "/assets/logo-hipo.svg"
 });
 

@@ -8,7 +8,7 @@ A compact, bilingual portfolio for Hipolit Badowski, a Vienna-based DevOps engin
 - `src/templates.mjs` owns the shared home, navigation, footer, metadata, structured data, and 404 templates.
 - `scripts/build.mjs` validates content and writes the deployable `_site/` artifact.
 - `scripts/check.mjs` validates metadata, language alternates, internal links, assets, headings, CSP rules, the deliberately small route set, and publishing files.
-- `assets/css/main.css`, `assets/js/main.js`, `assets/logo-hipo.svg`, and `assets/img/ich.png` are the only public design/runtime sources.
+- `assets/css/main.css`, `assets/js/main.js`, `assets/logo-hipo.svg`, and `assets/img/ich.jpg` are the only public design/runtime sources.
 
 There is no runtime framework, blog, content feed, remote font, analytics, third-party script, or client-side translation.
 

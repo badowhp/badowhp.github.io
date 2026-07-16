@@ -134,7 +134,7 @@ for (const [route, html] of htmlByRoute) {
     if (!html.includes(`<meta property="og:locale:alternate" content="${seoExpectation.alternateLocale}">`)) {
       errors.push(`${route}: missing Open Graph alternate locale`);
     }
-    if (!html.includes('<meta property="og:image:type" content="image/png">')) {
+    if (!html.includes('<meta property="og:image:type" content="image/jpeg">')) {
       errors.push(`${route}: missing Open Graph image type`);
     }
     if (!/<meta name="twitter:image:alt" content="[^"]+">/.test(html)) {
@@ -256,8 +256,8 @@ if (
   errors.push("site.webmanifest: invalid identity, start URL, or theme color");
 }
 
-const portrait = await stat(path.join(OUTPUT, "assets", "img", "ich.png"));
-if (portrait.size < 100_000) errors.push("portrait asset looks unexpectedly small");
+const portrait = await stat(path.join(OUTPUT, "assets", "img", "ich.jpg"));
+if (portrait.size < 30_000) errors.push("portrait asset looks unexpectedly small");
 
 if (errors.length) {
   process.stderr.write(`Site checks failed (${errors.length}):\n- ${errors.join("\n- ")}\n`);

@@ -8,9 +8,9 @@
 - **Tone and density:** Confident, concise, practical, and lightly irreverent. Prefer short assertions over consulting language. The first viewport names the role and location, carries one memorable position — infrastructure should be boring — plus one explanation and one contact action.
 - **Provisional assumptions:** The main audience is based in Vienna or works with remote European teams. The desired inquiry concerns cloud platforms, delivery, infrastructure as code, or production operations. English is the default language and German is a complete alternate.
 - **Technology:** A dependency-free Node static build renders localized JSON into HTML. CSS and small progressive-enhancement JavaScript are hand-authored. No third-party fonts, client frameworks, analytics, blog engine, feeds, Markdown, or runtime content requests. GitHub Actions builds and deploys the `_site/` artifact to GitHub Pages.
-- **Source of truth:** `src/data/site.en.json` and `src/data/site.de.json` for localized copy; `src/templates.mjs` and `scripts/build.mjs` for rendering; `assets/css/main.css` for tokens/components; `assets/js/main.js` for enhancement; `assets/img/ich.png` and `assets/logo-hipo.svg` for brand media; `README.md` and `.github/workflows/deploy-pages.yml` for publishing.
+- **Source of truth:** `src/data/site.en.json` and `src/data/site.de.json` for localized copy; `src/templates.mjs` and `scripts/build.mjs` for rendering; `assets/css/main.css` for tokens/components; `assets/js/main.js` for enhancement; `assets/img/ich.jpg` and `assets/logo-hipo.svg` for brand media; `README.md` and `.github/workflows/deploy-pages.yml` for publishing.
 - **Reference direction:** editorial engineering portfolios with the restraint of a printed technical brief. Borrow strong type, evidence, and direct contact paths—not terminal styling, fabricated metrics, or a résumé timeline. **Anti-references:** neon hacker aesthetics, fake dashboards, logo/tool walls, generic agency gradients, card grids, padded case studies, and unsupported scale claims.
-- **Freshness:** Revised 2026-07-13 for the compact portfolio direction and removal of the Notes/blog feature.
+- **Freshness:** Revised 2026-07-16 for the cleaned portrait asset (`ich.jpg`) and hero eyebrow wrap rule; 2026-07-13 for the compact portfolio direction and removal of the Notes/blog feature.
 
 ## 2. Colors
 
@@ -32,7 +32,7 @@
 - **Depth:** flat surfaces divided by 1px rules. The portrait has a narrow border and small radius. The open-source band and closing contact area are the only inverse surfaces. No cards, nested panels, or decorative shadows.
 - **Radius:** 4px for controls and portrait. Avoid pills.
 - **Motion:** 160ms color, opacity, and small arrow movement only. No scroll reveals, background animation, or hover lift. `prefers-reduced-motion` removes smooth scrolling and transitions.
-- **Media:** show `assets/img/ich.png` without filters, coordinate overlays, or résumé caption cards. Keep the face visible at every breakpoint and reserve dimensions to prevent layout shift.
+- **Media:** show `assets/img/ich.jpg` (cropped clean of source letterbox bars, optimized JPEG) without filters, coordinate overlays, or résumé caption cards. Keep the face visible at every breakpoint and reserve dimensions to prevent layout shift.
 
 ## 5. Components and Content
 

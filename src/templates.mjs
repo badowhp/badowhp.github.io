@@ -14,6 +14,13 @@ function absolute(path) {
   return new URL(path, SITE.url).href;
 }
 
+function phraseHtml(value) {
+  return String(value)
+    .split(" · ")
+    .map((part) => `<span class="phrase">${escapeHtml(part)}</span>`)
+    .join("&#160;· ");
+}
+
 function safeJson(value) {
   return JSON.stringify(value).replaceAll("<", "\\u003c");
 }
@@ -128,9 +135,9 @@ function layout({
   <meta property="og:locale" content="${data.languageCode.replace("-", "_")}">
   ${alternatePaths ? `<meta property="og:locale:alternate" content="${alternateLocale}">` : ""}
   <meta property="og:image" content="${absolute(SITE.image)}">
-  <meta property="og:image:type" content="image/png">
-  <meta property="og:image:width" content="874">
-  <meta property="og:image:height" content="952">
+  <meta property="og:image:type" content="image/jpeg">
+  <meta property="og:image:width" content="841">
+  <meta property="og:image:height" content="897">
   <meta property="og:image:alt" content="${escapeHtml(data.hero.portraitAlt)}">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="${escapeHtml(title)}">
@@ -241,7 +248,7 @@ export function renderHome({ data, alternatePaths }) {
     <section class="hero" aria-labelledby="hero-title">
       <div class="container hero-grid">
         <div class="hero-copy">
-          <p class="eyebrow">${escapeHtml(data.hero.eyebrow)}</p>
+          <p class="eyebrow">${phraseHtml(data.hero.eyebrow)}</p>
           <h1 id="hero-title">${escapeHtml(data.hero.title)}</h1>
           <p class="hero-lede">${escapeHtml(data.hero.lede)}</p>
           <div class="hero-actions">
@@ -254,7 +261,7 @@ export function renderHome({ data, alternatePaths }) {
           </p>
         </div>
         <figure class="hero-portrait">
-          <img src="${SITE.image}" alt="${escapeHtml(data.hero.portraitAlt)}" width="874" height="952" fetchpriority="high">
+          <img src="${SITE.image}" alt="${escapeHtml(data.hero.portraitAlt)}" width="841" height="897" fetchpriority="high">
           <figcaption>${escapeHtml(data.hero.portraitCaption)}</figcaption>
         </figure>
       </div>

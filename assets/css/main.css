@@ -153,6 +153,11 @@ p {
   letter-spacing: .06em;
   line-height: 1.35;
   text-transform: uppercase;
+  text-wrap: balance;
+}
+
+.phrase {
+  white-space: nowrap;
 }
 
 .button {
