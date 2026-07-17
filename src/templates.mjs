@@ -316,7 +316,7 @@ export function renderHome({ data, alternatePaths }) {
         </div>
         <div class="contact-links">
           <a href="${SITE.emailHref}"><span>${escapeHtml(data.contact.email)}</span><strong>${SITE.email}</strong><i aria-hidden="true">→</i></a>
-          <a href="${SITE.linkedin}" target="_blank" rel="noopener noreferrer"><span>${escapeHtml(data.contact.linkedin)}</span><strong>hipolit-badowski</strong><i aria-hidden="true">↗</i></a>
+          <a href="${SITE.linkedin}" target="_blank" rel="noopener noreferrer"><span>${escapeHtml(data.contact.linkedin)}</span><strong>hipolitb</strong><i aria-hidden="true">↗</i></a>
           <a href="${SITE.github}" target="_blank" rel="noopener noreferrer"><span>${escapeHtml(data.contact.github)}</span><strong>badowhp</strong><i aria-hidden="true">↗</i></a>
         </div>
       </div>

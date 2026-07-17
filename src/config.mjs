@@ -4,7 +4,7 @@ export const SITE = Object.freeze({
   email: "badowhp@gmail.com",
   emailHref: "mailto:badowhp@gmail.com",
   github: "https://github.com/badowhp",
-  linkedin: "https://www.linkedin.com/in/hipolit-badowski",
+  linkedin: "https://www.linkedin.com/in/hipolitb/",
   project: "https://github.com/badowhp/skill-mania",
   image: "/assets/img/ich.jpg",
   logo: "/assets/logo-hipo.svg"
