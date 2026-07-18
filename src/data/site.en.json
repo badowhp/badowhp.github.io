@@ -5,8 +5,8 @@
   "prefix": "",
   "meta": {
     "homeTitle": "DevOps Engineer Vienna | Hipolit Badowski",
-    "homeDescription": "Vienna-based DevOps engineer Hipolit Badowski builds cloud and CI/CD platforms, agentic AI infrastructure, and private local LLM deployments.",
-    "lastModified": "2026-07-13",
+    "homeDescription": "Infrastructure should be boring. Hipolit Badowski is a Vienna-based DevOps engineer building cloud platforms, agentic AI infrastructure, and private local LLMs.",
+    "lastModified": "2026-07-17",
     "themeColor": "#071521"
   },
   "skip": "Skip to content",
@@ -15,7 +15,8 @@
     "homeAria": "Hipolit Badowski home",
     "role": "DevOps Engineer · Vienna",
     "work": "Work",
-    "project": "Open source",
+    "project": "Building",
+    "lab": "Lab",
     "contact": "Contact",
     "menuOpen": "Open navigation",
     "menuClose": "Close navigation",
@@ -24,7 +25,7 @@
   "hero": {
     "eyebrow": "Independent DevOps engineer in Vienna · Remote across Europe",
     "title": "DevOps Engineer in Vienna.",
-    "lede": "Infrastructure should be boring. I build cloud platforms, agentic AI infrastructure, and private local LLM systems.",
+    "lede": "Infrastructure should be boring. I build cloud platforms, agentic AI infrastructure, and private local LLM systems that stay boring on purpose.",
     "primaryAction": "Let's talk infrastructure",
     "secondaryAction": "GitHub",
     "expertiseLabel": "Working across",
@@ -86,6 +87,38 @@
     "email": "Email",
     "linkedin": "LinkedIn",
     "github": "GitHub"
+  },
+  "lab": {
+    "meta": {
+      "title": "Lab — AI experiments | Hipolit Badowski",
+      "description": "Progress log from a Vienna DevOps engineer using AI beyond infrastructure: RACCOON FPS (a Godot immersive sim), Blender assets over MCP, and the novel NEONFEHLER on Amazon.",
+      "lastModified": "2026-07-17"
+    },
+    "eyebrow": "Lab",
+    "title": "Experiments, in progress.",
+    "intro": "What happens when I point the same AI tooling I trust in production at things I have no business building: a cyber-noir shooter, 3D assets, and a novel. I'll post progress here as each one moves.",
+    "backLabel": "Back to home",
+    "entries": [
+      {
+        "slug": "ai-outside-infrastructure",
+        "date": "2026-07-17",
+        "dateLabel": "17 July 2026",
+        "title": "Pointing AI at things that aren't infrastructure",
+        "tags": ["AI", "Godot", "Blender", "Writing"],
+        "sections": [
+          { "body": "My day job is making infrastructure boring: predictable, reviewable, calm. Off the clock I've been doing the opposite, pointing the same AI tooling at a game engine, a 3D pipeline, and a manuscript. Three domains where I'm not an expert. The surprise was how much of the infrastructure mindset carried over, and how much of it I package back into my skill-mania repo as I go." },
+          { "heading": "RACCOON FPS, in Godot", "body": "RACCOON FPS is the big one: a cyber-noir immersive sim in the lineage of Deus Ex, Quake, and the early Elder Scrolls games. One raccoon, a city full of secrets, augmentations you slot in as you move. AI sits in the loop for code and iteration, but the point was never that a model writes GDScript. It's that the production habits still apply: review every change, keep a state you can roll back to, don't ship what you can't explain. A language model is a fast, confident junior. It moves quickly, and it's wrong with total conviction, so the human stays the reviewer. The two shots below sit a few weeks apart: an emoji-placeholder menu, then a 3D cyber-noir rebuild on Godot 4.7.", "images": [
+            { "src": "/assets/img/raccoon-fps.jpg", "alt": "Early RACCOON FPS menu with emoji level icons and a Start Game button", "width": 1200, "height": 714, "caption": "RACCOON FPS · where it started", "variant": "wide" },
+            { "src": "/assets/img/raccoon-fps-v02.jpg", "alt": "RACCOON FPS v0.2 alpha: a 3D cyber-noir main menu with a rendered raccoon standing in a dark city", "width": 1200, "height": 714, "caption": "RACCOON FPS · v0.2 alpha, Godot 4.7", "variant": "wide" }
+          ] },
+          { "heading": "Assets in Blender, driven over MCP", "body": "The 3D is where AI earns its place. I drive Blender over MCP, so the model can pose, render, and export game assets while I art-direct instead of pushing every vertex. It behaves like any generated artifact: great for a first pass, still dependent on a human deciding what's actually good. Same tradeoff as generated infrastructure code, only this time the output is the raccoon." },
+          { "heading": "NEONFEHLER, on Amazon", "body": "The third one leaves the terminal entirely. I'm publishing a novel on Amazon: NEONFEHLER, an absurd, comic techno-fantasy. AI helped draft the book and shape its cover; it isn't the author. Same rule as the code: useful right up until you stop editing.", "images": [
+            { "src": "/assets/img/neonfehler-cover.jpg", "alt": "Cover of NEONFEHLER by Hipolit Badowski: a neon-glitch black cat with green eyes", "width": 800, "height": 1200, "caption": "NEONFEHLER · cover", "variant": "cover" }
+          ] },
+          { "heading": "What actually transfers", "body": "None of this is my profession, and that's the point. What moves from infrastructure to creative work isn't a tool — it's the discipline: small steps, a human on review, a boring and reproducible process that holds whether the output is a deploy, a level, or a paragraph. What survives becomes a skill in my skill-mania repo, and I'll post progress on each of these as it moves. More soon." }
+        ]
+      }
+    ]
   },
   "notFound": {
     "eyebrow": "404 / Route not found",

@@ -1,5 +1,5 @@
 import { createHash } from "node:crypto";
-import { SITE, homePath } from "./config.mjs";
+import { SITE, homePath, labPath } from "./config.mjs";
 
 export function escapeHtml(value = "") {
   return String(value)
@@ -72,9 +72,63 @@ function schemaForHome(data, path) {
             "Continuous delivery",
             "Infrastructure as code",
             "Production operations"
-          ]
+          ],
+          knowsLanguage: ["English", "German"]
         }
+      },
+      {
+        "@type": "SoftwareSourceCode",
+        "@id": `${SITE.project}#software`,
+        name: "Skill Mania",
+        description: data.project.body,
+        codeRepository: SITE.project,
+        url: SITE.project,
+        author: { "@id": `${SITE.url}/#person` },
+        keywords: ["AI agent skills", "Codex", "Claude Code", "GitHub Copilot"]
       }
+    ]
+  };
+}
+
+function schemaForLab(data, path) {
+  const url = absolute(path);
+  return {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "@id": `${SITE.url}/#website`,
+        url: `${SITE.url}/`,
+        name: SITE.name,
+        alternateName: "hipo.is-a.dev",
+        inLanguage: ["en-GB", "de-AT"]
+      },
+      {
+        "@type": "CollectionPage",
+        "@id": `${url}#lab`,
+        url,
+        name: data.lab.meta.title,
+        description: data.lab.meta.description,
+        inLanguage: data.languageCode,
+        dateModified: data.lab.meta.lastModified,
+        isPartOf: { "@id": `${SITE.url}/#website` },
+        about: { "@id": `${SITE.url}/#person` }
+      },
+      ...data.lab.entries.map((entry) => ({
+        "@type": "Article",
+        "@id": `${url}#${entry.slug}`,
+        headline: entry.title,
+        datePublished: entry.date,
+        dateModified: entry.date,
+        inLanguage: data.languageCode,
+        author: { "@id": `${SITE.url}/#person` },
+        publisher: { "@id": `${SITE.url}/#person` },
+        keywords: entry.tags.join(", "),
+        articleSection: "Lab",
+        mainEntityOfPage: url,
+        url,
+        isPartOf: { "@id": `${url}#lab` }
+      }))
     ]
   };
 }
@@ -162,16 +216,21 @@ function layout({
 
 function navLinks(data, path, mobile = false) {
   const home = homePath(data.locale);
+  const lab = labPath(data.locale);
   const isHome = path === home;
   const items = [
-    ["work", data.nav.work],
-    ["project", data.nav.project],
-    ["contact", data.nav.contact]
+    { id: "work", label: data.nav.work, href: `${isHome ? "" : home}#work`, section: true },
+    { id: "project", label: data.nav.project, href: `${isHome ? "" : home}#project`, section: true },
+    { id: "lab", label: data.nav.lab, href: lab, section: false, current: path === lab },
+    { id: "contact", label: data.nav.contact, href: `${isHome ? "" : home}#contact`, section: true }
   ];
 
-  return items.map(([id, label]) => {
+  return items.map((item) => {
     const className = mobile ? "mobile-menu-link" : "site-nav-link";
-    return `<a class="${className}" href="${isHome ? "" : home}#${id}" data-section-link="${id}">${escapeHtml(label)}</a>`;
+    const active = item.current ? " is-active" : "";
+    const sectionAttr = item.section ? ` data-section-link="${item.id}"` : "";
+    const current = item.current ? ' aria-current="page"' : "";
+    return `<a class="${className}${active}" href="${item.href}"${sectionAttr}${current}>${escapeHtml(item.label)}</a>`;
   }).join("\n          ");
 }
 
@@ -332,6 +391,59 @@ export function renderHome({ data, alternatePaths }) {
     body,
     schema: schemaForHome(data, path),
     bodyClass: "home-page"
+  });
+}
+
+export function renderLab({ data, alternatePaths }) {
+  const path = labPath(data.locale);
+  const lab = data.lab;
+
+  const articles = lab.entries.map((entry) => {
+    const sections = entry.sections.map((section) => {
+      const heading = section.heading ? `<h3>${escapeHtml(section.heading)}</h3>\n            ` : "";
+      const images = (section.images || []).map((image) => `
+            <figure class="lab-figure lab-figure-${escapeHtml(image.variant || "wide")}">
+              <img src="${image.src}" alt="${escapeHtml(image.alt)}" width="${Number(image.width)}" height="${Number(image.height)}" loading="lazy">
+              <figcaption>${escapeHtml(image.caption)}</figcaption>
+            </figure>`).join("");
+      return `${heading}<p>${escapeHtml(section.body)}</p>${images}`;
+    }).join("\n            ");
+    const tags = entry.tags.map((tag) => `<li>${escapeHtml(tag)}</li>`).join("");
+    return `<article class="lab-article" aria-labelledby="${escapeHtml(entry.slug)}-title">
+          <header class="lab-article-head">
+            <time class="lab-date" datetime="${escapeHtml(entry.date)}">${escapeHtml(entry.dateLabel)}</time>
+            <h2 id="${escapeHtml(entry.slug)}-title">${escapeHtml(entry.title)}</h2>
+            <ul class="lab-tags">${tags}</ul>
+          </header>
+          <div class="lab-body">
+            ${sections}
+          </div>
+        </article>`;
+  }).join("\n        ");
+
+  const body = `<main id="main" class="lab-main">
+    <header class="lab-head">
+      <div class="container">
+        <p class="eyebrow">${escapeHtml(lab.eyebrow)}</p>
+        <h1 id="lab-title">${escapeHtml(lab.title)}</h1>
+        <p class="lab-intro">${escapeHtml(lab.intro)}</p>
+      </div>
+    </header>
+    <div class="container lab-articles">
+        ${articles}
+        <a class="text-link lab-back" href="${homePath(data.locale)}"><span aria-hidden="true">←</span> ${escapeHtml(lab.backLabel)}</a>
+    </div>
+  </main>`;
+
+  return layout({
+    data,
+    path,
+    alternatePaths,
+    title: lab.meta.title,
+    description: lab.meta.description,
+    body,
+    schema: schemaForLab(data, path),
+    bodyClass: "lab-page"
   });
 }
 

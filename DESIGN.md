@@ -3,14 +3,14 @@
 ## 1. Overview
 
 - **Creative north star:** The operations brief — sparse, blunt, and credible. The page should feel like a senior engineer wrote down only what a technical lead needs to know before starting a conversation. The real portrait is the only decorative asset; everything else earns its place through hierarchy or proof.
-- **Register:** Brand / portfolio. The home page is the product. The German route is an equal localized version; the 404 page is the only supporting surface.
+- **Register:** Brand / portfolio. The home page is the product. The German route is an equal localized version. The Lab (`/lab/`, `/de/lab/`) is a secondary long-form surface for AI experiments; the 404 page is the only other supporting surface.
 - **Audience and primary job:** Engineering leaders, CTOs, and senior developers responsible for live cloud systems. In one short scroll they should understand what Hipolit does, see one verifiable public build, and know how to contact him.
 - **Tone and density:** Confident, concise, practical, and lightly irreverent. Prefer short assertions over consulting language. The first viewport names the role and location, carries one memorable position — infrastructure should be boring — plus one explanation and one contact action.
 - **Provisional assumptions:** The main audience is based in Vienna or works with remote European teams. The desired inquiry concerns cloud platforms, delivery, infrastructure as code, or production operations. English is the default language and German is a complete alternate.
 - **Technology:** A dependency-free Node static build renders localized JSON into HTML. CSS and small progressive-enhancement JavaScript are hand-authored. No third-party fonts, client frameworks, analytics, blog engine, feeds, Markdown, or runtime content requests. GitHub Actions builds and deploys the `_site/` artifact to GitHub Pages.
 - **Source of truth:** `src/data/site.en.json` and `src/data/site.de.json` for localized copy; `src/templates.mjs` and `scripts/build.mjs` for rendering; `assets/css/main.css` for tokens/components; `assets/js/main.js` for enhancement; `assets/img/ich.jpg` and `assets/logo-hipo.svg` for brand media; `README.md` and `.github/workflows/deploy-pages.yml` for publishing.
 - **Reference direction:** editorial engineering portfolios with the restraint of a printed technical brief. Borrow strong type, evidence, and direct contact paths—not terminal styling, fabricated metrics, or a résumé timeline. **Anti-references:** neon hacker aesthetics, fake dashboards, logo/tool walls, generic agency gradients, card grids, padded case studies, and unsupported scale claims.
-- **Freshness:** Revised 2026-07-16 for the cleaned portrait asset (`ich.jpg`) and hero eyebrow wrap rule; 2026-07-13 for the compact portfolio direction and removal of the Notes/blog feature.
+- **Freshness:** Revised 2026-07-17 for the hook-first meta description, the "Building" nav label, the added `SoftwareSourceCode` / `knowsLanguage` structured data, and the new bilingual Lab surface; 2026-07-16 for the cleaned portrait asset (`ich.jpg`) and hero eyebrow wrap rule; 2026-07-13 for the compact portfolio direction.
 
 ## 2. Colors
 
@@ -36,14 +36,15 @@
 
 ## 5. Components and Content
 
-- **Navigation:** compact masthead with mark/name, three destinations — Work, Open source, Contact — EN/DE switch, and no separate header CTA. Mobile uses a labelled button with `aria-expanded` and `aria-controls`; Escape, outside click, link selection, and desktop resize close it; focus returns to the trigger. Targets are at least 44px.
+- **Navigation:** compact masthead with mark/name, four destinations — Work, Building (the open-source section), Lab (the experiments page), Contact — EN/DE switch, and no separate header CTA. Mobile uses a labelled button with `aria-expanded` and `aria-controls`; Escape, outside click, link selection, and desktop resize close it; focus returns to the trigger. Targets are at least 44px.
 - **Hero:** eyebrow, “DevOps Engineer in Vienna.” / “DevOps Engineer in Wien.” as the H1, the line “Infrastructure should be boring.” / “Infrastruktur sollte langweilig sein.” in one short explanation, one email action, one GitHub text link, and the real portrait. A single compact expertise line may follow; do not add a proof grid or portrait biography.
 - **Work:** exactly four flat numbered rows: Platforms, Delivery, Operations, and AI Infrastructure. Each uses one short result, one sentence, and a compact tool line. The AI row covers agent runtimes and private local LLM systems without implying model training or unsupported scale. No bullets, badges, or repeated benefit copy.
 - **Open source:** one full-width dark band for Skill Mania. Describe only repository-verifiable scope in one sentence and provide one GitHub action. Do not imply client work.
 - **Method:** one compact line — understand, simplify, document — with one sentence of support. It is not a separate case-study section or three-card process.
 - **Contact:** a direct closing statement, one short expectation-setting sentence, email, LinkedIn, and GitHub. Do not ask for a stack inventory or mimic a form.
 - **Language control:** route-preserving links show `EN` and `DE`, native names in accessible text, `hreflang`, and a current state. Product and personal names are not translated.
-- **Removed surfaces:** no Notes/blog navigation, home preview, post routes, feeds, Markdown content, adjacent-post controls, or blog metadata. Existing public post URLs may return the branded 404.
+- **Lab:** a single curated long-form page at `/lab/` (and `/de/lab/`), reached from the masthead. One page H1, dated entries as `article` blocks with `h2` titles, monospace date, tag chips, and `h3` subheads inside a ≤64ch reading column on the light surface. Each entry carries `Article` structured data authored by the site Person. No feed, RSS, per-entry routes, comments, or pagination. Entries stay first-hand and specific; claims about the book, game, or 3D work must be true and unembellished.
+- **Removed surfaces:** no feed/RSS, per-post routes, Markdown content, adjacent-post controls, home post-preview, or blog engine. The Lab is a single hand-authored page, not a reintroduced blog; old public post URLs may still return the branded 404.
 - **System states:** visible hover, focus, open-menu, current-language, and reduced-motion states are required. Loading, empty, validation, selected, error, and permission states do not apply to the static portfolio.
 - **Responsive behavior:** hero is two-column above 900px and one column below it. At mobile widths, copy appears before the portrait, actions remain easy to tap, work rows collapse to one column, and contact links become full-width rows. Prevent horizontal scroll at 320px.
 

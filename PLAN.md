@@ -6,12 +6,14 @@ Turn the existing long-form “operator’s field journal” into an operations 
 
 ## Information Architecture
 
-1. **Masthead:** identity, Work, Open source, Contact, and EN/DE.
+1. **Masthead:** identity, Work, Building, Lab, Contact, and EN/DE.
 2. **Hero:** the role and location as the H1, “Infrastructure should be boring” in the supporting sentence, email action, GitHub path, portrait, and one compact expertise line.
 3. **Work:** four numbered rows for platforms, delivery, operations, and private AI infrastructure.
 4. **Open source:** one dark Skill Mania band with one verifiable description and repository link.
 5. **Method:** one line — understand, simplify, document — instead of three process panels.
 6. **Contact:** direct email-led close plus LinkedIn and GitHub.
+
+The Lab (`/lab/`, `/de/lab/`) is a later addition: a single curated long-form page for AI experiments, linked from the masthead, with `Article` structured data and no feed or per-post routes.
 
 The fit strip, proof grid, portrait biography, long method section, Notes preview, blog, posts, feeds, and blog-specific routes are removed.
 

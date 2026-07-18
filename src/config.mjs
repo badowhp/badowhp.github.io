@@ -15,3 +15,7 @@ export const LOCALES = Object.freeze(["en", "de"]);
 export function homePath(locale) {
   return locale === "de" ? "/de/" : "/";
 }
+
+export function labPath(locale) {
+  return locale === "de" ? "/de/lab/" : "/lab/";
+}

@@ -58,7 +58,7 @@ const seoExpectations = {
     descriptionPhrase: "Vienna-based DevOps engineer",
     visiblePhrase: "Independent DevOps engineer in Vienna",
     offerPhrases: ["Agentic AI infrastructure", "private local LLM systems"],
-    lastModified: "2026-07-13",
+    lastModified: "2026-07-17",
     alternateLocale: "de_AT",
     city: "Vienna"
   },
@@ -68,7 +68,7 @@ const seoExpectations = {
     descriptionPhrase: "DevOps Engineer Hipolit Badowski in Wien",
     visiblePhrase: "Selbstständiger DevOps Engineer in Wien",
     offerPhrases: ["agentische AI-Infrastruktur", "private lokale LLM-Systeme"],
-    lastModified: "2026-07-13",
+    lastModified: "2026-07-17",
     alternateLocale: "en_GB",
     city: "Vienna"
   }
@@ -81,7 +81,7 @@ for (const filename of htmlFiles) {
   idsByRoute.set(route, new Set(idsForHtml(html)));
 }
 
-const expectedRoutes = ["/", "/404.html", "/de/"];
+const expectedRoutes = ["/", "/404.html", "/de/", "/de/lab/", "/lab/"];
 const actualRoutes = [...htmlByRoute.keys()].sort();
 if (JSON.stringify(actualRoutes) !== JSON.stringify(expectedRoutes)) {
   errors.push(`unexpected HTML routes: ${actualRoutes.join(", ")}`);

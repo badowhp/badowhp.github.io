@@ -10,7 +10,7 @@ A compact, bilingual portfolio for Hipolit Badowski, a Vienna-based DevOps engin
 - `scripts/check.mjs` validates metadata, language alternates, internal links, assets, headings, CSP rules, the deliberately small route set, and publishing files.
 - `assets/css/main.css`, `assets/js/main.js`, `assets/logo-hipo.svg`, and `assets/img/ich.jpg` are the only public design/runtime sources.
 
-There is no runtime framework, blog, content feed, remote font, analytics, third-party script, or client-side translation.
+There is no runtime framework, content feed, RSS, per-post route, remote font, analytics, third-party script, or client-side translation. The Lab (`/lab/`, `/de/lab/`) is a single hand-authored page rendered from the same localized JSON, not a blog engine.
 
 ## Local Development
 
@@ -49,11 +49,12 @@ English is the default language; German is a first-class alternate.
 | Surface | English | German |
 | --- | --- | --- |
 | Home | `/` | `/de/` |
+| Lab | `/lab/` | `/de/lab/` |
 | Not found | `/404.html` | — |
 
 The build also emits `sitemap.xml`, `robots.txt`, `site.webmanifest`, `CNAME`, and `.nojekyll`. GitHub Actions uploads only `_site/` and deploys it through the `github-pages` environment.
 
-After a significant public-content change, verify `/`, `/de/`, `robots.txt`, and `sitemap.xml` in production. Submit `https://hipo.is-a.dev/sitemap.xml` in Google Search Console and request recrawling for the two home URLs through URL Inspection. Search Console ownership and indexing requests remain account-controlled operations; they are not automated by this repository.
+After a significant public-content change, verify `/`, `/de/`, `/lab/`, `/de/lab/`, `robots.txt`, and `sitemap.xml` in production. Submit `https://hipo.is-a.dev/sitemap.xml` in Google Search Console and request recrawling for the home and Lab URLs through URL Inspection. Search Console ownership and indexing requests remain account-controlled operations; they are not automated by this repository.
 
 ## Design and Content Rules
 

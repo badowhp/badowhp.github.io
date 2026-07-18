@@ -5,8 +5,8 @@
   "prefix": "/de",
   "meta": {
     "homeTitle": "DevOps Engineer Wien | Hipolit Badowski",
-    "homeDescription": "DevOps Engineer Hipolit Badowski in Wien baut Cloud- und CI/CD-Plattformen, agentische AI-Infrastruktur und private lokale LLM-Systeme.",
-    "lastModified": "2026-07-13",
+    "homeDescription": "Infrastruktur sollte langweilig sein. DevOps Engineer Hipolit Badowski in Wien baut Cloud-Plattformen, agentische AI-Infrastruktur und private lokale LLM-Systeme.",
+    "lastModified": "2026-07-17",
     "themeColor": "#071521"
   },
   "skip": "Zum Inhalt springen",
@@ -15,7 +15,8 @@
     "homeAria": "Startseite von Hipolit Badowski",
     "role": "DevOps Engineer · Wien",
     "work": "Arbeit",
-    "project": "Open Source",
+    "project": "Building",
+    "lab": "Lab",
     "contact": "Kontakt",
     "menuOpen": "Navigation öffnen",
     "menuClose": "Navigation schließen",
@@ -24,7 +25,7 @@
   "hero": {
     "eyebrow": "Selbstständiger DevOps Engineer in Wien · Remote in Europa",
     "title": "DevOps Engineer in Wien.",
-    "lede": "Infrastruktur sollte langweilig sein. Ich baue Cloud-Plattformen, agentische AI-Infrastruktur und private lokale LLM-Systeme.",
+    "lede": "Infrastruktur sollte langweilig sein. Ich baue Cloud-Plattformen, agentische AI-Infrastruktur und private lokale LLM-Systeme, die absichtlich langweilig bleiben.",
     "primaryAction": "Infrastruktur besprechen",
     "secondaryAction": "GitHub",
     "expertiseLabel": "Arbeitsfelder",
@@ -86,6 +87,38 @@
     "email": "E-Mail",
     "linkedin": "LinkedIn",
     "github": "GitHub"
+  },
+  "lab": {
+    "meta": {
+      "title": "Lab — AI-Experimente | Hipolit Badowski",
+      "description": "Fortschritts-Log eines Wiener DevOps Engineers, der AI jenseits der Infrastruktur nutzt: RACCOON FPS (ein Godot-Immersive-Sim), Blender-Assets über MCP und der Roman NEONFEHLER auf Amazon.",
+      "lastModified": "2026-07-17"
+    },
+    "eyebrow": "Lab",
+    "title": "Experimente, in Arbeit.",
+    "intro": "Was passiert, wenn ich dasselbe AI-Werkzeug, dem ich in Produktion vertraue, auf Dinge richte, für die ich nicht gemacht bin: einen Cyber-Noir-Shooter, 3D-Assets und einen Roman. Ich poste hier Fortschritt, sobald sich etwas bewegt.",
+    "backLabel": "Zurück zur Startseite",
+    "entries": [
+      {
+        "slug": "ai-outside-infrastructure",
+        "date": "2026-07-17",
+        "dateLabel": "17. Juli 2026",
+        "title": "AI auf Dinge richten, die keine Infrastruktur sind",
+        "tags": ["AI", "Godot", "Blender", "Schreiben"],
+        "sections": [
+          { "body": "Mein Job ist es, Infrastruktur langweilig zu halten: vorhersehbar, nachvollziehbar, ruhig. Nach Feierabend mache ich das Gegenteil und richte dasselbe AI-Werkzeug auf eine Spiel-Engine, eine 3D-Pipeline und ein Manuskript. Drei Bereiche, in denen ich kein Experte bin. Überraschend war, wie viel vom Infrastruktur-Denken sich überträgt, und wie viel davon ich unterwegs in mein skill-mania-Repo zurückpacke." },
+          { "heading": "RACCOON FPS, in Godot", "body": "RACCOON FPS ist das große Projekt: ein Cyber-Noir-Immersive-Sim in der Tradition von Deus Ex, Quake und den frühen Elder-Scrolls-Spielen. Ein Waschbär, eine Stadt voller Geheimnisse, Augmentierungen, die man unterwegs einsetzt. AI ist bei Code und Iteration in der Schleife, aber der Punkt war nie, dass ein Modell GDScript schreibt. Sondern dass die Produktions-Gewohnheiten weiter gelten: jede Änderung prüfen, einen Stand behalten, zu dem man zurück kann, nichts ausliefern, was man nicht erklären kann. Ein Sprachmodell ist ein schneller, selbstbewusster Junior. Es ist schnell und liegt mit voller Überzeugung falsch, also bleibt der Mensch der Reviewer. Die zwei Bilder unten liegen ein paar Wochen auseinander: ein Menü mit Emoji-Platzhaltern, dann ein 3D-Cyber-Noir-Umbau auf Godot 4.7.", "images": [
+            { "src": "/assets/img/raccoon-fps.jpg", "alt": "Frühes RACCOON-FPS-Menü mit Emoji-Level-Symbolen und einem Start-Button", "width": 1200, "height": 714, "caption": "RACCOON FPS · der Anfang", "variant": "wide" },
+            { "src": "/assets/img/raccoon-fps-v02.jpg", "alt": "RACCOON FPS v0.2 Alpha: ein 3D-Cyber-Noir-Hauptmenü mit einem gerenderten Waschbär in einer dunklen Stadt", "width": 1200, "height": 714, "caption": "RACCOON FPS · v0.2 Alpha, Godot 4.7", "variant": "wide" }
+          ] },
+          { "heading": "Assets in Blender, über MCP gesteuert", "body": "Beim 3D verdient sich AI ihren Platz. Ich steuere Blender über MCP, sodass das Modell Assets posen, rendern und exportieren kann, während ich Art-Direction mache, statt jeden Vertex zu schieben. Es verhält sich wie jedes generierte Artefakt: gut für den ersten Wurf, weiterhin darauf angewiesen, dass ein Mensch entscheidet, was wirklich gut ist. Derselbe Kompromiss wie bei generiertem Infrastruktur-Code, nur ist der Output diesmal der Waschbär." },
+          { "heading": "NEONFEHLER, auf Amazon", "body": "Das dritte verlässt das Terminal ganz. Ich veröffentliche einen Roman auf Amazon: NEONFEHLER, eine absurd-komische Techno-Fantasy. AI hat beim Entwurf des Buchs und beim Cover geholfen; Autor ist sie nicht. Dieselbe Regel wie beim Code: nützlich genau so lange, bis man aufhört zu redigieren.", "images": [
+            { "src": "/assets/img/neonfehler-cover.jpg", "alt": "Cover von NEONFEHLER von Hipolit Badowski: eine schwarze Katze mit grünen Augen im Neon-Glitch-Stil", "width": 800, "height": 1200, "caption": "NEONFEHLER · Cover", "variant": "cover" }
+          ] },
+          { "heading": "Was wirklich bleibt", "body": "Nichts davon ist mein Beruf, und genau das ist der Punkt. Was sich von der Infrastruktur auf kreative Arbeit überträgt, ist kein Werkzeug — es ist die Disziplin: kleine Schritte, ein Mensch im Review, ein langweiliger und reproduzierbarer Prozess, der hält, egal ob am Ende ein Deploy, ein Level oder ein Absatz steht. Was übrig bleibt, wird zu einem Skill in meinem skill-mania-Repo, und ich poste Fortschritt zu jedem dieser Projekte, sobald sich etwas tut. Bald mehr." }
+        ]
+      }
+    ]
   },
   "notFound": {
     "eyebrow": "404 / Route nicht gefunden",

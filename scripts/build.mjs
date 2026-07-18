@@ -1,8 +1,8 @@
 import { cp, mkdir, readFile, rm, writeFile } from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
-import { SITE, homePath } from "../src/config.mjs";
-import { renderHome, renderNotFound } from "../src/templates.mjs";
+import { SITE, homePath, labPath } from "../src/config.mjs";
+import { renderHome, renderLab, renderNotFound } from "../src/templates.mjs";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const OUTPUT = path.join(ROOT, "_site");
@@ -46,18 +46,26 @@ function xmlEscape(value = "") {
     .replaceAll("'", "&apos;");
 }
 
-function renderSitemap(dataByLocale) {
-  const entries = [
-    { route: "/", lastModified: dataByLocale.en.meta.lastModified },
-    { route: "/de/", lastModified: dataByLocale.de.meta.lastModified }
-  ];
-  const urls = entries.map(({ route, lastModified }) => `  <url>
-    <loc>${xmlEscape(new URL(route, SITE.url).href)}</loc>
+function sitemapEntry(route, lastModified, alternates) {
+  const abs = (value) => xmlEscape(new URL(value, SITE.url).href);
+  return `  <url>
+    <loc>${abs(route)}</loc>
     <lastmod>${xmlEscape(lastModified)}</lastmod>
-    <xhtml:link rel="alternate" hreflang="en" href="${xmlEscape(new URL("/", SITE.url).href)}" />
-    <xhtml:link rel="alternate" hreflang="de" href="${xmlEscape(new URL("/de/", SITE.url).href)}" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="${xmlEscape(new URL("/", SITE.url).href)}" />
-  </url>`).join("\n");
+    <xhtml:link rel="alternate" hreflang="en" href="${abs(alternates.en)}" />
+    <xhtml:link rel="alternate" hreflang="de" href="${abs(alternates.de)}" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="${abs(alternates.en)}" />
+  </url>`;
+}
+
+function renderSitemap(dataByLocale) {
+  const homeAlternates = { en: "/", de: "/de/" };
+  const labAlternates = { en: "/lab/", de: "/de/lab/" };
+  const urls = [
+    sitemapEntry("/", dataByLocale.en.meta.lastModified, homeAlternates),
+    sitemapEntry("/de/", dataByLocale.de.meta.lastModified, homeAlternates),
+    sitemapEntry("/lab/", dataByLocale.en.lab.meta.lastModified, labAlternates),
+    sitemapEntry("/de/lab/", dataByLocale.de.lab.meta.lastModified, labAlternates)
+  ].join("\n");
 
   return `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
@@ -82,6 +90,11 @@ async function build() {
     await writeRoute(homePath(locale), renderHome({ data, alternatePaths }));
   }
 
+  const labAlternatePaths = { en: labPath("en"), de: labPath("de") };
+  for (const locale of ["en", "de"]) {
+    await writeRoute(labPath(locale), renderLab({ data: dataByLocale[locale], alternatePaths: labAlternatePaths }));
+  }
+
   await writeRoute("/404.html", renderNotFound({ data: dataByLocale.en }));
   await writeRoute("/sitemap.xml", renderSitemap(dataByLocale));
   await writeRoute("/robots.txt", `User-agent: *\nAllow: /\n\nSitemap: ${SITE.url}/sitemap.xml\n`);
@@ -97,7 +110,7 @@ async function build() {
   await writeRoute("/CNAME", `${new URL(SITE.url).hostname}\n`);
   await writeRoute("/.nojekyll", "");
 
-  process.stdout.write("Built 3 HTML pages and a sitemap in _site/.\n");
+  process.stdout.write("Built 5 HTML pages and a sitemap in _site/.\n");
 }
 
 await build();
