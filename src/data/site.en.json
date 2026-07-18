@@ -91,7 +91,7 @@
   "lab": {
     "meta": {
       "title": "Lab — AI experiments | Hipolit Badowski",
-      "description": "A Vienna DevOps engineer's after-hours log: RACCOON FPS (a Godot immersive sim), Blender assets over MCP, and the novel NEONFEHLER on Amazon.",
+      "description": "A Vienna DevOps engineer's after-hours log: RACCOON FPS (a Godot immersive sim), Blender assets over MCP, and NEONFEHLER, a first novel in review.",
       "lastModified": "2026-07-18"
     },
     "eyebrow": "Lab",
@@ -112,7 +112,7 @@
             { "src": "/assets/img/raccoon-fps.jpg", "alt": "The earlier RACCOON FPS menu, a flat screen with emoji level icons", "width": 1200, "height": 714, "caption": "where it started, a few weeks earlier", "variant": "wide" }
           ] },
           { "heading": "Assets in Blender, over MCP", "body": "The 3D is where I'm most out of my depth, and where AI really earns its keep. I drive Blender over MCP so the model can pose, render, and export assets while I play art director instead of fighting every vertex. It's a first-pass machine: brilliant for getting something on screen, still needing a human to say what's actually good. That raccoon didn't model itself; it didn't model entirely by hand either." },
-          { "heading": "NEONFEHLER, on Amazon", "body": "And then there's the one with no code in it at all. NEONFEHLER is a novel I wrote, an absurd, comic techno-fantasy, and it's going up on Amazon, cover and all. AI helped me draft and shape the cover, but the jokes are mine, and so are the bad decisions. It's the most personal thing on this page.", "images": [
+          { "heading": "NEONFEHLER, in review", "body": "And then there's the one with no code in it at all. NEONFEHLER is my first novel, an absurd, comic techno-fantasy, drafted with AI in the loop, cover and all, and now in human review before Amazon. I'll share how this first iteration actually holds up and compare it against a second book I've already started. The jokes are mine, and so are the bad decisions; the most personal thing on this page.", "images": [
             { "src": "/assets/img/neonfehler-cover.jpg", "alt": "Cover of NEONFEHLER by Hipolit Badowski: a neon-glitch black cat with green eyes", "width": 800, "height": 1200, "caption": "NEONFEHLER · cover", "variant": "cover" }
           ] },
           { "heading": "What actually transfers", "body": "None of this pays the bills, and that's exactly why I love it. The funny part is how much loops back to the day job: the patience, the small steps, the habit of keeping a human in the loop. Whatever survives, I fold into my {{skill-mania}} repo so the next real project gets it for free. I'll keep posting here as these grow. Come back sometime." }

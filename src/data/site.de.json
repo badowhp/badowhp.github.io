@@ -91,7 +91,7 @@
   "lab": {
     "meta": {
       "title": "Lab — AI-Experimente | Hipolit Badowski",
-      "description": "Das After-Hours-Log eines Wiener DevOps Engineers: RACCOON FPS (Godot-Immersive-Sim), Blender-Assets über MCP und der Roman NEONFEHLER auf Amazon.",
+      "description": "Das After-Hours-Log eines Wiener DevOps Engineers: RACCOON FPS (Godot-Immersive-Sim), Blender-Assets über MCP und NEONFEHLER, ein erster Roman in Prüfung.",
       "lastModified": "2026-07-18"
     },
     "eyebrow": "Lab",
@@ -112,7 +112,7 @@
             { "src": "/assets/img/raccoon-fps.jpg", "alt": "Das frühere RACCOON-FPS-Menü, ein flacher Bildschirm mit Emoji-Level-Symbolen", "width": 1200, "height": 714, "caption": "der Anfang, ein paar Wochen früher", "variant": "wide" }
           ] },
           { "heading": "Assets in Blender, über MCP", "body": "Beim 3D bin ich am meisten überfordert, und genau da verdient sich AI ihren Platz. Ich steuere Blender über MCP, sodass das Modell Assets posen, rendern und exportieren kann, während ich Art-Direction mache, statt mit jedem Vertex zu kämpfen. Es ist eine Erste-Wurf-Maschine: großartig, um etwas auf den Schirm zu bekommen, aber ein Mensch muss sagen, was wirklich gut ist. Der Waschbär hat sich nicht selbst modelliert; ganz von Hand aber eben auch nicht." },
-          { "heading": "NEONFEHLER, auf Amazon", "body": "Und dann ist da das eine ganz ohne Code. NEONFEHLER ist ein Roman, den ich geschrieben habe, eine absurd-komische Techno-Fantasy, und er kommt auf Amazon, Cover inklusive. AI hat mir beim Entwurf und beim Cover geholfen, aber die Witze sind meine, und die schlechten Entscheidungen auch. Es ist das Persönlichste auf dieser Seite.", "images": [
+          { "heading": "NEONFEHLER, in Prüfung", "body": "Und dann ist da das eine ganz ohne Code. NEONFEHLER ist mein erster Roman, eine absurd-komische Techno-Fantasy, mit AI in der Schleife entworfen, Cover inklusive, und gerade in menschlicher Prüfung, bevor es zu Amazon geht. Ich teile, wie sich diese erste Iteration schlägt, und vergleiche sie mit einem zweiten Buch, das ich schon angefangen habe. Die Witze sind meine, und die schlechten Entscheidungen auch; das Persönlichste auf dieser Seite.", "images": [
             { "src": "/assets/img/neonfehler-cover.jpg", "alt": "Cover von NEONFEHLER von Hipolit Badowski: eine schwarze Katze mit grünen Augen im Neon-Glitch-Stil", "width": 800, "height": 1200, "caption": "NEONFEHLER · Cover", "variant": "cover" }
           ] },
           { "heading": "Was wirklich bleibt", "body": "Nichts davon zahlt die Rechnungen, und genau deshalb liebe ich es. Das Komische ist, wie viel zum Job zurückkommt: die Geduld, die kleinen Schritte, die Gewohnheit, einen Menschen in der Schleife zu behalten. Was übrig bleibt, packe ich in mein {{skill-mania}}-Repo, damit das nächste echte Projekt es gratis bekommt. Ich poste hier weiter, während die Projekte wachsen. Schau mal wieder vorbei." }
