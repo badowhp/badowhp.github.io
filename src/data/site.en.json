@@ -6,7 +6,7 @@
   "meta": {
     "homeTitle": "DevOps Engineer Vienna | Hipolit Badowski",
     "homeDescription": "Infrastructure should be boring. Hipolit Badowski is a Vienna-based DevOps engineer building cloud platforms, agentic AI infrastructure, and private local LLMs.",
-    "lastModified": "2026-07-17",
+    "lastModified": "2026-07-18",
     "themeColor": "#071521"
   },
   "skip": "Skip to content",
@@ -91,31 +91,31 @@
   "lab": {
     "meta": {
       "title": "Lab — AI experiments | Hipolit Badowski",
-      "description": "Progress log from a Vienna DevOps engineer using AI beyond infrastructure: RACCOON FPS (a Godot immersive sim), Blender assets over MCP, and the novel NEONFEHLER on Amazon.",
-      "lastModified": "2026-07-17"
+      "description": "A Vienna DevOps engineer's after-hours log: RACCOON FPS (a Godot immersive sim), Blender assets over MCP, and the novel NEONFEHLER on Amazon.",
+      "lastModified": "2026-07-18"
     },
     "eyebrow": "Lab",
-    "title": "Experiments, in progress.",
-    "intro": "What happens when I point the same AI tooling I trust in production at things I have no business building: a cyber-noir shooter, 3D assets, and a novel. I'll post progress here as each one moves.",
+    "title": "The things I build after hours.",
+    "intro": "Infrastructure is the day job. This is everything else: the game, the 3D, the novel I keep coming back to because building them is the part I love. I'll share each one here as it grows, mess and all.",
     "backLabel": "Back to home",
     "entries": [
       {
         "slug": "ai-outside-infrastructure",
         "date": "2026-07-17",
         "dateLabel": "17 July 2026",
-        "title": "Pointing AI at things that aren't infrastructure",
+        "title": "Three side projects I can't put down",
         "tags": ["AI", "Godot", "Blender", "Writing"],
         "sections": [
-          { "body": "My day job is making infrastructure boring: predictable, reviewable, calm. Off the clock I've been doing the opposite, pointing the same AI tooling at a game engine, a 3D pipeline, and a manuscript. Three domains where I'm not an expert. The surprise was how much of the infrastructure mindset carried over, and how much of it I package back into my skill-mania repo as I go." },
-          { "heading": "RACCOON FPS, in Godot", "body": "RACCOON FPS is the big one: a cyber-noir immersive sim in the lineage of Deus Ex, Quake, and the early Elder Scrolls games. One raccoon, a city full of secrets, augmentations you slot in as you move. AI sits in the loop for code and iteration, but the point was never that a model writes GDScript. It's that the production habits still apply: review every change, keep a state you can roll back to, don't ship what you can't explain. A language model is a fast, confident junior. It moves quickly, and it's wrong with total conviction, so the human stays the reviewer. The two shots below sit a few weeks apart: an emoji-placeholder menu, then a 3D cyber-noir rebuild on Godot 4.7.", "images": [
-            { "src": "/assets/img/raccoon-fps.jpg", "alt": "Early RACCOON FPS menu with emoji level icons and a Start Game button", "width": 1200, "height": 714, "caption": "RACCOON FPS · where it started", "variant": "wide" },
-            { "src": "/assets/img/raccoon-fps-v02.jpg", "alt": "RACCOON FPS v0.2 alpha: a 3D cyber-noir main menu with a rendered raccoon standing in a dark city", "width": 1200, "height": 714, "caption": "RACCOON FPS · v0.2 alpha, Godot 4.7", "variant": "wide" }
+          { "body": "My day job is making infrastructure boring, and I'm genuinely good at boring. But the projects that keep me up past midnight are anything but: a game, a heap of 3D, a novel. I build them because I want them to exist, and I bring along the same AI tooling I trust at work. The discipline comes with me. So does the fun." },
+          { "heading": "RACCOON FPS, in Godot", "body": "RACCOON FPS is the one I'm proudest of: a cyber-noir immersive sim in the lineage of Deus Ex, Quake, and the early Elder Scrolls games. One raccoon, a whole city of secrets, augmentations you slot in as you move. I'm no game developer; I just really wanted this to exist, so I've been building it in Godot night after night. AI helps with the code and the iteration, but it never skips review: it's a fast, confident junior that's wrong with total conviction, and catching that is half the fun. Every session it looks a little more like the thing in my head. A few weeks back the menu was held together with emoji; now there's a proper skyline and a rendered raccoon prowling a cyber-noir city.", "images": [
+            { "src": "/assets/img/raccoon-fps-v02.jpg", "alt": "RACCOON FPS v0.2 alpha main menu: a rendered raccoon on a rooftop in a neon-lit cyber-noir city", "width": 1200, "height": 714, "caption": "RACCOON FPS · v0.2 alpha, Godot 4.7", "variant": "promo" },
+            { "src": "/assets/img/raccoon-fps.jpg", "alt": "The earlier RACCOON FPS menu, a flat screen with emoji level icons", "width": 1200, "height": 714, "caption": "where it started, a few weeks earlier", "variant": "wide" }
           ] },
-          { "heading": "Assets in Blender, driven over MCP", "body": "The 3D is where AI earns its place. I drive Blender over MCP, so the model can pose, render, and export game assets while I art-direct instead of pushing every vertex. It behaves like any generated artifact: great for a first pass, still dependent on a human deciding what's actually good. Same tradeoff as generated infrastructure code, only this time the output is the raccoon." },
-          { "heading": "NEONFEHLER, on Amazon", "body": "The third one leaves the terminal entirely. I'm publishing a novel on Amazon: NEONFEHLER, an absurd, comic techno-fantasy. AI helped draft the book and shape its cover; it isn't the author. Same rule as the code: useful right up until you stop editing.", "images": [
+          { "heading": "Assets in Blender, over MCP", "body": "The 3D is where I'm most out of my depth, and where AI really earns its keep. I drive Blender over MCP so the model can pose, render, and export assets while I play art director instead of fighting every vertex. It's a first-pass machine: brilliant for getting something on screen, still needing a human to say what's actually good. That raccoon didn't model itself; it didn't model entirely by hand either." },
+          { "heading": "NEONFEHLER, on Amazon", "body": "And then there's the one with no code in it at all. NEONFEHLER is a novel I wrote, an absurd, comic techno-fantasy, and it's going up on Amazon, cover and all. AI helped me draft and shape the cover, but the jokes are mine, and so are the bad decisions. It's the most personal thing on this page.", "images": [
             { "src": "/assets/img/neonfehler-cover.jpg", "alt": "Cover of NEONFEHLER by Hipolit Badowski: a neon-glitch black cat with green eyes", "width": 800, "height": 1200, "caption": "NEONFEHLER · cover", "variant": "cover" }
           ] },
-          { "heading": "What actually transfers", "body": "None of this is my profession, and that's the point. What moves from infrastructure to creative work isn't a tool — it's the discipline: small steps, a human on review, a boring and reproducible process that holds whether the output is a deploy, a level, or a paragraph. What survives becomes a skill in my skill-mania repo, and I'll post progress on each of these as it moves. More soon." }
+          { "heading": "What actually transfers", "body": "None of this pays the bills, and that's exactly why I love it. The funny part is how much loops back to the day job: the patience, the small steps, the habit of keeping a human in the loop. Whatever survives, I fold into my {{skill-mania}} repo so the next real project gets it for free. I'll keep posting here as these grow. Come back sometime." }
         ]
       }
     ]

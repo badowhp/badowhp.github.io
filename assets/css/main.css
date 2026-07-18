@@ -882,6 +882,19 @@ p {
   margin-top: 0;
 }
 
+.lab-body a {
+  color: var(--teal-dark);
+  font-weight: 640;
+  text-decoration: underline;
+  text-decoration-color: color-mix(in srgb, currentColor 40%, transparent);
+  text-underline-offset: 3px;
+  transition: text-decoration-color 160ms ease;
+}
+
+.lab-body a:hover {
+  text-decoration-color: currentColor;
+}
+
 .lab-figure {
   margin-top: 24px;
 }
@@ -895,6 +908,10 @@ p {
 
 .lab-figure-cover {
   max-width: 340px;
+}
+
+.lab-figure-promo {
+  margin-top: 28px;
 }
 
 .lab-figure figcaption {

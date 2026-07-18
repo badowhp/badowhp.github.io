@@ -21,6 +21,13 @@ function phraseHtml(value) {
     .join("&#160;· ");
 }
 
+function labBody(text) {
+  return escapeHtml(text).replaceAll(
+    "{{skill-mania}}",
+    `<a href="${SITE.project}" target="_blank" rel="noopener noreferrer">skill-mania</a>`
+  );
+}
+
 function safeJson(value) {
   return JSON.stringify(value).replaceAll("<", "\\u003c");
 }
@@ -406,7 +413,7 @@ export function renderLab({ data, alternatePaths }) {
               <img src="${image.src}" alt="${escapeHtml(image.alt)}" width="${Number(image.width)}" height="${Number(image.height)}" loading="lazy">
               <figcaption>${escapeHtml(image.caption)}</figcaption>
             </figure>`).join("");
-      return `${heading}<p>${escapeHtml(section.body)}</p>${images}`;
+      return `${heading}<p>${labBody(section.body)}</p>${images}`;
     }).join("\n            ");
     const tags = entry.tags.map((tag) => `<li>${escapeHtml(tag)}</li>`).join("");
     return `<article class="lab-article" aria-labelledby="${escapeHtml(entry.slug)}-title">
